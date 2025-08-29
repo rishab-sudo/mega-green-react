@@ -1,0 +1,91 @@
+.property-section {
+  padding: 60px 0;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: #555;
+}
+
+.property-card {
+  position: relative;
+  display: flex;
+  width: 90%;          /* desktop width */
+  height: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-left {
+  width: 45%;
+  height: 100%;
+}
+
+.card-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-right {
+  width: 50%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-right h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card-right p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.card-info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+.property-btn{
+    width: 150px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #007bff;
+}
+.card-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #007bff;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+/* 🔹 Responsive for mobile */
+@media (max-width: 767px) {
+  .property-card {
+    min-width: 100%;           /* full width on mobile */
+    max-width: 95%;        /* keep a little margin */
+    margin: 0 auto;        /* center horizontally */
+  }
+}

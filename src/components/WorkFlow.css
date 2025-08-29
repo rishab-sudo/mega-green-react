@@ -1,0 +1,109 @@
+.work-section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.work-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* Horizontal line only between first and last card */
+.work-hline {
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: #ccc;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.work-boxes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.work-box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quarter-circle arcs */
+.work-arc {
+  position: absolute;
+  width: 45%;
+  height: 45%;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+}
+
+.work-arc-tl {
+  top: 0;
+  left: 0;
+  border-radius: 0  0  100% 0; /* quarter circle */
+}
+
+.work-arc-br {
+  bottom: 0;
+  right: 0;
+  border-radius: 100% 0 0 0; /* quarter circle */
+}
+
+/* Text inside box */
+.work-content {
+  text-align: left;
+  max-width: 80%;
+  z-index: 1;
+}
+
+.work-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #222;
+}
+
+.work-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .work-hline {
+    display: none;
+  }
+
+  .work-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-box {
+    width: 100%;
+    max-width: 350px;
+  }
+}

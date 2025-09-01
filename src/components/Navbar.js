@@ -25,8 +25,8 @@ const toggleMenu = () => {
 
         <ul className="nav-links">
           <li><a href="/home">Home</a></li>
-
-          <li
+ <li><a href="/about">About Us</a></li>
+          {/* <li
             className="dropdown"
             onMouseEnter={() => setAboutDropdownOpen(true)}
             onMouseLeave={() => setAboutDropdownOpen(false)}
@@ -36,11 +36,11 @@ const toggleMenu = () => {
               <li><a href="/about">About Us</a></li>
               <li><a href="/established">Established Excellence</a></li>
             </ul>
-          </li>
+          </li> */}
 
-          <li><a href="/product">Products</a></li>
-          <li><a href="/projects" onClick={toggleMenu}>Projects</a></li>
-          <li><a href="/career" onClick={toggleMenu}>Careers</a></li>
+          {/* <li><a href="/product">Products</a></li> */}
+          <li><a href="/projects" >Projects</a></li>
+          {/* <li><a href="/career" onClick={toggleMenu}>Careers</a></li> */}
 
           {/* <li
             className="dropdown"

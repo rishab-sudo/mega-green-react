@@ -7,8 +7,21 @@ const HomeAbout = () => {
     <section className="home-about">
       <div className="home-about-container">
         {/* Left Column */}
-        <div className="home-about-left">
+         <div className="home-about-left">
+          <img
+            src= {require("../assets/banner/room1.jpg")}
+            alt="About Us"
+            className="about-img"
+          />
+        </div>
+     
+
+        {/* Right Column */}
+          <div className="home-about-right">
+            <div className="about-heading-div">
+
           <h2 className="about-heading">About Our Company</h2>
+            </div>
 
           {/* Subheading 1 */}
           <div className="about-subsection">
@@ -33,15 +46,6 @@ const HomeAbout = () => {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Right Column */}
-        <div className="home-about-right">
-          <img
-            src= {require("../assets/banner/room1.jpg")}
-            alt="About Us"
-            className="about-img"
-          />
         </div>
       </div>
     </section>

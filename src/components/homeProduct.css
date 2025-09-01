@@ -16,6 +16,7 @@
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .homeproducts-card:hover {
@@ -23,7 +24,7 @@
 }
 
 .homeproducts-card img {
-  height: 220px;
+  height: 225px;
   object-fit: cover;
 }
 

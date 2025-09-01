@@ -6,7 +6,7 @@
 }
 .exclusive-container {
     margin: auto !important;
-    background-color: aliceblue;
+    background-color: rgba(211, 211, 211, 0.221);
   display: flex;
   justify-content: space-between;
   align-items: center;

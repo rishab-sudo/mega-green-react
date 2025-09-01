@@ -1,0 +1,108 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+/* Two-column name row */
+.name-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.name-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* label aur input ke beech equal gap */
+}
+
+/* Inputs and textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 10px 4px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+input:focus,
+textarea:focus {
+  border-bottom: 2px solid #05956c;
+}
+
+/* Textarea (Message) */
+textarea {
+  min-height: 20px;
+  max-height: 50px; /* thoda zyada height */
+  resize: vertical;
+}
+
+/* Labels */
+.form-label {
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+}
+
+/* Inquiry section */
+.inquiry-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inquiry-options {
+  display: flex;
+  gap: 20px;
+}
+.inquiry-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.inquiry-options input[type="radio"] {
+  accent-color: #05956c;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Submit button at bottom-right */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.contact-submit-button {
+  padding: 10px 22px;
+  background-color: #05956c;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.contact-submit-button:hover {
+  background-color: #047e59;
+}
+
+/* Errors */
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .name-row {
+    flex-direction: column;
+  }
+}

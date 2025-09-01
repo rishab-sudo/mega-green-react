@@ -13,22 +13,23 @@ const AboutBanner = () => {
         </p>
 
         {/* Info Box */}
-        <div className="info-box">
-          <div className="info-section">
-            <span className="info-label">City/Street</span>
-            <span className="info-value">New York City</span>
-          </div>
-          <div className="divider"></div>
-          <div className="info-section">
-            <span className="info-label">Property Type</span>
-            <span className="info-value">Duplex House</span>
-          </div>
-          <div className="divider"></div>
-          <div className="info-section">
-            <span className="info-label">Price Range</span>
-            <span className="info-value">$18,000 - $30,000</span>
-          </div>
-        </div>
+      <div className="info-box">
+  <div className="info-section">
+    <span className="info-label">City/Street</span>
+    <span className="info-value">New York City</span>
+  </div>
+  <div className="divider"></div>
+  <div className="info-section">
+    <span className="info-label">Property Type</span>
+    <span className="info-value">Duplex House</span>
+  </div>
+  <div className="divider"></div>
+  <div className="info-section">
+    <span className="info-label">Price Range</span>
+    <span className="info-value">$18,000 - $30,000</span>
+  </div>
+</div>
+
 
         {/* Stats */}
         <div className="stats">

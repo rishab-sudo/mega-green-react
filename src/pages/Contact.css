@@ -36,8 +36,8 @@
 
 /* Left: Big Black Info Box */
 .contact-info-section {
-  flex: 0 0 45%;
-  height: 100%;
+  flex: 0 0 42%;
+  height: 525px;
 }
 
 .big-info-box {
@@ -82,9 +82,14 @@
   font-weight: 500;
   color: #fff;
 }
-
+.add-box-text{
+  max-width: 75%;
+  margin-right: auto;
+}
 /* Buttons inside black box */
 .contact-info-btn {
+  text-align: center;
+  width: 95px;
   padding: 6px 12px;
   background: #05956c;
   color: #fff;
@@ -142,7 +147,10 @@
     width: 100%;
   }
   .big-info-box {
-    height: auto;
+    height: auto !important;
+  }
+  .contact-info-btn {
+display: none !important;
   }
   .form-container form {
     margin-top: 2rem;

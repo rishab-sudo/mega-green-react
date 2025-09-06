@@ -89,4 +89,12 @@ min-width: 45%;
   .exclusive-container {
     flex-direction: column;
   }
+  /* Left Side */
+.exclusive-left {
+width: 100% !important;
+}
+
+.exclusive-image {
+  width: 100%;
+}
 }

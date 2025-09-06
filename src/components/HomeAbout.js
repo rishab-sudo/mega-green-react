@@ -4,12 +4,13 @@ import { FaCheckCircle } from "react-icons/fa"; // example icon
 
 const HomeAbout = () => {
   return (
+     <div>
     <section className="home-about">
       <div className="home-about-container">
         {/* Left Column */}
          <div className="home-about-left">
           <img
-            src= {require("../assets/banner/room1.jpg")}
+            src= {require("../assets/about us 01.png")}
             alt="About Us"
             className="about-img"
           />
@@ -49,6 +50,8 @@ const HomeAbout = () => {
         </div>
       </div>
     </section>
+
+    </div>
   );
 };
 

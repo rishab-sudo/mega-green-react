@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
 
       <div className='copyright-div'>
-        Copyright © 2025 <span style={{ color: "#ea3138" }}>Alutuff</span>. All Right Reserved.
+        Copyright © 2025 <span style={{ color: "#ea3138" }}>MeghaGreenCity</span>. All Right Reserved.
       </div>
     </Container>
   );

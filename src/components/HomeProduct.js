@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import Slider from "react-slick";
+import { Card } from "react-bootstrap";
 import { FaBed, FaBath } from "react-icons/fa";
 import "./homeProduct.css";
 
@@ -61,36 +62,62 @@ const properties = [
 ];
 
 const HomeProduct = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    responsive: [
+      {
+        breakpoint: 992, // tablets
+        settings: {
+          slidesToShow: 2,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 768, // mobile
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true, // keep true so card stays centered
+          centerPadding: "0px",
+        },
+      },
+    ],
+  };
+
   return (
-    <Container fluid className="homeproducts-section">
-      <Container>
-        <h2 className="homeproducts-heading">Our Properties</h2>
-        <Row>
-          {properties.map((property) => (
-            <Col key={property.id} xs={12} sm={6} lg={4} className="mb-4">
-              <Card className="homeproducts-card shadow-sm">
-                <Card.Img variant="top" src={property.img} />
-                <Card.Body>
-                  <h5 className="homeproducts-price">{property.price}</h5>
-                  <h4 className="homeproducts-title">{property.title}</h4>
-                  <p className="homeproducts-description">
-                    {property.description}
-                  </p>
-                  <hr />
-                  <div className="homeproducts-footer">
-                    <div className="homeproducts-icons">
-                      <span><FaBed /> {property.beds} Beds</span>
-                      <span><FaBath /> {property.baths} Baths</span>
-                    </div>
-                    <div className="homeproducts-booknow">Book Now →</div>
+    <div className="homeproducts-section">
+      <h2 className="homeproducts-heading">Our Properties</h2>
+      <Slider {...settings}>
+        {properties.map((property) => (
+          <div key={property.id} className="homeproducts-slide">
+            <Card className="homeproducts-card shadow-sm">
+              <Card.Img variant="top" src={property.img} />
+              <Card.Body>
+                <h5 className="homeproducts-price">{property.price}</h5>
+                <h4 className="homeproducts-title">{property.title}</h4>
+                <p className="homeproducts-description">{property.description}</p>
+                <hr />
+                <div className="homeproducts-footer">
+                  <div className="homeproducts-icons">
+                    <span><FaBed /> {property.beds} Beds</span>
+                    <span><FaBath /> {property.baths} Baths</span>
                   </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </Container>
+                  <div className="homeproducts-booknow">Book Now →</div>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const Luxury = () => {
 
 useEffect(() => {
   // Flip after 1.5 seconds
-  const timer = setTimeout(() => setFlipped(true), 2700);
+  const timer = setTimeout(() => setFlipped(true), 2900);
   return () => clearTimeout(timer);
 }, []);
 

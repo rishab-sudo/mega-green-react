@@ -3,14 +3,14 @@
   padding: 50px 10%;
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 50px;
 }
 
 /* Each row */
 .aboutdemo-row {
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 30px;
 }
 
 /* Reverse row for second */
@@ -19,38 +19,26 @@
 }
 
 /* Image styles */
-.aboutdemo-img-div{
-    width: 50%;
-    height: auto;
-}
-.about-row1-img{
-  min-width: 100%;
-  height: 250px;
-  border-radius: 0px;
+.aboutdemo-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
   object-fit: cover;
-  margin-bottom: -75px;
-}
-.about-row2-img{
-  min-width: 100%;
-  height: 280px;
-  border-radius: 0px;
-  object-fit: cover;
-    margin-top: -75px;
 }
 
 /* Black content box */
 .aboutdemo-box {
   flex: 1;
-  max-width: 50%;
-   height: 325px;
   background: #000;
   color: #fff;
   padding: 30px;
-  border-radius: 0px;
+  border-radius: 12px;
 }
 
 /* Special class for larger image */
-
+.demoabout img {
+  width: 120%; /* Make image wider */
+}
 
 /* Responsive */
 @media (max-width: 768px) {

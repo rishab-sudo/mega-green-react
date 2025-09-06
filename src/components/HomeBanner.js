@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomeBanner.css";
 
 const HomeBanner = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -15,40 +17,45 @@ const HomeBanner = () => {
     slidesToScroll: 1,
     arrows: false,
     pauseOnHover: false,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
   };
 
   const slides = [
     {
       img: require("../assets/banner/room1.jpg"),
       heading: "Welcome to Our Website",
-      desc: "This is a short description of your service or product. You can add more details here.",
+      desc: `This is a short description of your service or product.<br/>
+             You can add more details here.<br/>
+             Make your content more engaging with line breaks.`,
       btn: "Get Started",
     },
     {
       img: require("../assets/banner/room2.jpg"),
       heading: "Our Premium Rooms",
-      desc: "Experience luxury like never before with our premium collection.",
+      desc: `Experience luxury like never before.
+             Explore our premium collection.`,
       btn: "Book Now",
     },
     {
       img: require("../assets/banner/room1.jpg"),
       heading: "Special Offers",
-      desc: "Grab amazing discounts and deals available for a limited time.",
+      desc: `Grab amazing discounts and deals.
+             Available for a limited time only.`,
       btn: "View Offers",
     },
   ];
 
   return (
     <section className="home-banner">
-      {/* Left Text (Desktop) */}
+      {/* Left Text (Dynamic with fade) */}
       <div className="home-banner-left desktop-only">
-        <div className="banner-text-box">
-          <h1 className="banner-heading">Welcome to Our Website</h1>
-          <p className="banner-description">
-            This is a short description of your service or product. You can add
-            more details here.
-          </p>
-          <button className="banner-btn">Get Started</button>
+        <div key={currentSlide} className="banner-text-box fade-in">
+          <h1 className="banner-heading">{slides[currentSlide].heading}</h1>
+          <p
+            className="banner-description"
+            dangerouslySetInnerHTML={{ __html: slides[currentSlide].desc }}
+          ></p>
+          <button className="banner-btn">{slides[currentSlide].btn}</button>
         </div>
       </div>
 
@@ -57,11 +64,18 @@ const HomeBanner = () => {
         <Slider {...settings}>
           {slides.map((slide, index) => (
             <div key={index} className="banner-slide">
-              <img src={slide.img} alt={`Slide ${index}`} className="banner-img" />
+              <img
+                src={slide.img}
+                alt={`Slide ${index}`}
+                className="banner-img"
+              />
               {/* Text Box (Mobile only) */}
               <div className="banner-text-box mobile-only">
                 <h1 className="banner-heading">{slide.heading}</h1>
-                <p className="banner-description">{slide.desc}</p>
+                <p
+                  className="banner-description"
+                  dangerouslySetInnerHTML={{ __html: slide.desc }}
+                ></p>
                 <button className="banner-btn">{slide.btn}</button>
               </div>
             </div>

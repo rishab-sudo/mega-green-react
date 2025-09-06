@@ -33,7 +33,7 @@ const Contact = () => {
                 <div className='info-box-icon-div'>
                   <FaPhoneVolume className="info-icon" />
                 </div>
-                <p>+91 9557077742, +91 8979177743</p>
+                <p>+91 9557077742, <br/>+91 8979177743</p>
                 <a href="tel:+919557077742" className="contact-info-btn">Call</a>
               </div>
 
@@ -58,10 +58,12 @@ const Contact = () => {
                 <div className='info-box-icon-div'>
                   <SiLibreofficewriter className="info-icon" />
                 </div>
+                <div className="add-box-text">
                 <p>
                   Bandia Road, Parsakhera Industrial Area,<br />
                   Bareilly-243122, Uttar Pradesh, India
                 </p>
+                </div>
                 <a 
                   href="https://www.google.com/maps/place/Bandia+Road,+Parsakhera+Industrial+Area,+Bareilly,+Uttar+Pradesh+243122"
                   target="_blank"

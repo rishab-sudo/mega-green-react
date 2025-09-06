@@ -1,73 +1,75 @@
-.homeproducts-section {
+.productpage-section {
   padding: 60px 0;
   background: #f8f9fa;
-}
-
-.slick-slide {
-  display: flex !important;
-  justify-content: center;
-  margin: auto;
-}
-
-.homeproducts-heading {
   text-align: center;
+}
+
+.productpage-heading {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 40px;
   color: #222;
 }
 
-.homeproducts-slide {
-  display: flex;
-  justify-content: center;
+/* Grid layout */
+.productpage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-items: center;
 }
 
-.homeproducts-card {
+.productpage-card {
   width: 100%;
   max-width: 450px;
   border: none;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  margin: auto;
-  margin-bottom: 2rem;
+  background: #fff;
 }
 
-.homeproducts-card:hover {
+.productpage-card:hover {
   transform: translateY(-5px);
 }
 
-.homeproducts-card img {
-  height: 225px;
+.productpage-card-img {
+  height: 220px;
   object-fit: cover;
 }
 
-.homeproducts-price {
+.productpageinfo {
+  text-align: left;
+}
+
+.productpage-price {
   font-size: 1.2rem;
   font-weight: 700;
   color: #007bff;
   margin-bottom: 8px;
 }
 
-.homeproducts-title {
+.productpage-title {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
-.homeproducts-description {
+.productpage-description {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 12px;
 }
 
-.homeproducts-footer {
+.productpage-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.homeproducts-icons span {
+.productpage-icons span {
   margin-right: 15px;
   font-size: 0.9rem;
   color: #444;
@@ -76,22 +78,30 @@
   gap: 5px;
 }
 
-.homeproducts-booknow {
+.productpage-booknow {
   font-weight: 600;
   color: #007bff;
   cursor: pointer;
   transition: color 0.3s;
 }
 
-.homeproducts-booknow:hover {
+.productpage-booknow:hover {
   color: #0056b3;
 }
 
-/* Mobile Fix: 95% width + centered */
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .productpage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .homeproducts-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto 2rem auto; /* center horizontally */
+  .productpage-grid {
+    grid-template-columns: 1fr;
+  }
+  .productpage-card {
+    max-width: 95%;
+    margin: 0 auto;
   }
 }

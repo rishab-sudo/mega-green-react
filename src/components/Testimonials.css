@@ -3,7 +3,11 @@
   background: #f9f9f9;
   text-align: center;
 }
-
+.testimonials-slider{
+  display: flex;
+  justify-content: center;
+  margin: auto !important;
+}
 .testimonials-header h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -95,11 +99,8 @@
 
 @media (max-width: 767px) {
 .testimonial-card {
-padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center !important;
-  min-height: 250px;
-  min-width: 95%;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 2rem auto; /* center horizontally */
 }
 }

@@ -53,14 +53,20 @@ const Testimonials = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
-      {
-        breakpoint: 1024, // tablet
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 600, // mobile
-        settings: { slidesToShow: 1 },
-      },
+     {
+      breakpoint: 992, // screen <= 992px
+      settings: {
+        slidesToShow: 2,
+        centerMode: false
+      }
+    },
+    {
+      breakpoint: 768, // screen <= 768px
+      settings: {
+        slidesToShow: 1,
+        centerMode: false
+      }
+    }
     ],
   };
 
@@ -75,7 +81,7 @@ const Testimonials = () => {
       </div>
 
       <Container className="testimonials-container">
-        <Slider {...settings}>
+        <Slider {...settings} className="testimonials-slider">
           {testimonials.map((t) => (
             <div key={t.id} className="testimonial-card">
               <div className="testimonial-top">

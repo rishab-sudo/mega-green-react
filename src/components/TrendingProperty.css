@@ -85,7 +85,9 @@
 @media (max-width: 767px) {
   .property-card {
     min-width: 100%;           /* full width on mobile */
-    max-width: 95%;        /* keep a little margin */
+    max-width: 95%;  
+    height: 215px;      /* keep a little margin */
     margin: 0 auto;        /* center horizontally */
   }
+
 }

@@ -52,6 +52,8 @@ const Testimonials = () => {
     speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
+     arrows: false, 
+    
     responsive: [
      {
       breakpoint: 992, // screen <= 992px

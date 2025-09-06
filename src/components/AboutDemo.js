@@ -1,17 +1,11 @@
 import React from "react";
-import "./AboutSection.css";
+import "./AboutDemo.css";
 
 const AboutSection = () => {
   return (
     <section className="aboutdemo-section">
       {/* Row 1 */}
       <div className="aboutdemo-row">
-        <div className="aboutdemo-img">
-          <img
-            src={require("../assets/about1.jpg")}
-            alt="About Us"
-          />
-        </div>
         <div className="aboutdemo-box">
           <h2>About Our Company</h2>
           <p>
@@ -19,10 +13,13 @@ const AboutSection = () => {
             and customer satisfaction.
           </p>
         </div>
+        <div className="aboutdemo-img">
+          <img src={require("../assets/images-hm.webp")} alt="About Us" />
+        </div>
       </div>
 
       {/* Row 2 */}
-      <div className="aboutdemo-row aboutdemo-reverse">
+      <div className="aboutdemo-row">
         <div className="aboutdemo-box">
           <h2>Our Mission</h2>
           <p>
@@ -31,10 +28,7 @@ const AboutSection = () => {
           </p>
         </div>
         <div className="aboutdemo-img demoabout">
-          <img
-            src={require("../assets/about2.jpg")}
-            alt="Our Mission"
-          />
+          <img src={require("../assets/images-hm.webp")} alt="Our Mission" />
         </div>
       </div>
     </section>

@@ -87,7 +87,7 @@ height: 75vh;
   .home-banner {
     flex-direction: column;
     text-align: center;
-    padding: 20px;         
+    padding: 0px;         
     gap: 20px;             
   }
   .home-banner-left {

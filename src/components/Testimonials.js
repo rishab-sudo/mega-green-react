@@ -62,6 +62,13 @@ const Testimonials = () => {
         centerMode: false
       }
     },
+         {
+      breakpoint: 480, // screen <= 992px
+      settings: {
+        slidesToShow: 1,
+        centerMode: false
+      }
+    },
     {
       breakpoint: 768, // screen <= 768px
       settings: {
@@ -111,3 +118,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

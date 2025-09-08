@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import "./ProjectsPage.css";
 import Products from "../components/Products";
 import ProjectPageBanner from "../components/ProjectPageBanner";
+import HomeGallery from "../components/HomeGallery";
 
 const Projects = () => {
   return (
@@ -142,6 +143,8 @@ const Projects = () => {
           alt="Detail"
         />
       </Container>
+
+      <HomeGallery/>
     </>
   );
 };

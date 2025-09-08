@@ -27,13 +27,14 @@
   border: none;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease;
   background: #fff;
+  transition: transform 0.4s ease;
 }
 
 .productpage-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
+
 
 .productpage-card-img {
   height: 220px;

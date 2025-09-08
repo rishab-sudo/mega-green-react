@@ -4,7 +4,7 @@
 }
 
 .slick-slide {
-  display: flex !important;
+  display: block ;
   justify-content: center;
   margin: auto;
 }
@@ -89,9 +89,9 @@
 
 /* Mobile Fix: 95% width + centered */
 @media screen and (max-width: 768px) {
-  .homeproducts-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto 2rem auto; /* center horizontally */
-  }
+.homeproducts-card {
+  min-width: 100% !important;
+  background: #007bff !important;
+  margin: 0 auto 2rem auto;
+}
 }

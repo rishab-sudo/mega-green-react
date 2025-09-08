@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import { FaBed, FaBath } from "react-icons/fa";
 import "./homeProduct.css";
 
+
 const properties = [
   {
     id: 1,
@@ -85,7 +86,7 @@ const HomeProduct = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true, // keep true so card stays centered
+          centerMode: false, // keep true so card stays centered
           centerPadding: "0px",
         },
       },

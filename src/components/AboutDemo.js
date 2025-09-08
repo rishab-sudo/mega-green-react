@@ -1,11 +1,14 @@
 import React from "react";
 import "./AboutDemo.css";
 
-const AboutSection = () => {
+const AboutDemo = () => {
   return (
     <section className="aboutdemo-section">
-      {/* Row 1 */}
+      {/* Row 1: Image Left - Text Right */}
       <div className="aboutdemo-row">
+        <div className="aboutdemo-img">
+          <img src={require("../assets/images-hm.webp")} alt="About Us" />
+        </div>
         <div className="aboutdemo-box">
           <h2>About Our Company</h2>
           <p>
@@ -13,12 +16,9 @@ const AboutSection = () => {
             and customer satisfaction.
           </p>
         </div>
-        <div className="aboutdemo-img">
-          <img src={require("../assets/images-hm.webp")} alt="About Us" />
-        </div>
       </div>
 
-      {/* Row 2 */}
+      {/* Row 2: Text Left - Image Right */}
       <div className="aboutdemo-row">
         <div className="aboutdemo-box">
           <h2>Our Mission</h2>
@@ -35,4 +35,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default AboutDemo;

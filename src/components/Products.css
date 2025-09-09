@@ -34,8 +34,6 @@
 .productpage-card:hover {
   transform: scale(1.05);
 }
-
-
 .productpage-card-img {
   height: 220px;
   object-fit: cover;

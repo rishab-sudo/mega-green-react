@@ -1,16 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./Luxury.css";
 import { FaArrowRight, FaGem, FaCrown, FaStar } from "react-icons/fa";
 
 const Luxury = () => {
   const [flipped, setFlipped] = useState(false);
+  const sectionRef = useRef(null);
 
-useEffect(() => {
-  // Flip after 1.5 seconds
-  const timer = setTimeout(() => setFlipped(true), 2900);
-  return () => clearTimeout(timer);
-}, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          // Flip after 1 second when section is visible
+          const timer = setTimeout(() => setFlipped(true), 1500);
+          return () => clearTimeout(timer);
+        }
+      },
+      { threshold: 0.3 } // trigger when 30% of section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
 
   const cards = [
     {
@@ -37,7 +53,7 @@ useEffect(() => {
   ];
 
   return (
-    <div className="luxury-section">
+    <div className="luxury-section" ref={sectionRef}>
       <Container>
         <Row className="align-items-center luxury-header">
           <Col md={8}>

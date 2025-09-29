@@ -16,8 +16,7 @@ const HomeAbout = () => {
           />
         </div>
      
-
-        {/* Right Column */}
+     {/* Right Column */}
           <div className="home-about-right">
             <div className="about-heading-div">
 

@@ -66,8 +66,6 @@ margin-bottom: 2rem;
   align-items: center;
 }
 
-
-
 /* Responsive */
 @media (max-width: 768px) {
   .home-about-container {

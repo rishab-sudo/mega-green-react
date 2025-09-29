@@ -20,6 +20,7 @@
 .homeproducts-slide {
   display: flex;
   justify-content: center;
+  padding: 25px 0px;
 }
 
 .homeproducts-card {
@@ -27,21 +28,18 @@
   max-width: 450px;
   border: none;
   border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  overflow: hidden ;
+  transition: transform 0.4s ease;
   margin: auto;
   margin-bottom: 2rem;
 }
-
 .homeproducts-card:hover {
-  transform: translateY(-5px);
+ transform: scale(1.05);
 }
-
 .homeproducts-card img {
   height: 225px;
   object-fit: cover;
 }
-
 .homeproducts-price {
   font-size: 1.2rem;
   font-weight: 700;

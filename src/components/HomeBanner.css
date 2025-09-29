@@ -24,3 +24,82 @@
   font-size: 1.1rem;
   color: #f1f1f1;
 }
+/* Mobile / Tablet responsive tweaks for .homebanner */
+
+@media (max-width: 768px) {
+  .homebanner {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    background-color: black;
+  }
+
+  .homebanner-img {
+    height: fit-content;              
+    object-fit: contain;
+    object-position: center;   
+    width: 100%;
+    display: block;
+  }
+
+  .homebanner-caption {
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    bottom: 12%;                
+    max-width: 92%;
+    text-align: left;
+    padding: 0.6rem;
+    background: rgba(0,0,0,0.25);
+    border-radius: 6px;
+  }
+
+  .homebanner-caption h3 {
+    font-size: 1.5rem;         
+    line-height: 1.15;
+    margin: 0 0 0.35rem 0;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  }
+
+  .homebanner-caption p {
+    font-size: 0.95rem;        
+    margin: 0;
+    color: #f7f7f7;
+    line-height: 1.35;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+  .homebanner-img {
+    height: fit-content;               
+  }
+
+  .homebanner-caption {
+    left: 3%;
+    right: 3%;
+    bottom: 10%;
+    padding: 0.5rem;
+  }
+
+  .homebanner-caption h3 {
+    font-size: 1.3rem;
+  }
+
+  .homebanner-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Optional: improve touch target for CTA buttons inside caption */
+.homebanner-caption .btn,
+.homebanner-caption a.button {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  min-height: 40px;
+  line-height: 1;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}

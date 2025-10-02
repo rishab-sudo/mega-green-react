@@ -8,77 +8,87 @@ import TrendingProperty from '../components/TrendingProperty'
 import ExclusiveSection from '../components/ExclusiveSection'
 import Testimonials from '../components/Testimonials'
 import { motion } from "framer-motion";
+import { Facilities } from '../components/Facilities'
 
 const Home = () => {
   return (
     <div>
-      <HomeBanner/>
+      <HomeBanner />
 
-            <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-      <HomeAbout/>
+        <HomeAbout />
       </motion.div>
-      
-          <motion.div
+
+      <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-      <Homeproduct/>
+        <Homeproduct />
       </motion.div>
 
-             <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-      <WorkFlow/>
+        <WorkFlow />
       </motion.div>
 
-                <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-      <Stats/>
+        <TrendingProperty />
       </motion.div>
 
-             <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-      <TrendingProperty/>
-      </motion.div>
-
-             <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
      <ExclusiveSection/>
-      </motion.div>
-
-             <motion.div
+      </motion.div> */}
+      <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-       <Testimonials/>
+        <Stats />
       </motion.div>
-    
-   
-   
+
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Facilities />
+      </motion.div>
+
+
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Testimonials />
+      </motion.div>
+
+
+
     </div>
   )
 }

@@ -12,9 +12,9 @@
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-justify-content: center;
-gap: 35px;
+justify-content: flex-start;
   width: 45% !important;
+  /* background-color: #222; */
 }
 
 .about-heading {
@@ -36,22 +36,24 @@ gap: 35px;
   width: 100%;
   display: flex !important;
   flex-direction: row !important;
-  justify-content: space-between;
-  align-items: center !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
   border: 2px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
   margin-bottom: 25px;
+  /* background-color: #222 !important; */
 }
 
 .info-section {
   flex: 1;
-  text-align: center;
+  text-align: flex-start;
   display: flex;
   flex-direction: column; /* label upar, value neeche */
   justify-content: center;
   padding: 0 15px;
+  /* background-color: aqua; */
 }
 
 .info-label {
@@ -69,8 +71,8 @@ gap: 35px;
 /* Divider */
 .divider {
   width: 1px;
-  height: 100%;
-  background-color: gray;
+  min-height: 60px;
+  background-color: #000 !important;
   margin: 0 10px;
 }
 
@@ -79,8 +81,9 @@ gap: 35px;
 .stats {
     width: 75%;
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0px;
 }
 
 .stat-item h3 {

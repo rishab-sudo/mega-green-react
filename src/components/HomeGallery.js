@@ -28,13 +28,12 @@ const HomeGallery = () => {
   };
 
   const images = [
-   require("../assets/images-hm.webp"),
- require("../assets/images-hm.webp"),
- require("../assets/images-hm.webp"),
- require("../assets/images-hm.webp"),
- require("../assets/images-hm.webp"),
- require("../assets/images-hm.webp"),
- require("../assets/images-hm.webp"),
+   require("../assets/gallery/mhGallery-1.png"),
+  require("../assets/gallery/mhGallery-2.png"),
+    require("../assets/gallery/mhGallery-3.png"),
+      require("../assets/gallery/mhGallery-4.png"),
+       require("../assets/gallery/mhGallery-5.png"),
+   
   ];
 
   return (

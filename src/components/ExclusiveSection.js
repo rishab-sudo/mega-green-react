@@ -1,55 +1,64 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-import "./ExclusiveSection.css";
-import { FaCheckCircle } from "react-icons/fa";
 
-const ExclusiveSection = () => {
+import React from "react";
+import "./HomeAbout.css";
+import { FaCheckCircle } from "react-icons/fa"; // example icon
+
+const HomeAbout = () => {
   return (
-    <section className="exclusive">
-      <Container className="exclusive-container">
-        {/* Left Side with Image */}
-        <div className="exclusive-left">
+     <div>
+    <section className="home-about">
+      <div className="home-about-container">
+        {/* Left Column */}
+         <div className="home-about-left">
           <img
-            src= {require("../assets/image-86.png")}
-            alt="Exclusive"
-            className="exclusive-image"
+            src= {require("../assets/about us 01.png")}
+            alt="About Us"
+            className="about-img"
           />
         </div>
+     
+     {/* Right Column */}
+          <div className="home-about-right">
+            <div className="about-heading-div">
 
-        {/* Right Side with Content */}
-        <div className="exclusive-right">
-          <h2 className="exclusive-heading">Why Choose Us</h2>
-          <p className="exclusive-description">
-            We provide high-quality services that ensure customer satisfaction
-            and trust. Our platform is built with performance, security, and
-            innovation at its core.
-          </p>
+          <h2 className="about-heading">About Our Company</h2>
+            </div>
 
-          {/* Key Points */}
-          <div className="exclusive-points">
-            <div className="exclusive-point">
-              <FaCheckCircle className="point-icon" />
-              <span>High Performance</span>
-            </div>
-            <div className="exclusive-point">
-              <FaCheckCircle className="point-icon" />
-              <span>Secure Platform</span>
-            </div>
-            <div className="exclusive-point">
-              <FaCheckCircle className="point-icon" />
-              <span>24/7 Support</span>
-            </div>
-            <div className="exclusive-point">
-              <FaCheckCircle className="point-icon" />
-              <span>Affordable Pricing</span>
+          {/* Subheading 1 */}
+          <div className="about-subsection">
+           <div>   <FaCheckCircle className="about-icon" /></div>
+            <div>
+              <h4 className="about-subheading">Better Living</h4>
+              <p className="about-desc">
+          At Mega Group, our mission is clear: Better Living. 
+          We are dedicated builders who work relentlessly to bring 
+          the future closer to the present creating homes of exceptional quality, 
+          enhancing neighbourhoods, and ensuring every project surpasses the last. 
+          These values form the foundation on which our company stands.
+              </p>
             </div>
           </div>
 
-          <button className="exclusive-btn">Learn More</button>
+          {/* Subheading 2 */}
+          <div className="about-subsection">
+            <div>   <FaCheckCircle className="about-icon" /></div>
+         
+            <div>
+              <h4 className="about-subheading">Enduring Assurance</h4>
+              <p className="about-desc">
+          Since our inception, we have honoured every commitment and will continue to do so. We believe a home is more than walls and roofs,it is where dreams are fulfilled and promises kept. Our goal is to see the satisfaction in every customer’s eyes, 
+          knowing we have delivered both comfort and trust.
+              </p>
+<br/>
+              <p>As we grow, we never lose sight of a simple truth: “The most valuable asset in any business is the attention and trust of its customers if you don’t earn it, someone else will.”</p>
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
+
+    </div>
   );
 };
 
-export default ExclusiveSection;
+export default HomeAbout;

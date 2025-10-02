@@ -4,27 +4,39 @@ import "./Luxury.css";
 import { FaArrowRight, FaGem, FaCrown, FaStar } from "react-icons/fa";
 
 const Luxury = () => {
-  const [flipped, setFlipped] = useState(false);
+  const [rotation, setRotation] = useState(0);
   const sectionRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          // Flip after 1 second when section is visible
-          const timer = setTimeout(() => setFlipped(true), 1500);
-          return () => clearTimeout(timer);
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
+          if (!intervalRef.current) {
+            intervalRef.current = setInterval(() => {
+              setRotation((prev) => prev + 180); // always +180 → clockwise
+            }, 3500);
+          }
+        } else {
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+            setRotation(0); // reset to initial state when leaving
+          }
         }
       },
-      { threshold: 0.3 } // trigger when 30% of section is visible
+      { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
     };
   }, []);
 
@@ -73,15 +85,16 @@ const Luxury = () => {
         <Row className="luxury-cards mt-5">
           {cards.map((card) => (
             <Col md={4} sm={12} key={card.id} className="mb-4">
-              <div className={`luxury-card ${flipped ? "flipped" : ""}`}>
-                <div className="luxury-card-inner">
-                  {/* Front (Image) */}
+              <div className="luxury-card">
+                <div
+                  className="luxury-card-inner"
+                  style={{ transform: `rotateY(${rotation}deg)` }}
+                >
                   <div
                     className="luxury-card-front"
                     style={{ backgroundImage: `url(${card.img})` }}
                   ></div>
 
-                  {/* Back (Content) */}
                   <div className="luxury-card-back">
                     <div className="luxury-icon">{card.icon}</div>
                     <h5 className="luxury-title">{card.title}</h5>

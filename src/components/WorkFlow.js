@@ -19,8 +19,8 @@ const WorkFlow = () => {
           <div className="work-arc work-arc-br"></div>
 
           <div className="work-content">
-            <h3>Development</h3>
-            <p>We build scalable and efficient solutions tailored to your needs.</p>
+            <h3>Consult</h3>
+            <p>Understand client needs and match them with the perfect property.</p>
           </div>
         </div>
 
@@ -32,8 +32,8 @@ const WorkFlow = () => {
           <div className="work-arc work-arc-br"></div>
 
           <div className="work-content">
-            <h3>Launch</h3>
-            <p>Quick deployment strategies to get your product live faster.</p>
+            <h3>Guide</h3>
+            <p>QProvide transparent pricing, legal support, & expert advice.</p>
           </div>
         </div>
 
@@ -45,8 +45,8 @@ const WorkFlow = () => {
           <div className="work-arc work-arc-br"></div>
 
           <div className="work-content">
-            <h3>Innovation</h3>
-            <p>Creative ideas to keep your business ahead of the curve.</p>
+            <h3>Support</h3>
+            <p>Assist clients post-purchase for smooth handover & satisfaction.</p>
           </div>
         </div>
       </div>

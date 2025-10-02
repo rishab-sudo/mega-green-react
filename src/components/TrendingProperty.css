@@ -17,8 +17,8 @@
   position: relative;
   display: flex;
   width: 90%;          /* desktop width */
-  height: 250px;
-  border: 1px solid #ddd;
+  height: 100%;
+ border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
@@ -69,6 +69,7 @@
     border-radius: 8px;
     background-color: #ffffff;
     color: #007bff;
+    margin-top: 1rem;
 }
 .card-badge {
   position: absolute;

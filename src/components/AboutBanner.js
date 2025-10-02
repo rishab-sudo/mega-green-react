@@ -51,7 +51,7 @@ const AboutBanner = () => {
       {/* Right Image */}
       <div className="about-right">
         <img
-          src={require("../assets/banner/room2.jpg")}
+          src={require("../assets/mh-building.jpg")}
           alt="Property"
           className="about-img"
         />

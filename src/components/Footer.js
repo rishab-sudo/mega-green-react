@@ -16,9 +16,8 @@ const Footer = () => {
                 <div className="trust-text">
                   <h2>Building Trust with Innovation, Quality Panels, and Global Manufacturing Excellence</h2>
                   <p>
-                    Alutuff delivers world-class aluminium panel solutions with trusted quality, modern design, and sustainable innovation.
-                    Backed by global presence and decades of expertise, we serve architects, developers, and industries with durable, fire-rated, and aesthetic 
-                    cladding solutions across India and beyond.
+             We deliver world-class real estate solutions with a focus on trusted quality, modern design, and sustainable development. Backed by years of expertise,
+              we serve homebuyers, investors, and developers with premium residential and commercial properties across India and beyond.
                   </p>
                 </div>
                 <div className="social-icons">
@@ -52,12 +51,12 @@ const Footer = () => {
                 <div className="col-text-div">
                   <h4>Contact Info</h4>
                   <div className="footer-contact-info">
-                    <p><strong>Address:</strong><br />Alutuff International,<br />Choupla Road, Civil Lines, Bareilly.</p>
+                    <p><strong>Address:</strong><br />xxxxxxxxxxxxxxxx,<br />Choupla Road, Civil Lines, Bareilly.</p>
                     <p><strong>Phone:</strong><br />
-                      <a href="tel:+916396854974">+91 63968 54974</a>
+                      <a href="tel:+916396854974">+91 xxxxx xxxxx</a>
                     </p>
                     <p><strong>Email:</strong><br />
-                      <a href="mailto:sales@alutuff.in">sales@alutuff.in</a>
+                      <a href="mailto:sales@alutuff.in">sales@xxxx.in</a>
                     </p>
                   </div>
                 </div>

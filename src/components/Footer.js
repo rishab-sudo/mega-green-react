@@ -12,7 +12,7 @@ const Footer = () => {
             {/* Left Column */}
             <Col lg={4} md={12} sm={12} className="footer-column-wrapper">
               <div className="footer-left">
-                <img src={require("../assets/footer_logo.png")} alt="logo" className="footer-logo" />
+                <img src={require("../assets/megha-logo.png")} alt="logo" className="footer-logo" />
                 <div className="trust-text">
                   <h2>Building Trust with Innovation, Quality Panels, and Global Manufacturing Excellence</h2>
                   <p>
@@ -36,10 +36,9 @@ const Footer = () => {
                   <div className="footer-links-column">
                     <a href="/home">Home</a>
                     <a href="/about">About Us</a>
-                    <a href="/product">Products</a>
-                    <a href="/career">Careers</a>
+                    <a href="/product">Projects</a>
                     <a href="/contact">Contact Us</a>
-                    <a href="/dealer">Become a Dealer</a>
+                   
                   </div>
                 </div>
               </div>

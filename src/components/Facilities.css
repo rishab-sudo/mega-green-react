@@ -16,20 +16,27 @@ gap: 25px;
 
 .facility-card {
   position: relative;
-  width: 250px;
-  height: 200px;
+  min-width: 250px;
+  height: 100%;
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
+  text-align: center;
+}
+.facility-name {
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
 }
 
 .facility-card img {
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 200px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
-  
+  border-radius: 10px;
   /* Add auto zoom animation */
   animation: zoomInOut 8s ease-in-out infinite;
 }

@@ -46,21 +46,21 @@ const Luxury = () => {
       icon: <FaGem size={40} />,
       title: "Luxury Living",
       desc: "Experience premium comfort and style in every corner.",
-      img: require("../assets/products/image-45.png"),
+      img: require("../assets/banner/Banner8.jpeg"),
     },
     {
       id: 2,
       icon: <FaCrown size={40} />,
       title: "Exclusive Design",
       desc: "Crafted with elegance and modern sophistication.",
-      img: require("../assets/products/image-45.png"),
+      img: require("../assets/banner/Banner7.jpeg"),
     },
     {
       id: 3,
       icon: <FaStar size={40} />,
       title: "Top Quality",
       desc: "We bring unmatched quality and excellence.",
-      img: require("../assets/products/image-45.png"),
+      img: require("../assets/banner/Banner5.jpeg"),
     },
   ];
 
@@ -68,18 +68,18 @@ const Luxury = () => {
     <div className="luxury-section" ref={sectionRef}>
       <Container>
         <Row className="align-items-center luxury-header">
-          <Col md={8}>
+          <Col md={12} className="text-center">
             <h2 className="luxury-heading">Luxury Experience</h2>
             <p className="luxury-desc">
               Discover the finest collection of premium living and lifestyle with our
               exclusive offerings.
             </p>
           </Col>
-          <Col md={4} className="text-md-end text-start mt-3 mt-md-0">
+          {/* <Col md={4} className="text-md-end text-start mt-3 mt-md-0">
             <Button variant="dark" className="luxury-btn">
               Explore More
             </Button>
-          </Col>
+          </Col> */}
         </Row>
 
         <Row className="luxury-cards mt-5">

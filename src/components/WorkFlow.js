@@ -40,7 +40,7 @@ const WorkFlow = () => {
         {/* Box 3 */}
         <div className="work-box">
           <div className="work-arc work-arc-tl">
-            <FaLightbulb />
+            <FaLightbulb  className=""/>
           </div>
           <div className="work-arc work-arc-br"></div>
 

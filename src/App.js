@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import Home from "./pages/Home";
 import About from './pages/About';
 import Projects from './pages/ProjectsPage';
-import Contact from './pages/Contact';
+import Contact from './pages/ContactUs';
 
 function App() {
   return (

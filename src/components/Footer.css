@@ -1,20 +1,20 @@
 .footer-section {
-  margin-top: 5%;
+  
   background-color: #000;
   width: 100%;
   padding: 0;
   color: #fff;
   overflow: hidden;
-  border-top-right-radius: 125px;
+  /* border-top-right-radius: 125px; */
 }
 
 .footer-overlay {
-  padding: 40px 30px;
+  padding: 25px 15px;
 }
 
 /* Main layout using Bootstrap Row/Col */
 .footer-content-wrapper {
-  gap: 40px;
+  gap: 25px;
 }
 
 .footer-column-wrapper {
@@ -34,7 +34,7 @@
   justify-content: flex-start !important;  
   text-align: left !important;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 5.2rem;
 /* background-color: #ea3138; */
 }
 
@@ -57,8 +57,8 @@
 }
 
 .footer-logo {
-  width: 65px;
-  margin-bottom: 15px;
+  width: 125px;
+  margin-bottom: 35px;
 }
 
 .social-icons {
@@ -136,7 +136,8 @@ a:hover {
 /* Bottom copyright bar */
 .copyright-div {
   width: 100%;
-  height: 50px;
+  padding: 15px 2px;
+  height: fit-content;
   background-color: #000;
   text-align: center;
   display: flex;

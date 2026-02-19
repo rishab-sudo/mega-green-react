@@ -1,0 +1,152 @@
+.about-split-nolib {
+  padding: 25px 0px;
+  margin-top: 3.5%;
+}
+
+.about-split-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+
+}
+
+/* LEFT */
+.about-left {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+  width: 50%;
+height: 525px;
+color: #fff;
+  background-color: #3F412B;
+}
+.left-text-wrapper{
+    width: 75%;
+    margin: auto;
+}
+.about-heading {
+  font-size: 36px;
+  margin-bottom: 3.5rem;
+}
+
+.about-year {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.about-para {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ffff;
+  min-height: 90px;
+}
+
+/* Arrows */
+.about-arrows {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.about-arrows button {
+  border: none;
+  background: #111;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.about-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  width: 50%;
+  height: 525px;
+    background-color: #ddd;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-main-image {
+  width: 650px;
+  height: 452px;
+  border-radius: 0px;
+  display: block;
+}
+
+/* Thumbs with blur bg */
+.about-thumbs {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  justify-content: center;
+}
+
+.about-thumb {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+}
+
+.about-thumb.active {
+  opacity: 1;
+  border-color: #000;
+}
+
+/* SLIDE RIGHT -> LEFT ANIMATION */
+.slide-left {
+  animation: slideLeftSmooth 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@keyframes slideLeftSmooth {
+  from {
+    opacity: 0;
+    transform: translateX(25px); /* smaller distance = smoother */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-split-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-left,
+  .about-right {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .about-heading {
+    font-size: 26px;
+  }
+}

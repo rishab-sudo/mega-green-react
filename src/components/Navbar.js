@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import './Navbar.css';
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
@@ -11,17 +12,33 @@ const Navbar = () => {
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
 
+  const [scrolled, setScrolled] = useState(false);
+
+
 const toggleMenu = () => {
   if (window.innerWidth < 992) {
     setMenuOpen(prev => !prev);
   }
 };
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 
   return (
-    <nav className="navbar">
+  <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+
       <div className="navbar-container">
-        <img className="logo" src={require("../assets/footer_logo.png")} alt="Logo" />
+        <img className="logo" src={require("../assets/megha-logo.png")} alt="Logo" />
 
         <ul className="nav-links">
           <li><a href="/home">Home</a></li>
@@ -58,10 +75,10 @@ const toggleMenu = () => {
 
         
           <li><a href="/contact">Contact Us</a></li>
-          {/* Desktop Become A Dealer Button */}
-          {/* <li>
-<a href="/dealer" className="dealer-btn desktop-only">Become A Dealer</a>
-</li> */}
+          {/* Desktop Become A Dealer Button  */}
+           <li>
+<a href="/dealer" className="dealer-btn desktop-only">Get a Quote</a>
+</li>
         </ul>
 
         <div className="hamburger" onClick={toggleMenu}>
@@ -88,14 +105,13 @@ const toggleMenu = () => {
             {mobileAboutOpen && (
               <ul className="side-dropdown-menu">
                 <li><a href="/about" onClick={toggleMenu}>About Us</a></li>
-                <li><a href="/established" onClick={toggleMenu}>Established Excellence</a></li>
+                {/* <li><a href="/established" onClick={toggleMenu}>Established Excellence</a></li> */}
               </ul>
             )}
           </li>
 
-          <li><a href="/product" onClick={toggleMenu}>Products</a></li>
-          <li><a href="/projects" onClick={toggleMenu}>Projects</a></li>
-                    <li><a href="/career" onClick={toggleMenu}>Careers</a></li>
+         <li><a href="/projects" onClick={toggleMenu}>Projects</a></li>
+
           {/* Mobile More Dropdown */}
           <li className="side-dropdown">
             <span

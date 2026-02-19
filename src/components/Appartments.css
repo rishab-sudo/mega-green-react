@@ -1,0 +1,144 @@
+.appartments {
+  padding: 25px 0;
+  margin-top: 3.2%;
+  background: #fff;
+}
+
+.appartments-container {
+  width: 100%;
+  margin: auto;
+}
+
+.appartments-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Tabs */
+.appartments-tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 50px;
+}
+
+.appartments-tab {
+  flex: 1;
+  padding: 15px 10px;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  text-align: center;
+}
+
+.appartments-tab.active {
+  color: #000;
+}
+
+.appartments-indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 4px;
+  background: #A1BE28; /* yellow/green line like screenshot */
+  transition: transform 0.4s ease;
+}
+
+/* Content */
+.appartments-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.appartments-info h3 {
+text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.appartments-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.appartments-info ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  font-weight: 600;
+}
+
+.price-per {
+  margin-top: 10px;
+  color: #777;
+   font-weight: 600;
+}
+
+.learn-more-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #3F412B;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: #000;
+}
+
+/* Image */
+.appartments-image img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin-left: auto;
+}
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .appartments-content {
+    grid-template-columns: 1fr;   /* one column */
+    gap: 30px;
+  }
+
+  .appartments-info {
+    order: 1;  /* text first */
+  }
+
+  .appartments-image {
+    order: 2;  /* image below */
+    text-align: center;
+  }
+
+  .appartments-image img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .appartments-title {
+    font-size: 32px;
+  }
+
+  .appartments-tabs {
+    flex-wrap: wrap;
+  }
+
+  .appartments-tab {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+}

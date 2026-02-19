@@ -46,7 +46,7 @@
 .productpage-price {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #007bff;
+  color: #3F412B;
   margin-bottom: 8px;
 }
 
@@ -79,13 +79,13 @@
 
 .productpage-booknow {
   font-weight: 600;
-  color: #007bff;
+  color: #3333;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .productpage-booknow:hover {
-  color: #0056b3;
+  color: #3F412B;
 }
 
 /* Responsive */

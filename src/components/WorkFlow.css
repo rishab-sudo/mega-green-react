@@ -1,7 +1,9 @@
 .work-section {
   position: relative;
-  padding: 60px 20px;
+  padding: 45px 20px;
   text-align: center;
+  background-color: #55555506;
+ 
 }
 
 .work-heading {
@@ -48,9 +50,9 @@
 /* Quarter-circle arcs */
 .work-arc {
   position: absolute;
-  width: 45%;
-  height: 45%;
-  background: gray;
+  width: 34%;
+  height: 34%;
+  background: #3F412B;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,6 +62,7 @@
 }
 
 .work-arc-tl {
+  margin: auto !important;
   top: 0;
   left: 0;
   border-radius: 0  0  100% 0; /* quarter circle */

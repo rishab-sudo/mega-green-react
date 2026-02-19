@@ -1,60 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import "./ExclusiveSection.css";
+import "./HomeAbout.css";
 import { FaCheckCircle } from "react-icons/fa";
 
-const ExclusiveSection = () => {
+const images = [
+  require("../assets/banner/Banner7.jpeg"),
+  require("../assets/banner/Banner1.jpeg"),
+  require("../assets/banner/Banner2.jpeg"),
+  require("../assets/banner/Banner3.jpeg"),
+  require("../assets/banner/Banner4.jpeg"),
+];
+
+const HomeAbout = () => {
+  const [activeImage, setActiveImage] = useState(images[0]);
+  const [animate, setAnimate] = useState(true);
+
+  const handleImageChange = (img) => {
+    setAnimate(false);
+    setTimeout(() => {
+      setActiveImage(img);
+      setAnimate(true);
+    }, 50);
+  };
+
   return (
-    <section className="exclusive">
-      <Container className="exclusive-container">
-        {/* Left Side with Image */}
+    <section className="exclusive g-0">
+      <Container fluid className="exclusive-container g-0">
+
+        {/* Left Side with Image Gallery */}
         <div className="exclusive-left">
-          <img
-            src= {require("../assets/image-86.png")}
-            alt="Exclusive"
-            className="exclusive-image"
-          />
+          <div className="exclusive-image-wrapper">
+            <img
+              src={activeImage}
+              alt="Exclusive"
+              className={`exclusive-image ${animate ? "fade-zoom" : ""}`}
+            />
+
+            {/* Thumbnails OVER the big image at bottom */}
+            <div className="exclusive-thumbs overlay">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt="thumb"
+                  className={`exclusive-thumb ${activeImage === img ? "active" : ""}`}
+                  onClick={() => handleImageChange(img)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Right Side with Content */}
         <div className="exclusive-right">
-          <h2 className="exclusive-heading">Why Choose Us</h2>
+          <h2 className="exclusive-heading">About Us</h2>
           <p className="exclusive-description">
-            We provide high-quality services that ensure customer satisfaction
-            and trust. Our platform is built with performance, security, and
-            innovation at its core.
+            We are Mega Group, builders driven by one goal and one ideal: <strong>Better Living</strong>.
+            We work tirelessly to bring the future closer to the present by delivering superior quality,
+            improving neighborhoods, and making every home better than the last.
           </p>
 
-          {/* Key Points */}
           <div className="exclusive-points">
             <div className="exclusive-point">
+              <div><FaCheckCircle className="point-icon" /></div>
               <div>
-              <FaCheckCircle className="point-icon" />
-              </div>
-              <div>
-      <p>Better Living</p>
-              <p>At Mega Group, our mission is clear: Better Living. We are dedicated builders who work relentlessly to bring the future closer to the present creating homes of exceptional quality, enhancing neighbourhoods, 
-                and ensuring every project surpasses the last. These values form the foundation on which our company stands.</p>
+                <p>Better Living</p>
+                <p>
+                  At Mega Group, our foundation is built on strong ideals. We strive to provide the utmost
+                  quality of living and ensure every dwelling is better than the last.
+                </p>
               </div>
             </div>
 
             <div className="exclusive-point">
-              <div>   <FaCheckCircle className="point-icon" /></div>
-           <div>
-              <p>Enduring Assurance</p>
-              <p>Since our inception, we have honoured every commitment and will continue to do so. We believe a home is more than walls and roofs,it is where dreams are fulfilled and promises kept. Our goal is to see the 
-                satisfaction in every customer’s eyes, knowing we have delivered both comfort and trust.</p>
-                </div>
+              <div><FaCheckCircle className="point-icon" /></div>
+              <div>
+                <p>Enduring Assurance</p>
+                <p>
+                  We have been delivering every promise since day one. A home is more than walls and a roof,
+                  it is a place of comfort and fulfilled promises.
+                </p>
+              </div>
             </div>
-            
-     
           </div>
 
-          <button className="exclusive-btn">Learn More</button>
+          <button className="exclusive-btn">Know More</button>
         </div>
+
       </Container>
     </section>
   );
 };
 
-export default ExclusiveSection;
+export default HomeAbout;

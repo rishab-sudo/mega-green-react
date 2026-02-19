@@ -1,9 +1,9 @@
 
 import React from "react";
-import "./HomeAbout.css";
+import "./ExclusiveSection.css";
 import { FaCheckCircle } from "react-icons/fa"; // example icon
 
-const HomeAbout = () => {
+const ExclusiveSection = () => {
   return (
      <div>
     <section className="home-about">
@@ -61,4 +61,4 @@ const HomeAbout = () => {
   );
 };
 
-export default HomeAbout;
+export default ExclusiveSection;

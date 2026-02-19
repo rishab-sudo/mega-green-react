@@ -34,9 +34,9 @@ const TrendingProperty = () => {
                   <span style={{fontWeight:"600", color:"#000"}}>2 Beds</span>
                   <span style={{fontWeight:"600", color:"#000"}}>2 Baths</span>
                 </div> */}
-                <Button className="property-btn" size="sm">
+                {/* <Button className="property-btn" size="sm">
                   View Details
-                </Button>
+                </Button> */}
               </div>
             </div>
           </Col>
@@ -61,9 +61,9 @@ const TrendingProperty = () => {
                   <span style={{fontWeight:"600", color:"#000"}}>2 Beds</span>
                   <span style={{fontWeight:"600", color:"#000"}}>2 Baths</span>
                 </div> */}
-                <Button className="property-btn" size="sm">
+                {/* <Button className="property-btn" size="sm">
                   View Details
-                </Button>
+                </Button> */}
               </div>
             </div>
           </Col>
@@ -88,9 +88,9 @@ const TrendingProperty = () => {
                   <span style={{fontWeight:"600", color:"#000"}}>2 Beds</span>
                   <span style={{fontWeight:"600", color:"#000"}}>2 Baths</span>
                 </div> */}
-                <Button className="property-btn" size="sm">
+                {/* <Button className="property-btn" size="sm">
                   View Details
-                </Button>
+                </Button> */}
               </div>
             </div>
           </Col>
@@ -115,9 +115,9 @@ const TrendingProperty = () => {
                   <span style={{fontWeight:"600", color:"#000"}}>2 Beds</span>
                   <span style={{fontWeight:"600", color:"#000"}}>2 Baths</span>
                 </div> */}
-                <Button className="property-btn" size="sm">
+                {/* <Button className="property-btn" size="sm">
                   View Details
-                </Button>
+                </Button> */}
               </div>
             </div>
           </Col>

@@ -6,60 +6,89 @@
   gap: 0px;
 }
 
-/* Each row */
-.aboutdemo-row {
+
+/* Dection - 1 */
+.about-section1-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.about-section1-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-section1-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.about-section1-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Grid */
+.about-section1-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+}
+
+/* Each item */
+.about-stat-item {
+  width: 100%;
+}
+
+/* Top row: label + % */
+.about-stat-top {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0px;
+  margin-bottom: 8px;
 }
 
-/* Reverse row for second */
-.aboutdemo-reverse {
-  flex-direction: row-reverse;
+.about-stat-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
 }
 
-/* Image styles */
-.aboutdemo-img-div{
-    width: 50%;
-    height: auto;
-}
-.about-row1-img{
-  min-width: 100%;
-  height: 250px;
-  border-radius: 0px;
-  object-fit: cover;
-  margin-bottom: -75px;
-}
-.about-row2-img{
-  min-width: 100%;
-  height: 280px;
-  border-radius: 0px;
-  object-fit: cover;
-    margin-top: -75px;
+.about-stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
 }
 
-/* Black content box */
-.aboutdemo-box {
-  flex: 1;
-  max-width: 50%;
-   height: 325px;
-  background: #000;
-  color: #fff;
-  padding: 30px;
-  border-radius: 0px;
+/* Line with outline */
+.about-stat-line-bg {
+  width: 100%;
+  height: 8px;               /* little thicker for better look */
+  border: 1px solid #ccc;    /* outline */
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
 }
 
-/* Special class for larger image */
+/* Animated fill */
+.about-stat-line-fill {
+  height: 100%;
+  background: #3F412B;       /* theme color */
+  border-radius: 20px;
+}
 
 
 /* Responsive */
 @media (max-width: 768px) {
-  .aboutdemo-row,
-  .aboutdemo-reverse {
-    flex-direction: column;
+   .about-section1-text h2 {
+    font-size: 28px;
   }
 
-  .demoabout img {
-    width: 100%;
+  .about-section1-stats {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

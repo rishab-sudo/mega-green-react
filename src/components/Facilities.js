@@ -4,22 +4,22 @@ import './Facilities.css'
 
 export const Facilities = () => {
   const facilities = [
-    { id: 1,  img: require("../assets/amenties/mh-eco.jpg"), text: 'Eco-Friendly Campus' },
-    { id: 2,  img: require("../assets/amenties/mh-balcony.jpg"), text: 'Open Balcony Areas' },
-    { id: 3,  img: require("../assets/amenties/mh-carWash.jpg"), text: 'Car Wash Facility' },
-    { id: 4,  img: require("../assets/amenties/mh-childd.webp"), text: 'Child Care Center' },
-    { id: 5,  img: require("../assets/amenties/mh-comfort.jpg"), text: 'Comfortable Seating' },
-    { id: 6,  img: require("../assets/amenties/mh-games.jpg"), text: 'Indoor Games Room' },
-    { id: 7,  img: require("../assets/amenties/mh-gym.jpg"), text: 'Gym & Fitness' },
-    { id: 8,  img: require("../assets/amenties/mh-hall.jpg"), text: 'Community Hall' },
-    { id: 9,  img: require("../assets/amenties/mh-kitchen.jpg"), text: 'Modern Kitchen' },
-    { id: 10, img: require("../assets/amenties/mh-lift.webp"), text: 'High-Speed Lifts' },
-    { id: 11, img: require("../assets/amenties/mh-park.jpg"), text: 'Green Park Area' },
-    { id: 12, img: require("../assets/amenties/mh-pool.jpg"), text: 'Swimming Pool' },
-    { id: 13, img: require("../assets/amenties/mh-power.jpeg"), text: '24x7 Power Backup' },
-    { id: 14, img: require("../assets/amenties/mh-shop.jpg"), text: 'Convenience Shops' },
-    { id: 15, img: require("../assets/amenties/mh-theater.jpg"), text: 'Mini Theater' },
-    { id: 16, img: require("../assets/amenties/mh-ample.webp"), text: 'Ample Parking' },
+    { id: 1,  img: require("../assets/amenties/mh-eco.jpg"), overlay: 'Eco-Friendly', name: 'Eco-Friendly Campus' },
+    { id: 2,  img: require("../assets/amenties/mh-balcony.jpg"), overlay: 'Balcony', name: 'Open Balcony Areas' },
+    { id: 3,  img: require("../assets/amenties/mh-carWash.jpg"), overlay: 'Car Wash', name: 'Car Wash Facility' },
+    { id: 4,  img: require("../assets/amenties/mh-childd.webp"), overlay: 'Child Care', name: 'Child Care Center' },
+    { id: 5,  img: require("../assets/amenties/mh-comfort.jpg"), overlay: 'Seating', name: 'Comfortable Seating' },
+    { id: 6,  img: require("../assets/amenties/mh-games.jpg"), overlay: 'Indoor Games', name: 'Indoor Games Room' },
+    { id: 7,  img: require("../assets/amenties/mh-gym.jpg"), overlay: 'Gym', name: 'Gym & Fitness' },
+    { id: 8,  img: require("../assets/amenties/mh-hall.jpg"), overlay: 'Community', name: 'Community Hall' },
+    { id: 9,  img: require("../assets/amenties/mh-kitchen.jpg"), overlay: 'Kitchen', name: 'Modern Kitchen' },
+    { id: 10, img: require("../assets/amenties/mh-lift.webp"), overlay: 'Lift', name: 'High-Speed Lifts' },
+    { id: 11, img: require("../assets/amenties/mh-park.jpg"), overlay: 'Park', name: 'Green Park Area' },
+    { id: 12, img: require("../assets/amenties/mh-pool.jpg"), overlay: 'Pool', name: 'Swimming Pool' },
+    { id: 13, img: require("../assets/amenties/mh-power.jpeg"), overlay: 'Power Backup', name: '24x7 Power Backup' },
+    { id: 14, img: require("../assets/amenties/mh-shop.jpg"), overlay: 'Shops', name: 'Convenience Shops' },
+    { id: 15, img: require("../assets/amenties/mh-theater.jpg"), overlay: 'Theater', name: 'Mini Theater' },
+    { id: 16, img: require("../assets/amenties/mh-ample.webp"), overlay: 'Parking', name: 'Ample Parking' },
   ]
 
   return (
@@ -33,10 +33,14 @@ export const Facilities = () => {
       <Container className="facilities-grid">
         {facilities.map((item) => (
           <div key={item.id} className="facility-card">
-            <img src={item.img} alt={item.text} />
-            <div className="overlay">
-              <span>{item.text}</span>
+            <div className="image-wrapper">
+              <img src={item.img} alt={item.name} />
+              <div className="overlay">
+                <span>{item.overlay}</span>
+              </div>
             </div>
+            {/* Name below image */}
+            <p className="facility-name">{item.name}</p>
           </div>
         ))}
       </Container>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Luxury.css";
 import { FaArrowRight, FaGem, FaCrown, FaStar } from "react-icons/fa";
 
@@ -9,6 +9,8 @@ const Luxury = () => {
   const intervalRef = useRef(null);
 
   useEffect(() => {
+    const sectionEl = sectionRef.current; // ✅ yahin copy bana li
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -29,10 +31,10 @@ const Luxury = () => {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionEl) observer.observe(sectionEl);
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (sectionEl) observer.unobserve(sectionEl); // ✅ same cached ref used
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
@@ -75,11 +77,6 @@ const Luxury = () => {
               exclusive offerings.
             </p>
           </Col>
-          {/* <Col md={4} className="text-md-end text-start mt-3 mt-md-0">
-            <Button variant="dark" className="luxury-btn">
-              Explore More
-            </Button>
-          </Col> */}
         </Row>
 
         <Row className="luxury-cards mt-5">

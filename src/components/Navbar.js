@@ -5,8 +5,8 @@ import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
+  // const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  // const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
 
   // Mobile dropdowns
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);

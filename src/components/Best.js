@@ -58,37 +58,42 @@ const Best = () => {
     changeSlide(newIndex);
   };
 
-  // ✅ AUTO SLIDE
+  // ✅ AUTO SLIDE (no ESLint warning, no stale state)
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      setAnimate(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+        setAnimate(true);
+      }, 60);
     }, 4000); // every 4 sec
 
     return () => clearInterval(interval);
-  }, [index]); // keep in sync
+  }, []); // ✅ empty deps is now correct
 
   return (
     <section className="about-split-nolib">
       <Container fluid className="about-split-container g-0">
         {/* LEFT SIDE */}
         <div className="about-left container">
-            <div className="left-text-wrapper">
-          <h2 className="about-heading">{slides[index].title}</h2>
-          <span className="about-year">{slides[index].year}</span>
+          <div className="left-text-wrapper">
+            <h2 className="about-heading">{slides[index].title}</h2>
+            <span className="about-year">{slides[index].year}</span>
 
-          <p className={`about-para ${animate ? "slide-left" : ""}`}>
-            {slides[index].desc}
-          </p>
-          <div className="about-arrows">
-            <button onClick={prevSlide}>
-              <FaArrowLeft />
-            </button>
-            <button onClick={nextSlide}>
-              <FaArrowRight />
-            </button>
+            <p className={`about-para ${animate ? "slide-left" : ""}`}>
+              {slides[index].desc}
+            </p>
+
+            <div className="about-arrows">
+              <button onClick={prevSlide}>
+                <FaArrowLeft />
+              </button>
+              <button onClick={nextSlide}>
+                <FaArrowRight />
+              </button>
+            </div>
           </div>
         </div>
-</div>
 
         {/* RIGHT SIDE */}
         <div className="about-right">

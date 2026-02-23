@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GetQuotePopup from "../components/GetQuotePopup";
 import './Navbar.css';
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaBars, FaTimes,  } from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -55,7 +55,7 @@ const Work = () => {
           <h2
             className={`work-title ${progress > 0.05 ? "centered" : ""}`}
           >
-            Our Work <span></span>
+           OUR WORK<span></span>
           </h2>
 
           {/* Images */}

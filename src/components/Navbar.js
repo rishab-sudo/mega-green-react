@@ -9,8 +9,8 @@ const Navbar = () => {
   // const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
 
   // Mobile dropdowns
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
+  // const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  // const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
     const [showQuote, setShowQuote] = useState(false);

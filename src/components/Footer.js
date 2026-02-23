@@ -17,13 +17,13 @@ const Footer = () => {
                   <h2>Building Trust with Innovation, Quality Panels, and Global Manufacturing Excellence</h2>
                   <p>
              We deliver world-class real estate solutions with a focus on trusted quality, modern design, and sustainable development. Backed by years of expertise,
-              we serve homebuyers, investors, and developers with premium residential and commercial properties across India and beyond.
+
                   </p>
                 </div>
                 <div className="social-icons">
-                  <a href="https://www.facebook.com/profile.php?id=61578129710470"><FaFacebook /></a>
-                  <a href="https://www.linkedin.com/company/alutuff/"><FaLinkedin /></a>
-                  <a href="https://www.instagram.com/alutuff.panels/"><FaInstagram /></a>
+                  <a href="https://www.facebook.com/profile.php?"><FaFacebook /></a>
+                  <a href="https://www.linkedin.com/company/"><FaLinkedin /></a>
+                  <a href="https://www.instagram.com//"><FaInstagram /></a>
                 </div>
               </div>
             </Col>
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
 
       <div className='copyright-div'>
-        Copyright © 2025 <span style={{ color: "#ea3138" }}>MeghaGreenCity</span>. All Right Reserved.
+        Copyright © 2025 <span style={{ color: "#A1BE28" }}> MegaGreenCity</span>. All Right Reserved.
       </div>
     </Container>
   );

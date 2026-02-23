@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import GetQuotePopup from "../components/GetQuotePopup";
 import './Navbar.css';
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
+    const [showQuote, setShowQuote] = useState(false);
 
 
 const toggleMenu = () => {
@@ -35,6 +36,7 @@ useEffect(() => {
 
 
   return (
+    <>
   <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
 
       <div className="navbar-container">
@@ -77,7 +79,17 @@ useEffect(() => {
           <li><a href="/contact">Contact Us</a></li>
           {/* Desktop Become A Dealer Button  */}
            <li>
-<a href="/dealer" className="dealer-btn desktop-only">Get a Quote</a>
+<li>
+  <button
+    className="dealer-btn mobile-only"
+    onClick={() => {
+      setShowQuote(true);
+      setMenuOpen(false); // close side menu
+    }}
+  >
+     Get a Quote
+  </button>
+</li>
 </li>
         </ul>
 
@@ -88,32 +100,18 @@ useEffect(() => {
 
       <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
         <div className="side-menu-header">
-          <img className="side-logo" src={require("../assets/footer_logo.png")} alt="Logo" />
+          <img className="side-logo" src={require("../assets/megha-logo.png")} alt="Logo" />
         </div>
 
         <ul className="side-nav-links">
           <li><a href="/home" onClick={toggleMenu}>Home</a></li>
 
-          {/* Mobile About Dropdown */}
-          <li className="side-dropdown">
-            <span
-              className="side-about-title"
-              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-            >
-              About {mobileAboutOpen ? <FaChevronUp /> : <FaChevronDown />}
-            </span>
-            {mobileAboutOpen && (
-              <ul className="side-dropdown-menu">
-                <li><a href="/about" onClick={toggleMenu}>About Us</a></li>
-                {/* <li><a href="/established" onClick={toggleMenu}>Established Excellence</a></li> */}
-              </ul>
-            )}
-          </li>
+       <li><a href="/about" onClick={toggleMenu}>About</a></li>
 
          <li><a href="/projects" onClick={toggleMenu}>Projects</a></li>
 
           {/* Mobile More Dropdown */}
-          <li className="side-dropdown">
+          {/* <li className="side-dropdown">
             <span
               className="side-about-title"
               onClick={() => setMobileMoreOpen(!mobileMoreOpen)}
@@ -128,16 +126,30 @@ useEffect(() => {
                 <li><a href="/certificates" onClick={toggleMenu}>Certificates</a></li>
               </ul>
             )}
-          </li>
+          </li> */}
 
           
           <li><a href="/contact" onClick={toggleMenu}>Contact Us</a></li>
           {/* Mobile Become A Dealer Link */}
-<li><a href="/dealer" onClick={toggleMenu}>Become A Dealer</a> </li>
+<li>
+  <button
+    className="dealer-btn mobile-only"
+    onClick={() => {
+      setShowQuote(true);
+      setMenuOpen(false); // close side menu
+    }}
+  >
+   Get a Quote
+  </button>
+</li>
 
         </ul>
       </div>
     </nav>
+
+          {/* OVERLAY */}
+<GetQuotePopup open={showQuote} onClose={() => setShowQuote(false)} />
+  </>
   );
 };
 

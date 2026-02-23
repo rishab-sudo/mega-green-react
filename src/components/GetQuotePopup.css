@@ -1,0 +1,111 @@
+.pop-up-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 15px;
+}
+
+.pop-up-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px 20px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 7px; /* ✅ rounded modal */
+}
+
+/* CLOSE BUTTON */
+.pop-up-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* TITLE */
+.pop-up-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* FORM */
+.pop-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pop-up-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.pop-up-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* INPUTS */
+.pop-up-input,
+.pop-up-textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  border-radius: 7px; /* ✅ 7px radius */
+  outline: none;
+}
+
+.pop-up-input:focus,
+.pop-up-textarea:focus {
+  border-color: #3f412bd1;
+}
+
+.pop-up-textarea {
+  resize: none;
+}
+
+/* ERROR */
+.pop-up-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* SUBMIT */
+.pop-up-submit-btn {
+ background-color: #3f412bd1;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 7px; /* ✅ 7px radius */
+}
+
+.pop-up-submit-btn:hover {
+ background-color: #3f412bd1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .pop-up-modal {
+    padding: 20px 15px;
+  }
+
+  .pop-up-title {
+    font-size: 20px;
+  }
+}

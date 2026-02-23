@@ -1,0 +1,51 @@
+.app-buttons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #A1BE28;
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Scroll To Top Button */
+.top-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #A1BE28;
+  color: #A1BE28;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.top-btn:hover {
+  background-color: #A1BE28;
+  color: #fff;
+}

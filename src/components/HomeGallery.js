@@ -27,24 +27,54 @@ const HomeGallery = () => {
     ],
   };
 
-  const images = [
-   require("../assets/gallery/mhGallery-1.png"),
-  require("../assets/gallery/mhGallery-2.png"),
-    require("../assets/gallery/mhGallery-3.png"),
-      require("../assets/gallery/mhGallery-4.png"),
-       require("../assets/gallery/mhGallery-5.png"),
-   
-  ];
-
+const projects = [
+  {
+    img: require("../assets/projects/megha-city1.jpg"),
+    title: "Mega City ",
+  },
+  {
+    img: require("../assets/projects/megha-city2.jpg"),
+    title: "Mega City ",
+  },
+  {
+    img: require("../assets/projects/megha-dream-house.jpg"),
+    title: "Mega Dream Homes ",
+  },
+  {
+    img: require("../assets/projects/megha-dream-house2.jpg"),
+    title: "Mega Dream Home ",
+  },
+  {
+    img: require("../assets/projects/megha-dream-house3.jpg"),
+    title: "Mega Dream Homes",
+  },
+  {
+    img: require("../assets/projects/megha-dream-house4.jpg"),
+    title: "Mega Dream Homes ",
+  },
+  {
+    img: require("../assets/projects/megha-hieghts.jpg"),
+    title: "Mega Heights",
+  },
+  {
+    img: require("../assets/projects/megha-mansions.jpg"),
+    title: "Mega Mansions",
+  },
+    {
+    img: require("../assets/projects/megha-mension2.jpg"),
+    title: "Mega Mansions ",
+  },
+];
   return (
     <section className="homeGallery">
-      <h2 className="homeGallery-title">Our Gallery</h2>
+      <h2 className="homeGallery-title">Our compeleted projects</h2>
       <Slider {...settings} className="homeGallery-slider">
-        {images.map((img, index) => (
-          <div key={index} className="homeGallery-item">
-            <img src={img} alt={`gallery-${index}`} />
-          </div>
-        ))}
+       {projects.map((item, index) => (
+  <div key={index} className="homeGallery-item">
+    <img src={item.img} alt={item.title} />
+    <h4 className="homeGallery-item-title">{item.title}</h4>
+  </div>
+))}
       </Slider>
     </section>
   );

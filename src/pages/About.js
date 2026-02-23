@@ -33,9 +33,9 @@ const About = () => {
 
     <div className="about-section1-stats">
       {[
-        { label: "Offices", value: 40 },
-        { label: "Penthouses", value: 60 },
-        { label: "Rentals", value: 80 },
+        { label: "Offices", value: 85 },
+        { label: "Penthouses", value: 80 },
+        { label: "Rentals", value: 75 },
         { label: "Apartments", value: 90 },
       ].map((item, index) => (
         <div className="about-stat-item" key={index}>

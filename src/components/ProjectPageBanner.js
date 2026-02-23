@@ -1,86 +1,96 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import "./ProjectPageBanner.css";
 
+const subHeadings = [
+  "Where Modern Living Meets Nature",
+  "A Perfect Blend of Comfort and Sustainability",
+  "Crafted for a Better Lifestyle",
+  "Future-Ready Living Spaces",
+];
+
+const MAIN_TITLE = "MEGA GREEN CITY";
+
 const ProjectPageBanner = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [showTitle, setShowTitle] = useState(false);
+  const [showSub, setShowSub] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    pauseOnHover: false,
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
-  };
+  // Start title animation after 1 sec
+  useEffect(() => {
+    const t1 = setTimeout(() => {
+      setShowTitle(true);
+    }, 1000);
 
-  const slides = [
-    {
-      img: require("../assets/banner/room1.jpg"),
-      heading: "Welcome to Our Website",
-      desc: `This is a short description of your service or product.<br/>
-             You can add more details here.<br/>
-             Make your content more engaging with line breaks.`,
-      btn: "Get Started",
-    },
-    {
-      img: require("../assets/banner/room2.jpg"),
-      heading: "Our Premium Rooms",
-      desc: `Experience luxury like never before.
-             Explore our premium collection.`,
-      btn: "Book Now",
-    },
-    {
-      img: require("../assets/banner/room1.jpg"),
-      heading: "Special Offers",
-      desc: `Grab amazing discounts and deals.
-             Available for a limited time only.`,
-      btn: "View Offers",
-    },
-  ];
+    // Show subheading after title animation finishes
+    // (roughly letters * delay)
+    const t2 = setTimeout(() => {
+      setShowSub(true);
+    }, 1000 + MAIN_TITLE.length * 80 + 400);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
+  // Subheading fade loop (only after it's visible)
+  useEffect(() => {
+    if (!showSub) return;
+
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % subHeadings.length);
+        setFade(true);
+      }, 500);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [showSub]);
 
   return (
-    <section className="home-banner">
-      {/* Left Text (Dynamic with fade) */}
-      <div className="home-banner-left desktop-only">
-        <div key={currentSlide} className="banner-text-box fade-in">
-          <h1 className="banner-heading">{slides[currentSlide].heading}</h1>
-          <p
-            className="banner-description"
-            dangerouslySetInnerHTML={{ __html: slides[currentSlide].desc }}
-          ></p>
-          <button className="banner-btn">{slides[currentSlide].btn}</button>
-        </div>
-      </div>
+    <section className="projectpagebanner">
+      <video
+        className="projectpagebanner-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source
+          src={require("../assets/video/Mega Web Video (2).mp4")}
+          type="video/mp4"
+        />
+      </video>
 
-      {/* Right Slider */}
-      <div className="home-banner-right">
-        <Slider {...settings}>
-          {slides.map((slide, index) => (
-            <div key={index} className="banner-slide">
-              <img
-                src={slide.img}
-                alt={`Slide ${index}`}
-                className="banner-img"
-              />
-              {/* Text Box (Mobile only) */}
-              <div className="banner-text-box mobile-only">
-                <h1 className="banner-heading">{slide.heading}</h1>
-                <p
-                  className="banner-description"
-                  dangerouslySetInnerHTML={{ __html: slide.desc }}
-                ></p>
-                <button className="banner-btn">{slide.btn}</button>
-              </div>
-            </div>
-          ))}
-        </Slider>
+      <div className="projectpagebanner-overlay"></div>
+
+      <div className="projectpagebanner-content">
+        <Container className="projectpagebanner-inner">
+          <div className="banner-center">
+            {/* Main Title */}
+            <h1 className="banner-main-title">
+              {MAIN_TITLE.split("").map((char, i) => (
+                <span
+                  key={i}
+                  className={`title-letter ${showTitle ? "show" : ""}`}
+                  style={{ animationDelay: `${i * 0.08}s` }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </h1>
+
+            {/* Subheading */}
+            {showSub && (
+              <p className={`banner-subtitle ${fade ? "fade-in" : "fade-out"}`}>
+                {subHeadings[index]}
+              </p>
+            )}
+          </div>
+        </Container>
       </div>
     </section>
   );

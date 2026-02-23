@@ -18,7 +18,7 @@ const Luxury = () => {
           if (!intervalRef.current) {
             intervalRef.current = setInterval(() => {
               setRotation((prev) => prev + 180); // always +180 → clockwise
-            }, 3500);
+            }, 2500);
           }
         } else {
           if (intervalRef.current) {

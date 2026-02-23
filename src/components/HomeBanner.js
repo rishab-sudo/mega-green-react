@@ -12,11 +12,11 @@ function HomeBanner() {
             <img
               className="homebanner-img"
               src={require("../assets/banner/Banner1.jpeg")}
-              alt="Megha Green City"
+              alt=" Green City"
             />
             <div className="homebanner-overlay"></div>
             <div className="homebanner-center-content">
-              <h2>Megha Green City</h2>
+              <h2>Mega Green City</h2>
               <p>
                 A premium residential destination offering modern apartments and
                 luxury villas surrounded by lush greenery and elegant design.

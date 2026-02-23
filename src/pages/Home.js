@@ -1,8 +1,8 @@
 import React from 'react'
 import HomeBanner from '../components/HomeBanner'
 import HomeAbout from '../components/HomeAbout'
-import Homeproduct from '../components/HomeProperties'
-import WorkFlow from '../components/WorkFlow'
+import HomeProperties from '../components/HomeProperties'
+
 import Stats from '../components/Stats'
 import { motion } from "framer-motion";
 import { Facilities } from '../components/Facilities'
@@ -31,23 +31,18 @@ const Home = () => {
         <HomeAbout />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <Homeproduct />
-      </motion.div>
+      
+        <HomeProperties />
+   
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <WorkFlow />
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         initial={{ opacity: 0, y: 80 }}

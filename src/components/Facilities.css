@@ -1,22 +1,25 @@
 .facilities-container-fluid {
-  padding: 2rem;
+  padding: 2rem 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+   background: rgba(255, 255, 255, 0.35) !important;
 }
 
 .facilities-grid {
   display: grid;
-  grid-template-columns: repeat(4, 200px); /* 4 cards in a row */
-gap: 25px;
-  justify-content: space-around !important;
-  width: 100%;
+  grid-template-columns: repeat(5, 1fr);   /* 5 cards per row */
+  gap: 35px;
+  justify-items: center;                   /* center each card */
+  max-width: 1200px;                       /* control total width */
+  margin: 0 auto;                          /* center the whole grid */
 }
 
 .facility-card {
   position: relative;
-  min-width: 250px;
+  width: 100%;           /* take full grid cell */
+  max-width: 220px;      /* nice consistent card size */
   height: 100%;
   overflow: hidden;
   border-radius: 10px;
@@ -31,8 +34,8 @@ gap: 25px;
 }
 
 .facility-card img {
-  width: 250px;
-  height: 200px;
+  max-width: 100%;
+  height: 170px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
@@ -74,11 +77,32 @@ gap: 25px;
 .facility-card:hover .overlay {
   opacity: 1;
 }
+/* Wrapper to control overflow */
+.dotted-line-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px; 
+}
+
+/* The animated line */
+.dotted-line {
+  width: 0%;
+  height: 2px;
+  background-color: #3f412bd1; 
+  transition: width 1.5s ease;
+  margin-bottom: 16px;
+}
+
+/* When section is visible */
+.dotted-line.animate {
+  width: 100%;
+}
+
 
 /* Responsive: single card per row on small screens */
 @media (max-width: 576px) {
   .facilities-grid {
-    grid-template-columns: 1fr; /* 1 card per row */
+    grid-template-columns: 1fr;
   }
 
   .facility-card {

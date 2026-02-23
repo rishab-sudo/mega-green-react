@@ -1,96 +1,65 @@
-.homeproducts-section {
-  padding: 25px 0;
-  margin-top: 3.5%;
-  /* background: #3F412B; */
-}
-
-.slick-slide {
-  display: block ;
-  justify-content: center;
-  margin: auto;
-}
-
-.homeproducts-heading {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-.homeproducts-slide {
-  display: flex;
-  justify-content: center;
-  padding: 25px 0px;
-}
-
-.homeproducts-card {
+.villa-section {
+  margin: 1.5% auto;
   width: 100%;
-  max-width: 450px;
-  border: none;
-  border-radius: 12px;
-  overflow: hidden ;
-  transition: transform 0.4s ease;
-  margin: auto;
-  margin-bottom: 2rem;
+  text-align: center;
+background-color: #3f412bd1;
+   /* background-color: #A1BE28; */
+   padding: 45px 0px;
 }
-.homeproducts-card:hover {
- transform: scale(1.05);
+
+/* Heading + lines */
+.villa-heading-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+ 
 }
-.homeproducts-card img {
-  height: 225px;
+.heading-container{
+  margin-top: 2.5%;
+  font-family: "Geologica", sans-serif;
+
+}
+
+.villa-heading {
+  font-size: 45px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+
+}
+
+
+.villa-line {
+  height: 2px;
+  background: #fff;
+  width: 0;                 /* start collapsed */
+  transition: width 1s ease;
+  flex-shrink: 0;
+}
+
+/* On scroll: lines stretch */
+.villa-section.active .villa-line {
+  width: 45%;
+}
+
+/* Image */
+.villa-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.villa-image {
+  width: 350px;
+  height: 350px;
   object-fit: cover;
-}
-.homeproducts-price {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #3F412B;
-  margin-bottom: 8px;
+  transition: all 1.2s ease;
+  border-radius: 6px;
 }
 
-.homeproducts-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.homeproducts-description {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 12px;
-}
-
-.homeproducts-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.homeproducts-icons span {
-  margin-right: 15px;
-  font-size: 0.9rem;
-  color: #444;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.homeproducts-booknow {
-  font-weight: 600;
-  color: #3F412B;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.homeproducts-booknow:hover {
-  color: #0056b3;
-}
-
-/* Mobile Fix: 95% width + centered */
-@media screen and (max-width: 768px) {
-.homeproducts-card {
-  min-width: 100% !important;
-  background: #3F412B !important;
-  margin: 0 auto 2rem auto;
-}
+/* On scroll: image expands */
+.villa-section.active .villa-image {
+  width: 100%;
+  height: 85vh; /* adjust as per design */
 }

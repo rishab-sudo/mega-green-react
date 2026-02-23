@@ -1,125 +1,84 @@
-import React from "react";
-import Slider from "react-slick";
-import { Card } from "react-bootstrap";
-import { FaBed, FaBath } from "react-icons/fa";
+import React, { useEffect, useRef } from "react";
 import "./HomeProperties.css";
+import { Container } from "react-bootstrap";
 
-
-const properties = [
-  {
-    id: 1,
-    img: require("../assets/banner/Banner1.jpeg"),
-    price: "$250,000",
-    title: "Modern Family Home",
-    description: "A beautiful modern house located in the heart of the city.",
-    beds: 3,
-    baths: 3,
-  },
-  {
-    id: 2,
-    img: require("../assets/banner/Banner2.jpeg"),
-    price: "$180,000",
-    title: "Cozy Cottage",
-    description: "A charming cottage with a lovely garden view.",
-    beds: 2,
-    baths: 2,
-  },
-  {
-    id: 3,
-    img: require("../assets/banner/Banner3.jpeg"),
-    price: "$320,000",
-    title: "Luxury Villa",
-    description: "Spacious villa with modern amenities and pool access.",
-    beds: 4,
-    baths: 3,
-  },
-  {
-    id: 4,
-  img: require("../assets/banner/Banner6.jpeg"),
-    price: "$150,000",
-    title: "Urban Apartment",
-    description: "Stylish apartment in the city center.",
-    beds: 2,
-    baths: 1,
-  },
-  {
-    id: 5,
-   img: require("../assets/banner/Banner5.jpeg"),
-    price: "$150,000",
-    title: "Urban Apartment",
-    description: "Stylish apartment in the city center.",
-    beds: 2,
-    baths: 1,
-  },
-  {
-    id: 6,
- img: require("../assets/banner/Banner4.jpeg"),
-    price: "$150,000",
-    title: "Urban Apartment",
-    description: "Stylish apartment in the city center.",
-    beds: 2,
-    baths: 1,
-  },
+const data = [
+  { title: "Villa 1 ", img: require("../assets/projects/villa1.jpeg") },
+  { title: "Villa 2", img: require("../assets/projects/villa2.jpeg") },
+  { title: "Villa 3", img: require("../assets/projects/villa3.jpeg") },
 ];
 
-const HomeProduct = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "0px",
-    responsive: [
-      {
-        breakpoint: 992, // tablets
-        settings: {
-          slidesToShow: 2,
-          centerMode: false,
-        },
-      },
-      {
-        breakpoint: 768, // mobile
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false, // keep true so card stays centered
-          centerPadding: "0px",
-        },
-      },
-    ],
-  };
+const HomeProperties = () => {
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      sectionsRef.current.forEach((section) => {
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+        const windowH = window.innerHeight;
+
+        // section ka center viewport ke center ke kitna paas hai (0 to 1)
+        const viewportCenter = windowH / 2;
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        let progress = 1 - distance / viewportCenter; // center pe 1, door jaate jaate 0
+        progress = Math.min(Math.max(progress, 0), 1); // clamp 0–1
+
+        // lines
+        const lines = section.querySelectorAll(".villa-line");
+        lines.forEach((line) => {
+          line.style.width = `${progress * 40}%`; // max 40%
+        });
+
+        // image
+        const img = section.querySelector(".villa-image");
+        const minW = 300;
+        const maxW = section.offsetWidth; // full container
+        const minH = 300;
+        const maxH = 500;
+
+        const currentW = minW + (maxW - minW) * progress;
+        const currentH = minH + (maxH - minH) * progress;
+
+        img.style.width = `${currentW}px`;
+        img.style.height = `${currentH}px`;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial run
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="homeproducts-section">
-      <h2 className="homeproducts-heading">Our Properties</h2>
-      <Slider {...settings}>
-        {properties.map((property) => (
-          <div key={property.id} className="homeproducts-slide">
-            <Card className="homeproducts-card shadow-sm">
-              <Card.Img variant="top" src={property.img} />
-              <Card.Body>
-                <h5 className="homeproducts-price">{property.price}</h5>
-                <h4 className="homeproducts-title">{property.title}</h4>
-                <p className="homeproducts-description">{property.description}</p>
-                <hr />
-                <div className="homeproducts-footer">
-                  <div className="homeproducts-icons">
-                    <span><FaBed /> {property.beds} Beds</span>
-                    <span><FaBath /> {property.baths} Baths</span>
-                  </div>
-                  <div className="homeproducts-booknow">Book Now →</div>
-                </div>
-              </Card.Body>
-            </Card>
+    <>
+    <Container className="text-center heading-container">
+<h1>OUR PROPERTIES </h1>
+    </Container>
+
+      {data.map((item, index) => (
+        <div
+          className="villa-section"
+          key={index}
+          ref={(el) => (sectionsRef.current[index] = el)}
+        >
+          <div className="villa-heading-wrap">
+            <span className="villa-line left"></span>
+            <h2 className="villa-heading">{item.title}</h2>
+            <span className="villa-line right"></span>
           </div>
-        ))}
-      </Slider>
-    </div>
+
+          <div className="villa-image-wrap">
+            <img src={item.img} alt={item.title} className="villa-image" />
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 
-export default HomeProduct;
+export default HomeProperties;

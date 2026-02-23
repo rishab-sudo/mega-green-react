@@ -12,15 +12,25 @@
 }
 
 .homeGallery-slider {
-  width: 90%;
+  width: 95%;
   margin: 0 auto !important;
+  
 }
 
 .homeGallery-item {
   padding: 10px;
+  
+}
+.homeGallery-item-title {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
 }
 
 .homeGallery-item img {
+ 
   width: 100%;
   height: 300px;
   object-fit: cover;

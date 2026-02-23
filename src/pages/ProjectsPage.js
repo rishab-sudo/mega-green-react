@@ -1,150 +1,161 @@
-import React from "react";
-import { FaBed, FaBath, FaCar, FaCouch, FaTree, FaWifi } from "react-icons/fa";
+import React, { useEffect, useRef,useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 import { Container } from "react-bootstrap";
+import Work from "../components/Work"
 import "./ProjectsPage.css";
-import Products from "../components/Products";
 import ProjectPageBanner from "../components/ProjectPageBanner";
-import HomeGallery from "../components/HomeGallery";
+// Replace with your images
+import img1 from "../assets/projects/villa1.jpeg";
+import img2 from "../assets/projects/villa2.jpeg";
+import img3 from "../assets/projects/villa3.jpeg";
 
+const images = [img1, img2, img3];
+const highlights = [
+  "GRAND ENTRANCE",
+  "24X7 GATED SECURITY",
+  "TREE LINED WELL LIT ROAD",
+  "FULLY EQUIPPED GYMNASIUM",
+  "HALF BASKETBALL COURT",
+  "TENNIS AND BADMINTON COURTS",
+  "SWIMMING POOL",
+  "LANDSCAPED GREEN SPACES",
+  "CHILDREN’S PLAY AREA WITH SLIDES AND SWINGS",
+  "CLEAN AND POLLUTION-FREE ENVIRONMENT",
+  "EARTHQUAKE-RESISTANT CONSTRUCTION",
+];
 const Projects = () => {
+
+  // const carouselRef = useRef(null);
+const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  // ✅ Auto slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 3500); // change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
     <ProjectPageBanner/>
-      {/* First Section */}
-      <div className="projects-section">
-        {/* Left Side */}
-        <div className="projects-left">
-          <img
-            src={require("../assets/projects/image-65.png")}
-            alt="Main Project"
-            className="projects-main-img"
-          />
 
-          {/* Text under image */}
-          <div className="projects-left-info">
-            <h3 className="projects-price">$420.00 / per day</h3>
-            <h4 className="projects-title">Door to your a the new home</h4>
-            <p className="projects-subtitile">
-              66 Broklyant, New York America
-            </p>
-          </div>
+{/* new-project-section */}
+<section className="new-project-section">
+
+  {/* 🔹 Top Content (Above Slider) */}
+  <div className="new-project-heading-div container">
+    <h2>OUR PROJECT</h2>
+
+    <p>
+      Mega Green City is an exclusive villa township designed around the concept of eco-friendly and
+      sustainable living. It offers beautifully crafted villas with modern amenities at an accessible
+      price point, creating the perfect balance between comfort and nature.
+    </p>
+
+    <p>
+      The gated community features a grand entrance, 24×7 security, and controlled access, ensuring
+      a safe and peaceful environment. Thoughtfully planned landscaping, lush green spaces, and
+      tree-lined pathways enhance the natural beauty of the township.
+    </p>
+
+    <p>
+      Wide internal roads and well-designed infrastructure provide smooth connectivity and easy access
+      to every villa. Each home is designed for privacy, ventilation, and natural light, offering a
+      healthy and cozy lifestyle. Mega Green City is where green living meets modern comfort — an ideal
+      destination for those who value peace, space, and sustainable living.
+    </p>
+
+    <span className="new-project-tagline">LIVE GREEN. LIVE PREMIUM.</span>
+  </div>
+
+  {/* 🔹 Slider BELOW content */}
+  <div className="new-project-slider-wrapper">
+    <div
+      className="new-project-slider"
+      style={{ transform: `translateX(-${current * 100}%)` }}
+    >
+      {images.map((img, index) => (
+        <div className="new-project-slide" key={index}>
+          <img src={img} alt={`slide-${index}`} />
         </div>
+      ))}
+    </div>
 
-        {/* Right Side */}
-        <div className="projects-right">
-          <div className="projects-right-top">
-            <img
-              src={require("../assets/projects/image-71.png")}
-              alt="Small Project"
-              className="projects-sub-img"
-            />
-          </div>
+    {/* Arrows */}
+    <button className="slider-arrow left" onClick={prevSlide}>❮</button>
+    <button className="slider-arrow right" onClick={nextSlide}>❯</button>
+  </div>
 
-          <div className="projects-right-bottom">
-            <h2 className="projects-heading">Our Categories</h2>
-            <ul className="projects-points">
-              <li>High Quality Materials</li>
-              <li>Modern Architecture</li>
-              <li>Eco-friendly Designs</li>
-              <li>Luxury Amenities</li>
-            </ul>
-          </div>
+</section>
+   {/*  */}
+ <section className="project-highlight">
+      <Container>
+        <div className="text-center highlight-heading-div">
+          <h1>PROJECT HIGHLIGHTS</h1>
         </div>
-      </div>
-
-      {/* Second Section */}
-      <div className="project-detail-section">
-        {/* Left Side */}
-        <div className="project-detail-left">
-          <div className="project-detail-boxes">
-            {/* Row 1 */}
-            <div className="project-detail-row">
-              <div className="project-detail-box">
-                <FaBed className="project-detail-icon" />
-                <div className="project-detail-text">
-                  <h5>Room</h5>
-                  <p>4 Rooms</p>
-                </div>
+        <div className="project-highlight-grid">
+          {highlights.map((item, index) => (
+            <div className="highlight-box" key={index}>
+              <div className="highlight-icon">
+                <FaCheckCircle />
               </div>
-              <div className="project-detail-box">
-                <FaBath className="project-detail-icon" />
-                <div className="project-detail-text">
-                  <h5>Bathroom</h5>
-                  <p>2 Baths</p>
-                </div>
-              </div>
-              <div className="project-detail-box">
-                <FaCar className="project-detail-icon" />
-                <div className="project-detail-text">
-                  <h5>Garage</h5>
-                  <p>1 Space</p>
-                </div>
-              </div>
+              <div className="highlight-text">{item}</div>
             </div>
-
-            {/* Row 2 */}
-            <div className="project-detail-row">
-              <div className="project-detail-box">
-                <FaCouch className="project-detail-icon" />
-                <div className="project-detail-text">
-                  <h5>Living</h5>
-                  <p>2 Halls</p>
-                </div>
-              </div>
-              <div className="project-detail-box">
-                <FaTree className="project-detail-icon" />
-                <div className="project-detail-text">
-                  <h5>Garden</h5>
-                  <p>Big Yard</p>
-                </div>
-              </div>
-              <div className="project-detail-box">
-                <FaWifi className="project-detail-icon" />
-                <div className="project-detail-text">
-                  <h5>Wifi</h5>
-                  <p>Free Access</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
+          ))}
         </div>
-
-        {/* Right Side */}
-        <div className="project-detail-right">
-          <div className="project-detail-info-box">
-            <ul>
-              <li>
-                <span className="project-detail-point">✔</span>
-                <span className="project-detail-subheading">Prime Location</span>
-              </li>
-              <li>
-                <span className="project-detail-point">✔</span>
-                <span className="project-detail-subheading">Modern Design</span>
-              </li>
-              <li>
-                <span className="project-detail-point">✔</span>
-                <span className="project-detail-subheading">Affordable Price</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <Products />
-
-      {/* Image below boxes */}
-      <Container className="project-detail-img-div">
-        <img
-          className="project-detail-img"
-          src={require("../assets/projects/image-69.png")}
-          alt="Detail"
-        />
       </Container>
+    </section>
 
-      <HomeGallery/>
+  
+      {/* Image below boxes */}
+    <section className="plan-section">
+      <Container fluid>
+        <div className="plan-heading-div">
+          <h1>PROJECT PLAN</h1>
+        </div>
+        <Container>
+          {/* Block 1: Big Left */}
+          <div className="plan-grid">
+            <div className="plan-big">
+              <img src={require("../assets/projects/plan1.jpg")} alt="plan1" />
+            </div>
+            <div className="plan-small">
+              <img src={require("../assets/projects/plan2.jpg")} alt="plan2" />
+            </div>
+            <div className="plan-small">
+              <img src={require("../assets/projects/plan3.jpg")} alt="plan3" />
+            </div>
+          </div>
+
+          {/* Block 2: Big Right (swap) */}
+          <div className="plan-grid reverse">
+            <div className="plan-big">
+              <img src={require("../assets/projects/plan4.jpg")} alt="plan4" />
+            </div>
+            <div className="plan-small">
+              <img src={require("../assets/projects/plan5.jpg")} alt="plan5" />
+            </div>
+            <div className="plan-small">
+              <img src={require("../assets/projects/plan6.jpg")} alt="plan6" />
+            </div>
+          </div>
+
+          {/* You can repeat more blocks same pattern */}
+        </Container>
+      </Container>
+    </section>
+  <Work/>
+      {/* <HomeGallery/> */}
     </>
   );
 };

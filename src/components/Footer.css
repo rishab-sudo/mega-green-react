@@ -1,18 +1,28 @@
 .footer-section {
-  
-  background-color: #000;
+  position: relative;
   width: 100%;
-  padding: 0;
-  color: #fff;
+  padding-top: 25px ;
+  color: #fff; /* text white so it’s visible */
   overflow: hidden;
-  /* border-top-right-radius: 125px; */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  background: url("../assets/banner/footer-bg2.jpeg") center center / cover no-repeat;
 }
 
-.footer-overlay {
-  padding: 25px 15px;
+/* Black overlay */
+.footer-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); 
+  z-index: 1;
+ 
 }
 
-/* Main layout using Bootstrap Row/Col */
+.footer-section > * {
+  position: relative;
+  z-index: 2;
+}
+
 .footer-content-wrapper {
   gap: 25px;
 }
@@ -35,7 +45,7 @@
   text-align: left !important;
   width: 100%;
   margin-top: 5.2rem;
-/* background-color: #ea3138; */
+/* background-color: #A1BE28; */
 }
 
 .col-text-div {
@@ -74,7 +84,7 @@
 }
 
 .social-icons a:hover {
-  color: #ea3138;
+  color: #A1BE28;
 }
 
 .trust-text h2 {
@@ -86,7 +96,7 @@
 .trust-text p {
   font-size: 15px;
   line-height: 1.6;
-  color: #ccc;
+  color: #fff;
 }
 
 /* Quick Links and Contact */
@@ -104,28 +114,28 @@
 }
 
 .footer-links-column a {
-  color: #ccc;
+  color: #fff;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.3s;
 }
 
 .footer-links-column a:hover {
-  color: #ea3138;
+  color: #A1BE28;
 }
 
 a {
   text-decoration: none;
-  color: #ccc;
+  color: #fff;
 }
 a:hover {
-  color: #ea3138;
+  color: #A1BE28;
 }
 
 .footer-contact-info p {
   font-size: 14px;
   line-height: 1.5;
-  color: #ccc;
+  color: #fff;
   margin-bottom: 12px;
 }
 
@@ -138,13 +148,14 @@ a:hover {
   width: 100%;
   padding: 15px 2px;
   height: fit-content;
-  background-color: #000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  backdrop-filter: blur(0px);   
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  color: #ccc;
+  color: #fff;
 }
 
 /* Responsive styles */

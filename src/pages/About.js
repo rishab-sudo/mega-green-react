@@ -21,9 +21,11 @@ const About = () => {
 {/* section 1 */}
 <section className="aboutdemo-section">
   <Container className="about-section1-container">
-    <div className="about-section1-text">
-      <h2>About Our Company</h2>
-      <p>
+    <div className="about-section1-text ">
+      <div className='heading-center-underline'>
+      <h2 className='page-heading'>About Our Company</h2>
+</div>
+      <p className='page-description'>
         Each apartments has been individually designed to maximise space and
         light. Smart Home Technology installed as standard in each apartment
         putting you in total control of your home at the touch of a button from

@@ -54,21 +54,23 @@ const [current, setCurrent] = useState(0);
 
   {/* 🔹 Top Content (Above Slider) */}
   <div className="new-project-heading-div container">
-    <h2>OUR PROJECT</h2>
+   <div className="heading-center-underline"> 
+    <h2 className="page-heading">OUR PROJECT</h2>
+    </div>
 
-    <p>
+    <p className="page-description">
       Mega Green City is an exclusive villa township designed around the concept of eco-friendly and
       sustainable living. It offers beautifully crafted villas with modern amenities at an accessible
       price point, creating the perfect balance between comfort and nature.
     </p>
 
-    <p>
+  <p className="page-description">
       The gated community features a grand entrance, 24×7 security, and controlled access, ensuring
       a safe and peaceful environment. Thoughtfully planned landscaping, lush green spaces, and
       tree-lined pathways enhance the natural beauty of the township.
     </p>
 
-    <p>
+   <p className="page-description">
       Wide internal roads and well-designed infrastructure provide smooth connectivity and easy access
       to every villa. Each home is designed for privacy, ventilation, and natural light, offering a
       healthy and cozy lifestyle. Mega Green City is where green living meets modern comfort — an ideal
@@ -101,7 +103,7 @@ const [current, setCurrent] = useState(0);
  <section className="project-highlight">
       <Container>
         <div className="text-center highlight-heading-div">
-          <h1>PROJECT HIGHLIGHTS</h1>
+         <div className="heading-center-underline"> <h1 className="page-heading">PROJECT HIGHLIGHTS</h1></div>
         </div>
         <div className="project-highlight-grid">
           {highlights.map((item, index) => (
@@ -120,8 +122,8 @@ const [current, setCurrent] = useState(0);
       {/* Image below boxes */}
     <section className="plan-section">
       <Container fluid>
-        <div className="plan-heading-div">
-          <h1>PROJECT PLAN</h1>
+        <div className="plan-heading-div heading-center-underline">
+          <h1 className="page-heading">PROJECT PLAN</h1>
         </div>
         <Container>
           {/* Block 1: Big Left */}

@@ -16,22 +16,19 @@
 /* Top text block */
 .new-project-heading-div {
   width: 100%;
-  margin: 0 auto 50px auto; 
+  margin: 0 auto 5% auto; 
   text-align: center;
   padding: 0 20px;
 }
 
 .new-project-heading-div h2 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 20px;
+
+
 }
 
 .new-project-heading-div p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 14px;
-  color: #333;
+ color: #333 !important;
+ 
 }
 
 .new-project-tagline {
@@ -101,7 +98,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   color: #fbfbfb;
 }
 .project-highlight {
@@ -150,16 +147,18 @@
   color: #222;
   line-height: 1.4;
 }
-/* plan  section */
+/*--- plan section--- */
 
 .plan-section {
-  padding: 80px 0;
+  padding: 35px 0;
+  /* background-color: #222; */
 }
 .plan-heading-div{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 /* One block = 2 rows grid */
 .plan-grid {

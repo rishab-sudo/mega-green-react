@@ -11,9 +11,6 @@
 
 .appartments-title {
   text-align: center;
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 40px;
 }
 
 /* Tabs */
@@ -22,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #e5e5e5;
+  margin-top: 5%;
   margin-bottom: 50px;
 }
 
@@ -59,8 +57,6 @@
 
 .appartments-info h3 {
 text-transform: uppercase;
-  font-size: 32px;
-  font-weight: 600;
   margin-bottom: 20px;
 }
 
@@ -127,10 +123,6 @@ text-transform: uppercase;
   .appartments-image img {
     margin: 0 auto;
     max-width: 100%;
-  }
-
-  .appartments-title {
-    font-size: 32px;
   }
 
   .appartments-tabs {

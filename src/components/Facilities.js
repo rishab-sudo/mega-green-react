@@ -51,10 +51,12 @@ const facilities = [
       </div>
 
       <div className="testimonials-header">
-        <h2>Amenities</h2>
-        <p>
-          The premium features and the attention to detail is eye-catching and soul soothing
-        </p>
+        <div className='heading-center-underline'>
+        <h2 className='page-heading'>Amenities</h2>
+        </div>
+      <p className="page-subheading">
+  Where premium features and fine details come together to create a truly soothing living experience.
+</p>
       </div>
 
       <Container className="facilities-grid">

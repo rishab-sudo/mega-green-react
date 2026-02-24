@@ -44,3 +44,31 @@ font-style: normal;
 body.scrolled .navbar {
   transform: translateY(0);
 }
+.page-heading{
+  font-size: 38px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+.page-subheading{
+  font-size: 20px !important;
+  font-weight: 600;
+}
+.page-description{
+  font-size: 17px !important;
+  font-weight: 500 !important;
+}
+.heading-center-underline {
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.heading-center-underline::after {
+  content: "";
+  display: block;
+  width: 8%;
+  height: 2px;              
+  background-color: #A1BE28;  
+  margin: 0px auto 20px auto !important;      
+  border-radius: 2px;
+}

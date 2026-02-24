@@ -26,26 +26,7 @@ function HomeBanner() {
         </Carousel.Item>
 
         {/* Slide 2 */}
-        <Carousel.Item>
-          <div className="homebanner-slide">
-            <img
-              className="homebanner-img"
-              src={require("../assets/banner/Banner2.jpeg")}
-              alt="Premium Apartments"
-            />
-            <div className="homebanner-overlay"></div>
-            <div className="homebanner-center-content">
-              <h2>Premium Apartments</h2>
-              <p>
-                Thoughtfully planned homes with modern architecture, efficient
-                layouts, and a lifestyle crafted for comfort and elegance.
-              </p>
-            </div>
-          </div>
-        </Carousel.Item>
-
-        {/* Slide 3 */}
-        <Carousel.Item>
+          <Carousel.Item>
           <div className="homebanner-slide">
             <img
               className="homebanner-img"
@@ -58,6 +39,26 @@ function HomeBanner() {
               <p>
                 Experience spacious living with premium finishes, private spaces,
                 and a perfect blend of nature and modern lifestyle.
+              </p>
+            </div>
+          </div>
+        </Carousel.Item>
+
+        {/* Slide 3 */}
+  
+            <Carousel.Item>
+          <div className="homebanner-slide">
+            <img
+              className="homebanner-img"
+              src={require("../assets/banner/Banner2.jpeg")}
+              alt="Premium Apartments"
+            />
+            <div className="homebanner-overlay"></div>
+            <div className="homebanner-center-content">
+              <h2>Premium Apartments</h2>
+              <p>
+                Thoughtfully planned homes with modern architecture, efficient
+                layouts, and a lifestyle crafted for comfort and elegance.
               </p>
             </div>
           </div>

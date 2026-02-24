@@ -5,31 +5,31 @@ import "./Best.css";
 
 const slides = [
   {
-    title: "About Our Company",
+    title: "Mega Group",
     year: "2024",
     desc: "Each apartment has been individually designed to maximise space and light with smart home technology.",
     image: require("../assets/banner/Banner1.jpeg"),
   },
   {
-    title: "About Our Company",
+    title: "Mega Group",
     year: "2025",
     desc: "Premium materials and thoughtful layouts for a comfortable and modern lifestyle.",
     image: require("../assets/banner/Banner2.jpeg"),
   },
   {
-    title: "About Our Company",
+    title: "Mega Group",
     year: "2026",
     desc: "Smart layouts, elegant interiors and high quality construction standards.",
     image: require("../assets/banner/Banner3.jpeg"),
   },
   {
-    title: "About Our Company",
+    title: "Mega Group",
     year: "2027",
     desc: "Designed for people who value comfort, style and long-term reliability.",
     image: require("../assets/banner/Banner4.jpeg"),
   },
   {
-    title: "About Our Company",
+    title: "Mega Group",
     year: "2028",
     desc: "A perfect blend of architecture, technology and lifestyle.",
     image: require("../assets/banner/Banner5.jpeg"),
@@ -77,10 +77,10 @@ const Best = () => {
         {/* LEFT SIDE */}
         <div className="about-left container">
           <div className="left-text-wrapper">
-            <h2 className="about-heading">{slides[index].title}</h2>
-            <span className="about-year">{slides[index].year}</span>
+            <h2 className="about-heading page-heading">{slides[index].title}</h2>
+            <span className="about-year page-subheading">{slides[index].year}</span>
 
-            <p className={`about-para ${animate ? "slide-left" : ""}`}>
+            <p className={`about-para page-description ${animate ? "slide-left" : ""}`}>
               {slides[index].desc}
             </p>
 

@@ -85,7 +85,7 @@ const ProjectPageBanner = () => {
 
             {/* Subheading */}
             {showSub && (
-              <p className={`banner-subtitle ${fade ? "fade-in" : "fade-out"}`}>
+              <p className={`banner-subtitle page-subheading ${fade ? "fade-in" : "fade-out"}`}>
                 {subHeadings[index]}
               </p>
             )}

@@ -4,9 +4,10 @@ import img1 from "../assets/projects/megha-dream-house.jpg";
 import img2 from "../assets/projects/megha-dream-house2.jpg";
 import img3 from "../assets/projects/megha-dream-house3.jpg";
 import img4 from "../assets/projects/megha-mansions.jpg";
+import img6 from "../assets/projects/megha-dream-house4.jpg"; // 👈 add your new image
 import img5 from "../assets/projects/megha-hieghts.jpg";
 
-const images = [img1, img2, img3, img4, img5];
+const images = [img1, img6, img2, img3, img4, img5];
 
 const Work = () => {
   const sectionRef = useRef(null);
@@ -52,48 +53,49 @@ const Work = () => {
       <div className="work-sticky">
         <div className="work-container">
           {/* Title */}
+          <div className="title-div ">
           <h2
-            className={`work-title ${progress > 0.05 ? "centered" : ""}`}
+            className={`work-title page-heading ${progress > 0.05 ? "centered" : ""}`}
           >
            OUR WORK<span></span>
           </h2>
-
+</div>
           {/* Images */}
           <img
-            src={img1}
-            alt="work1"
-            className={`work-img work-img-1 ${
-              activeIndex === 0 ? "active" : ""
-            }`}
-          />
-          <img
-            src={img2}
-            alt="work2"
-            className={`work-img work-img-2 ${
-              activeIndex === 1 ? "active" : ""
-            }`}
-          />
-          <img
-            src={img3}
-            alt="work3"
-            className={`work-img work-img-3 ${
-              activeIndex === 2 ? "active" : ""
-            }`}
-          />
-          <img
-            src={img4}
-            alt="work4"
-            className={`work-img work-img-4 ${
-              activeIndex === 3 ? "active" : ""
-            }`}
-          />
-          <img
-            src={img5}
-            alt="work5"
-            className={`work-img work-img-5 ${
-              activeIndex === 4 ? "active" : ""
-            }`}
-          />
+  src={img1}
+  alt="work1"
+  className={`work-img work-img-1 ${activeIndex === 0 ? "active" : ""}`}
+/>
+
+<img
+  src={img6}
+  alt="work6"
+  className={`work-img work-img-6 ${activeIndex === 1 ? "active" : ""}`}
+/>
+
+<img
+  src={img2}
+  alt="work2"
+  className={`work-img work-img-2 ${activeIndex === 2 ? "active" : ""}`}
+/>
+
+<img
+  src={img3}
+  alt="work3"
+  className={`work-img work-img-3 ${activeIndex === 3 ? "active" : ""}`}
+/>
+
+<img
+  src={img4}
+  alt="work4"
+  className={`work-img work-img-4 ${activeIndex === 4 ? "active" : ""}`}
+/>
+
+<img
+  src={img5}
+  alt="work5"
+  className={`work-img work-img-5 ${activeIndex === 5 ? "active" : ""}`}
+/>
         </div>
       </div>
     </section>

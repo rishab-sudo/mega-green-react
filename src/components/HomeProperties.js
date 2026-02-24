@@ -57,7 +57,7 @@ const HomeProperties = () => {
   return (
     <>
     <Container className="text-center heading-container">
-<h1>OUR PROPERTIES </h1>
+<h1 className="page-heading heading-center-underline">OUR PROPERTIES </h1>
     </Container>
 
       {data.map((item, index) => (

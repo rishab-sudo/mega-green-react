@@ -21,12 +21,8 @@
   font-weight: 600;
 }
 
-.luxury-cards {
-  margin-top: 40px;
-}
-
 .luxury-card {
-  perspective: 1000px;
+  perspective: 1200px;
   height: 350px;
 }
 
@@ -34,8 +30,9 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 1s ease;
   transform-style: preserve-3d;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1); /* 👈 smooth like butter */
+  will-change: transform;
 }
 
 .luxury-card.flipped .luxury-card-inner {
@@ -52,15 +49,16 @@
   overflow: hidden;
 }
 
-/* Front (Image) */
+/* Front */
 .luxury-card-front {
   background-size: cover;
   background-position: center;
 }
 
-/* Back (Content) */
+/* Back */
 .luxury-card-back {
-  background: #fff;
+  background: #3f412bd1;
+  color: #fbfbfb !important;
   padding: 25px;
   text-align: center;
   transform: rotateY(180deg);
@@ -68,28 +66,33 @@
   flex-direction: column;
   justify-content: center;
   border: 1px solid #eee;
+
+  /* 👇 text smooth entry */
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When flipped, fade text in nicely */
+.luxury-card.flipped .luxury-card-back {
+  opacity: 1;
 }
 
 .luxury-icon {
   margin-bottom: 15px;
-  color: #000;
+    color: #fbfbfb !important;
 }
 
 .luxury-title {
-  font-size: 1.2rem;
-  font-weight: 600;
   margin-bottom: 10px;
 }
 
 .luxury-text {
-  font-size: 0.95rem;
-  color: #666;
   margin-bottom: 15px;
 }
 
 .luxury-link {
   font-weight: 600;
-  color: #000;
+  color: #fbfbfb !important;
   display: inline-flex;
   align-items: center;
   margin: auto !important;

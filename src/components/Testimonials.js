@@ -82,8 +82,11 @@ const Testimonials = () => {
   return (
     <section className="testimonials-section">
       <div className="testimonials-header">
-        <h2>What Our Clients Say</h2>
-        <p>
+        <div className="heading-center-underline">
+
+        <h2 className="page-heading">What Our Clients Say</h2>
+        </div>
+        <p className="page-description">
           Hear from our happy customers who trusted us and had a great
           experience.
         </p>

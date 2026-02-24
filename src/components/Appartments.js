@@ -77,8 +77,9 @@ const Appartments = () => {
   return (
     <section className="appartments">
       <Container className="appartments-container">
-        <h2 className="appartments-title">Apartments Plans</h2>
-
+        <div className="heading-center-underline">
+        <h2 className="appartments-title page-heading">Apartments Plans</h2>
+</div>
         {/* Tabs */}
         <div className="appartments-tabs">
           {plans.map((plan, index) => (
@@ -104,7 +105,7 @@ const Appartments = () => {
         {/* Content */}
         <div className="appartments-content">
           <div className="appartments-info">
-            <h3>{plans[activeIndex].name}</h3>
+            <h3 className="page-subheading" >{plans[activeIndex].name}</h3>
 
             <ul>
               <li>

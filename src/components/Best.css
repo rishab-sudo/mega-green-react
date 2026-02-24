@@ -27,20 +27,29 @@ color: #fff;
     margin: auto;
 }
 .about-heading {
-  font-size: 36px;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block; /* so underline sticks to heading width */
+}
+
+.about-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;              
+  bottom: -8px;        
+  width: 18%;           
+  height: 3px;         
+  background-color: #A1BE28; 
+  border-radius: 2px;
 }
 
 .about-year {
   display: block;
-  font-size: 18px;
-  font-weight: 600;
   color: #A1BE28;
   margin-bottom: 20px;
 }
 
 .about-para {
-  font-size: 18px;
   line-height: 1.7;
   color: #ffff;
   min-height: 90px;

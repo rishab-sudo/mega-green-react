@@ -14,12 +14,11 @@ const Footer = () => {
               <div className="footer-left">
                 <img src={require("../assets/megha-logo.png")} alt="logo" className="footer-logo" />
                 <div className="trust-text">
-                  <h2>Building Trust with Innovation, Quality Panels, and Global Manufacturing Excellence</h2>
-                  <p>
-             We deliver world-class real estate solutions with a focus on trusted quality, modern design, and sustainable development. Backed by years of expertise,
-
-                  </p>
-                </div>
+  <h2>Trust Built on Green Living and Premium Villas</h2>
+  <p>
+    Mega Green City offers thoughtfully designed, eco-friendly homes with quality construction and modern comfort.
+  </p>
+</div>
                 <div className="social-icons">
                   <a href="https://www.facebook.com/profile.php?"><FaFacebook /></a>
                   <a href="https://www.linkedin.com/company/"><FaLinkedin /></a>

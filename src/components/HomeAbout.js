@@ -87,8 +87,8 @@ const HomeAbout = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <h2 className="exclusive-heading">About Us</h2>
-          <p className="exclusive-description">
+          <h2 className="exclusive-heading page-heading">About Us</h2>
+          <p className="exclusive-description page-description">
             We are Mega Group, builders driven by one goal and one ideal: <strong>Better Living</strong>.
             We work tirelessly to bring the future closer to the present by delivering superior quality,
             improving neighborhoods, and making every home better than the last.
@@ -98,8 +98,8 @@ const HomeAbout = () => {
             <div className="exclusive-point">
               <div><FaCheckCircle className="point-icon" /></div>
               <div>
-                <p>Better Living</p>
-                <p>
+                <p className="page-subheading">Better Living</p>
+                <p className="page-description">
                   At Mega Group, our foundation is built on strong ideals. We strive to provide the utmost
                   quality of living and ensure every dwelling is better than the last.
                 </p>
@@ -109,8 +109,8 @@ const HomeAbout = () => {
             <div className="exclusive-point">
               <div><FaCheckCircle className="point-icon" /></div>
               <div>
-                <p>Enduring Assurance</p>
-                <p>
+                <p className="page-subheading">Enduring Assurance</p>
+                <p className="page-description">
                   We have been delivering every promise since day one. A home is more than walls and a roof,
                   it is a place of comfort and fulfilled promises.
                 </p>

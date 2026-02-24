@@ -3,6 +3,7 @@
   height: 500vh; /* 👈 enough scroll space for all images */
   background: #fff;
   margin-top: 3.5%;
+    /* background-color: #222; */
 }
 
 /* Sticky wrapper */
@@ -25,15 +26,15 @@
 }
 
 /* Title */
+.title-div{
+  margin-bottom: 45px !important;
+}
 .work-title {
   position: absolute;
   top: 5px;    
-  margin-bottom: 35px;          /* 👈 initially at top */
+        /* 👈 initially at top */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 64px;
-  font-weight: 600;
-  color: #000;
   z-index: 5;
   text-align: center;
   transition: all 0.6s ease;
@@ -42,6 +43,7 @@
 .work-title span {
   font-size: 28px;
   vertical-align: super;
+  
 }
 
 /* When scrolled → move to center */
@@ -54,19 +56,32 @@
 .work-img {
   position: absolute;
   object-fit: contain;
-  transition: transform 0.8s ease, opacity 0.8s ease;
   opacity: 0.6;
-  transform: scale(0.8);
-  
+  transform: scale(0.85);
+  transition: 
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s ease;
+  will-change: transform;
 }
 
-/* Active image zoom in */
+/* Active image: pop-in, then settle */
 .work-img.active {
-  transform: scale(1.1);
   opacity: 1;
   z-index: 4;
+  animation: popZoom 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+@keyframes popZoom {
+  0% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.15);  /* 👈 little overshoot = “pop” */
+  }
+  100% {
+    transform: scale(1.05);  /* 👈 settle nicely */
+  }
+}
 /* Positions (UNCHANGED) */
 .work-img-1 {
   width: 450px;
@@ -102,7 +117,12 @@
   right: 2%;
   top: 48%;
 }
-
+.work-img-6 {
+  width: 260px;
+  height: 280px;
+  left: 28%;
+  top: 5%;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .work-title {

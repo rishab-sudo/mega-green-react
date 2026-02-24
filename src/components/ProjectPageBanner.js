@@ -45,7 +45,7 @@ const ProjectPageBanner = () => {
         setIndex((prev) => (prev + 1) % subHeadings.length);
         setFade(true);
       }, 500);
-    }, 2500);
+    }, 2100);
 
     return () => clearInterval(interval);
   }, [showSub]);

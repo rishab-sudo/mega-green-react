@@ -123,6 +123,7 @@
   left: 28%;
   top: 5%;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
   .work-title {

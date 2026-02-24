@@ -104,3 +104,8 @@
 .luxury-link:hover {
   color: #e63946;
 }
+@media screen and (max-width: 768px) {
+  .text-center{
+    width: 100%;
+  }
+}

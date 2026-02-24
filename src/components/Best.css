@@ -146,17 +146,30 @@ color: #fff;
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .about-split-container {
-    flex-direction: column;
-    text-align: center;
+  
+    flex-direction: column-reverse;
+    text-align: left;
   }
 
   .about-left,
   .about-right {
-    width: 95%;
+    width: 100%;
+    height: fit-content;
     margin: 0 auto;
+      padding:  15px 0px;
   }
-
+.left-text-wrapper{
+    width: 90%;
+    margin: auto;
+}
   .about-heading {
-    font-size: 26px;
+    
   }
+  .about-main-image {
+  width: 95%;
+  height: 375px;
+  margin: auto;
+  border-radius: 0px;
+  display: block;
+}
 }

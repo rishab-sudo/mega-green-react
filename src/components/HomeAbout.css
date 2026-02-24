@@ -166,10 +166,11 @@ padding-bottom: 8px;
 @media (max-width: 768px) {
   .exclusive-container {
     flex-direction: column;
+    padding: 25px 0px;
   }
 
   .exclusive-left {
-    width: 100% !important;
+    width: 95% !important;
   }
 
   .exclusive-image {
@@ -180,4 +181,15 @@ padding-bottom: 8px;
     width: 55px;
     height: 40px;
   }
+  /* Right Side */
+.exclusive-right {
+  flex: 1;
+  margin: auto;
+  min-width: 95% !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+ 
+}
 }

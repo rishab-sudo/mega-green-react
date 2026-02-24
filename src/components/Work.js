@@ -96,9 +96,9 @@ const Work = () => {
   alt="work5"
   className={`work-img work-img-5 ${activeIndex === 5 ? "active" : ""}`}
 />
-        </div>
-      </div>
-    </section>
+       </div>
+    </div>
+ </section>
   );
 };
 

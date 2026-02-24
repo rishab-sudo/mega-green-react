@@ -95,7 +95,7 @@
 
 @media (max-width: 767px) {
 .testimonial-card {
-    min-width: 100% !important;
+    width: 100% !important;
     /* max-width: 100% !important; */
     margin: 0 auto 2rem auto; /* center horizontally */
 }

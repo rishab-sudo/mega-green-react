@@ -100,15 +100,22 @@
 
 
 /* Responsive: single card per row on small screens */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .facilities-grid {
     grid-template-columns: 1fr;
   }
 
   .facility-card {
     width: 100%;
-    max-width: 300px; /* keep reasonable size on mobiles */
-    height: 200px;
+    width: 95%; 
+    max-width:95%;
+    height: 250px;
     margin: 0 auto;
   }
+  .facility-card img {
+    height: 200px;
+  width: 95%;
+  max-width: 95%;
+
+}
 }

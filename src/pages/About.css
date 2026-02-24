@@ -20,7 +20,6 @@
 
 
 .about-section1-text p {
-  font-size: 16px;
   line-height: 1.7;
   color: #555;
 }
@@ -77,8 +76,16 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .aboutdemo-section {
+padding: 25px 15px;
+}
+  .about-section1-container {
+  width: 100%;
+  margin: 0 auto;
+  /* background-color: #222; */
+}
    .about-section1-text h2 {
-    font-size: 28px;
+
   }
 
   .about-section1-stats {

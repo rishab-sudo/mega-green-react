@@ -81,7 +81,7 @@ const [current, setCurrent] = useState(0);
   </div>
 
   {/* 🔹 Slider BELOW content */}
-  <div className="new-project-slider-wrapper">
+  <Container className="new-project-slider-wrapper g-0">
     <div
       className="new-project-slider"
       style={{ transform: `translateX(-${current * 100}%)` }}
@@ -96,7 +96,7 @@ const [current, setCurrent] = useState(0);
     {/* Arrows */}
     <button className="slider-arrow left" onClick={prevSlide}>❮</button>
     <button className="slider-arrow right" onClick={nextSlide}>❯</button>
-  </div>
+  </Container>
 
 </section>
    {/*  */}

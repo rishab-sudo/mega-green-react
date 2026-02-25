@@ -11,54 +11,31 @@ import { Container } from "react-bootstrap";
 
 const plans = [
   {
-    name: "Sunrise",
-    bedrooms: 3,
-    bathrooms: 2,
-    area: "80.12",
-    garages: 1,
-    price: "1,150,000",
-    perSqm: "$35,000 / square m",
+    name: "Villa 1",
+    plotSize: "7.00 × 14.27 M",
+    floors: 2,
+    carpetArea: "1136 SQ.FT",
+    type: "3 BHK VILLA",
+    // extra: '7000 [23"] × 14270 [46\'-10"] Ground',
     image: plan1,
   },
   {
-    name: "Vista",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: "72.50",
-    garages: 1,
-    price: "980,000",
-    perSqm: "$32,000 / square m",
+    name: "Villa 2",
+    plotSize: "6.810 × 12.610 M",
+    floors: 2,
+    carpetArea: "900 SQ.FT",
+    type: "3 BHK VILLA",
+    extra: "",
     image: plan2,
   },
   {
-    name: "Paradise",
-    bedrooms: 4,
-    bathrooms: 3,
-    area: "120.00",
-    garages: 2,
-    price: "1,850,000",
-    perSqm: "$40,000 / square m",
+    name: "Villa 3",
+    plotSize: "5.14 × 10.71 M",
+    floors: 2,
+    carpetArea: "557 SQ.FT",
+    type: "3 BHK",
+    extra: "",
     image: plan3,
-  },
-  {
-    name: "Monterey",
-    bedrooms: 3,
-    bathrooms: 2,
-    area: "95.00",
-    garages: 1,
-    price: "1,320,000",
-    perSqm: "$36,000 / square m",
-    image: plan4,
-  },
-  {
-    name: "Sea Breeze",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: "70.00",
-    garages: 1,
-    price: "890,000",
-    perSqm: "$30,000 / square m",
-    image: plan5,
   },
 ];
 
@@ -104,36 +81,37 @@ const Appartments = () => {
 
         {/* Content */}
         <div className="appartments-content">
-          <div className="appartments-info">
-            <h3 className="page-subheading" >{plans[activeIndex].name}</h3>
+         <div className="appartments-info">
+  <h3 className="page-subheading">{plans[activeIndex].name}</h3>
 
-            <ul>
-              <li>
-                <span>Bedrooms</span>
-                <span>{plans[activeIndex].bedrooms}</span>
-              </li>
-              <li>
-                <span>Bathrooms</span>
-                <span>{plans[activeIndex].bathrooms}</span>
-              </li>
-              <li>
-                <span>Area size</span>
-                <span>{plans[activeIndex].area}</span>
-              </li>
-              <li>
-                <span>Garages</span>
-                <span>{plans[activeIndex].garages}</span>
-              </li>
-              <li>
-                <span>$</span>
-                <span>{plans[activeIndex].price}</span>
-              </li>
-            </ul>
+  <ul>
+    <li>
+      <span>Plot Size</span>
+      <span>{plans[activeIndex].plotSize}</span>
+    </li>
+    <li>
+      <span>Floors</span>
+      <span>{plans[activeIndex].floors}</span>
+    </li>
+    <li>
+      <span>Carpet Area</span>
+      <span>{plans[activeIndex].carpetArea}</span>
+    </li>
+    <li>
+      <span>Type</span>
+      <span>{plans[activeIndex].type}</span>
+    </li>
 
-            <p className="price-per">{plans[activeIndex].perSqm}</p>
+    {plans[activeIndex].extra && (
+      <li>
+        <span>Details</span>
+        <span>{plans[activeIndex].extra}</span>
+      </li>
+    )}
+  </ul>
 
-            <button className="learn-more-btn">Know More</button>
-          </div>
+  <button className="learn-more-btn">Know More</button>
+</div>
 
           <div className="appartments-image">
             <img

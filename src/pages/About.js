@@ -33,33 +33,33 @@ const About = () => {
       </p>
     </div>
 
-    <div className="about-section1-stats">
-      {[
-        { label: "Offices", value: 85 },
-        { label: "Penthouses", value: 80 },
-        { label: "Rentals", value: 75 },
-        { label: "Apartments", value: 90 },
-      ].map((item, index) => (
-        <div className="about-stat-item" key={index}>
-          {/* Label ABOVE line */}
-          <div className="about-stat-top">
-            <span className="about-stat-label">{item.label}</span>
-            <span className="about-stat-value">{item.value}%</span>
-          </div>
+  <div className="about-section1-stats">
+  {[
+    { label: "Quality", value: 100 },
+    { label: "Living Experience", value: 95 },
+    { label: "Greenery", value: 85 },
+    { label: "Support", value: 100 },
+  ].map((item, index) => (
+    <div className="about-stat-item" key={index}>
+      {/* Label ABOVE line */}
+      <div className="about-stat-top">
+        <span className="about-stat-label">{item.label}</span>
+        <span className="about-stat-value">{item.value}%</span>
+      </div>
 
-          {/* Line with outline */}
-          <div className="about-stat-line-bg">
-            <motion.div
-              className="about-stat-line-fill"
-              initial={{ width: 0 }}
-              whileInView={{ width: `${item.value}%` }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              viewport={{ once: true }}
-            />
-          </div>
-        </div>
-      ))}
+      {/* Line with outline */}
+      <div className="about-stat-line-bg">
+        <motion.div
+          className="about-stat-line-fill"
+          initial={{ width: 0 }}
+          whileInView={{ width: `${item.value}%` }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
+      </div>
     </div>
+  ))}
+</div>
   </Container>
 </section>
 

@@ -68,7 +68,7 @@
 
 .pop-up-input:focus,
 .pop-up-textarea:focus {
-  border-color: #3f412bd1;
+  border-color: #3F412B;
 }
 
 .pop-up-textarea {
@@ -84,7 +84,7 @@
 
 /* SUBMIT */
 .pop-up-submit-btn {
- background-color: #3f412bd1;
+ background-color: #3F412B;
   color: #fff;
   border: none;
   padding: 12px;
@@ -96,7 +96,7 @@
 }
 
 .pop-up-submit-btn:hover {
- background-color: #3f412bd1;
+ background-color: #3F412B;
 }
 
 /* RESPONSIVE */

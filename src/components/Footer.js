@@ -35,7 +35,7 @@ const Footer = () => {
                   <div className="footer-links-column">
                     <a href="/home">Home</a>
                     <a href="/about">About Us</a>
-                    <a href="/product">Projects</a>
+                    <a href="/projects">Projects</a>
                     <a href="/contact">Contact Us</a>
                    
                   </div>
@@ -49,12 +49,14 @@ const Footer = () => {
                 <div className="col-text-div">
                   <h4>Contact Info</h4>
                   <div className="footer-contact-info">
-                    <p><strong>Address:</strong><br />xxxxxxxxxxxxxxxx,<br />Choupla Road, Civil Lines, Bareilly.</p>
+                    <p><strong>Address:</strong><br /> Between Phoenix Mall and Funcity,<br/>Pilibhit Bypass, Bareilly
+
+</p>
                     <p><strong>Phone:</strong><br />
-                      <a href="tel:+916396854974">+91 xxxxx xxxxx</a>
+                      <a href="tel:+919690177555">+91 9690177555</a>
                     </p>
                     <p><strong>Email:</strong><br />
-                      <a href="mailto:sales@alutuff.in">sales@xxxx.in</a>
+                      <a href="mailto:MegaGreenCity6@gmail.com">MegaGreenCity6@gmail.com</a>
                     </p>
                   </div>
                 </div>

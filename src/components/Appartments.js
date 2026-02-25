@@ -5,8 +5,7 @@ import "./Appartments.css";
 import plan1 from "../assets/projects/App-map.png";
 import plan2 from "../assets/projects/App-map.png";
 import plan3 from "../assets/projects/App-map.png";
-import plan4 from "../assets/projects/App-map.png";
-import plan5 from "../assets/projects/App-map.png";
+
 import { Container } from "react-bootstrap";
 
 const plans = [

@@ -1,24 +1,33 @@
 <?php
-// Set email recipient
-$to = "owner@example.com";
-$data = json_decode(file_get_contents("php://input"));
+header("Content-Type: application/json");
 
-if ($data) {
-    $subject = "New Contact Form Submission";
-    $message = "Name: " . $data->firstname . " " . $data->lastname . "\n";
-    $message .= "Email: " . $data->email . "\n";
-    $message .= "Message:\n" . $data->message;
+$to = "megagreencity6@gmil.com"; // 👈 change to your email
+$data = json_decode(file_get_contents("php://input"), true);
 
-    $headers = "From: no-reply@example.com";
+if (!$data) {
+  http_response_code(400);
+  echo json_encode(["message" => "Invalid data"]);
+  exit;
+}
 
-    if (mail($to, $subject, $message, $headers)) {
-        http_response_code(200);
-        echo json_encode(["message" => "Mail sent successfully."]);
-    } else {
-        http_response_code(500);
-        echo json_encode(["message" => "Mail sending failed."]);
-    }
+$name = $data["name"] ?? "";
+$phone = $data["phone"] ?? "";
+$email = $data["email"] ?? "";
+$address = $data["address"] ?? "";
+$product = $data["product"] ?? "";
+
+$subject = "New Quote Request";
+$message = "Name: $name\n";
+$message .= "Phone: $phone\n";
+$message .= "Email: $email\n";
+$message .= "Address: $address\n";
+$message .= "Interest: $product\n";
+
+$headers = "From: no-reply@yourdomain.com\r\nReply-To: $email";
+
+if (mail($to, $subject, $message, $headers)) {
+  echo json_encode(["message" => "Mail sent"]);
 } else {
-    http_response_code(400);
-    echo json_encode(["message" => "Invalid data."]);
+  http_response_code(500);
+  echo json_encode(["message" => "Mail failed"]);
 }

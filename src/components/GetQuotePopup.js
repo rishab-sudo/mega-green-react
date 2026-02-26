@@ -19,36 +19,16 @@ const GetQuotePopup = ({ open, onClose }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setForm((prev) => ({ ...prev, [name]: value }));
 
-    // Live validation for this field
     setErrors((prevErrors) => {
       const newErrors = { ...prevErrors };
 
-      if (name === "name" && value.trim()) {
-        delete newErrors.name;
-      }
-
-      if (name === "phone") {
-        if (/^[0-9]{10}$/.test(value)) {
-          delete newErrors.phone;
-        }
-      }
-
-      if (name === "email") {
-        if (/^\S+@\S+\.\S+$/.test(value)) {
-          delete newErrors.email;
-        }
-      }
-
-      if (name === "address" && value.trim()) {
-        delete newErrors.address;
-      }
-
-      if (name === "product" && value.trim()) {
-        delete newErrors.product;
-      }
+      if (name === "name" && value.trim()) delete newErrors.name;
+      if (name === "phone" && /^[0-9]{10}$/.test(value)) delete newErrors.phone;
+      if (name === "email" && /^\S+@\S+\.\S+$/.test(value)) delete newErrors.email;
+      if (name === "address" && value.trim()) delete newErrors.address;
+      if (name === "product" && value.trim()) delete newErrors.product;
 
       return newErrors;
     });
@@ -68,61 +48,71 @@ const GetQuotePopup = ({ open, onClose }) => {
       newErrors.email = "Enter valid email";
 
     if (!form.address.trim()) newErrors.address = "Address is required";
-
     if (!form.product.trim()) newErrors.product = "Please select an option";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const isValid = validate();
+    const isValid = validate();
+    if (!isValid) {
+      onClose();
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Please fill all fields correctly before submitting.",
+        confirmButtonColor: "#d33",
+      });
+      return;
+    }
 
-  if (isValid) {
-    console.log("Form Data:", form);
+    try {
+      const res = await fetch("/send-quote.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    // ✅ Close form popup first
-    onClose();
+      const data = await res.json();
 
-// Then show success Swal
-    Swal.fire({
-      icon: "success",
-      title: "Success!",
-      text: "Your quote request has been submitted successfully.",
-      confirmButtonColor: "#a1be28",
-    });
+      if (res.ok) {
+        onClose();
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Your quote request has been submitted successfully.",
+          confirmButtonColor: "#a1be28",
+        });
 
-    // Reset form
-    setForm({
-      name: "",
-      phone: "",
-      email: "",
-      address: "",
-      product: "",
-    });
-    setErrors({});
-  } else {
-    // ❌ Close form popup first (optional, but you asked for it)
-    onClose();
-
-    // Then show error Swal
-    Swal.fire({
-      icon: "error",
-      title: "Oops!",
-      text: "Please fill all fields correctly before submitting.",
-      confirmButtonColor: "#d33",
-    });
-  }
-};
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          address: "",
+          product: "",
+        });
+        setErrors({});
+      } else {
+        throw new Error(data.message || "Server error");
+      }
+    } catch (err) {
+      onClose();
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Something went wrong. Please try again later.",
+        confirmButtonColor: "#d33",
+      });
+    }
+  };
 
   return (
     <div className="pop-up-overlay">
       <div className="pop-up-modal">
-        <span className="pop-up-close" onClick={onClose}>
-          ×
-        </span>
+        <span className="pop-up-close" onClick={onClose}>×</span>
 
         <h3 className="pop-up-title">Get a Quote</h3>
 
@@ -150,9 +140,7 @@ const handleSubmit = (e) => {
               className="pop-up-input"
               placeholder="Enter your phone number"
             />
-            {errors.phone && (
-              <span className="pop-up-error">{errors.phone}</span>
-            )}
+            {errors.phone && <span className="pop-up-error">{errors.phone}</span>}
           </div>
 
           <div className="pop-up-field">
@@ -165,9 +153,7 @@ const handleSubmit = (e) => {
               className="pop-up-input"
               placeholder="Enter your email"
             />
-            {errors.email && (
-              <span className="pop-up-error">{errors.email}</span>
-            )}
+            {errors.email && <span className="pop-up-error">{errors.email}</span>}
           </div>
 
           <div className="pop-up-field">
@@ -180,9 +166,7 @@ const handleSubmit = (e) => {
               rows="3"
               placeholder="Enter your address"
             ></textarea>
-            {errors.address && (
-              <span className="pop-up-error">{errors.address}</span>
-            )}
+            {errors.address && <span className="pop-up-error">{errors.address}</span>}
           </div>
 
           <div className="pop-up-field">
@@ -195,19 +179,13 @@ const handleSubmit = (e) => {
             >
               <option value="">Options</option>
               {products.map((p, i) => (
-                <option key={i} value={p}>
-                  {p}
-                </option>
+                <option key={i} value={p}>{p}</option>
               ))}
             </select>
-            {errors.product && (
-              <span className="pop-up-error">{errors.product}</span>
-            )}
+            {errors.product && <span className="pop-up-error">{errors.product}</span>}
           </div>
 
-          <button type="submit" className="pop-up-submit-btn">
-            Submit
-          </button>
+          <button type="submit" className="pop-up-submit-btn">Submit</button>
         </form>
       </div>
     </div>

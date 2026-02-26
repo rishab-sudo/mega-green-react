@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Work.css";
+
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
 import img1 from "../assets/projects/mega-city-hd1.png";
 import img2 from "../assets/projects/mega-city-hd2.png";
 import img3 from "../assets/projects/mega-dream-home-hd1.png";
@@ -44,31 +51,27 @@ const Work = () => {
       const totalScroll = section.offsetHeight - vh;
       const scrolled = Math.min(Math.max(-rect.top, 0), totalScroll);
 
-      const p = totalScroll > 0 ? scrolled / totalScroll : 0; // 0 → 1
+      const p = totalScroll > 0 ? scrolled / totalScroll : 0;
       setProgress(p);
 
-      // which image segment
       const step = 1 / images.length;
       const idx = Math.floor(p / step);
 
       if (idx >= 0 && idx < images.length) {
         setActiveIndex(idx);
 
-        // local progress inside this image (0 → 1)
         const local = (p - idx * step) / step;
 
-        // first half zoom-in, second half zoom-out
         if (local < 0.5) {
-          const t = local / 0.5; // 0 → 1
-          setScale(0.6 + t * 0.6); // 0.6 → 1.2
-          setOpacity(t); // 0 → 1
+          const t = local / 0.5;
+          setScale(0.6 + t * 0.6);
+          setOpacity(t);
         } else {
-          const t = (local - 0.5) / 0.5; // 0 → 1
-          setScale(1.2 - t * 0.4); // 1.2 → 0.8
-          setOpacity(1 - t); // 1 → 0
+          const t = (local - 0.5) / 0.5;
+          setScale(1.2 - t * 0.4);
+          setOpacity(1 - t);
         }
       } else {
-        // outside range → show nothing in center
         setActiveIndex(-1);
         setOpacity(0);
       }
@@ -79,69 +82,91 @@ const Work = () => {
   }, []);
 
   return (
-    <section className="work" ref={sectionRef}>
-      <div className="work-sticky">
-        <div className="work-container">
-          {/* Title */}
-          <div className="title-div">
-            <h2
-              className={`work-title page-heading ${
-                progress > 0.05 ? "centered" : ""
-              }`}
-            >
-              OUR WORK<span></span>
-            </h2>
-          </div>
-
-          {/* 🔹 Initial layout images (UNCHANGED) */}
-          <img src={img1} alt="work1" className="work-img work-img-1" />
-          <img src={img6} alt="work6" className="work-img work-img-6" />
-          <img src={img2} alt="work2" className="work-img work-img-2" />
-          <img src={img3} alt="work3" className="work-img work-img-3" />
-          <img src={img4} alt="work4" className="work-img work-img-4" />
-          <img src={img5} alt="work5" className="work-img work-img-5" />
-          <img src={img7} alt="work7" className="work-img work-img-7" />
-          <img src={img8} alt="work8" className="work-img work-img-8" />
-
-          {/* 🔹 Center zoom image + project name */}
-          {activeIndex !== -1 && opacity > 0.05 && (
-            <>
-              <img
-                src={images[activeIndex]}
-                alt="work-zoom"
-                className="work-center-zoom"
-                style={{
-                  transform: `translate(-50%, -50%) scale(${scale})`,
-                  opacity: opacity,
-                }}
-              />
-
-              {/* 🔹 Project Name OVER image, CENTER */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: `translate(-50%, -50%) scale(${scale})`,
-                  zIndex: 11,
-                  color: "#fff",
-                  fontSize: "32px",
-                  fontWeight: "700",
-                  opacity: opacity,
-                  pointerEvents: "none",
-                  transition: "opacity 0.2s ease",
-                  textAlign: "center",
-                  whiteSpace: "nowrap",
-                  textShadow: "0 4px 12px rgba(0,0,0,0.6)",
-                }}
+    <>
+      {/* ================= DESKTOP VERSION ================= */}
+      <section className="work desktop-work" ref={sectionRef}>
+        <div className="work-sticky">
+          <div className="work-container">
+            <div className="title-div">
+              <h2
+                className={`work-title page-heading ${
+                  progress > 0.05 ? "centered" : ""
+                }`}
               >
-                {projectNames[activeIndex]}
-              </div>
-            </>
-          )}
+                OUR WORK
+              </h2>
+            </div>
+
+            <img src={img1} alt="work1" className="work-img work-img-1" />
+            <img src={img6} alt="work6" className="work-img work-img-6" />
+            <img src={img2} alt="work2" className="work-img work-img-2" />
+            <img src={img3} alt="work3" className="work-img work-img-3" />
+            <img src={img4} alt="work4" className="work-img work-img-4" />
+            <img src={img5} alt="work5" className="work-img work-img-5" />
+            <img src={img7} alt="work7" className="work-img work-img-7" />
+            <img src={img8} alt="work8" className="work-img work-img-8" />
+
+            {activeIndex !== -1 && opacity > 0.05 && (
+              <>
+                <img
+                  src={images[activeIndex]}
+                  alt="work-zoom"
+                  className="work-center-zoom"
+                  style={{
+                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    opacity: opacity,
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    zIndex: 11,
+                    color: "#fff",
+                    fontSize: "32px",
+                    fontWeight: "700",
+                    opacity: opacity,
+                    pointerEvents: "none",
+                    textShadow: "0 4px 12px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  {projectNames[activeIndex]}
+                </div>
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ================= MOBILE VERSION (SWIPER) ================= */}
+      <section className="mobile-work">
+        <h2 className="page-heading" style={{ textAlign: "center" }}>
+          OUR WORK
+        </h2>
+
+        <Swiper
+          modules={[Pagination]}
+          slidesPerView={1}     // 👈 ONE BY ONE
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          loop={true}
+        >
+          {images.map((img, i) => (
+            <SwiperSlide key={i}>
+              <div className="mobile-slide">
+                <img src={img} alt={projectNames[i]} />
+                <div className="mobile-slide-title">
+                  {projectNames[i]}
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+    </>
   );
 };
 

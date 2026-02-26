@@ -3,9 +3,9 @@ import "./HomeProperties.css";
 import { Container } from "react-bootstrap";
 
 const data = [
-  { title: "Villa 1 ", img: require("../assets/projects/villa1.jpeg") },
-  { title: "Villa 2", img: require("../assets/projects/villa2.jpeg") },
-  { title: "Villa 3", img: require("../assets/projects/villa3.jpeg") },
+  { title: "Villa - A ", img: require("../assets/projects/villa1.jpeg") },
+  { title: "Villa - B", img: require("../assets/projects/villa2.jpeg") },
+  { title: "Villa - C", img: require("../assets/projects/villa3.jpeg") },
 ];
 
 const HomeProperties = () => {

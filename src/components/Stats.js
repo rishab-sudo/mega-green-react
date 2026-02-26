@@ -4,11 +4,11 @@ import { FaAward, FaUsers, FaGlobe } from "react-icons/fa";
 import "./Stats.css";
 
 const Stats = () => {
-  const statsData = [
-    { icon: <FaAward />, number: 10, text: "Awards Winning", suffix: "M" },
-    { icon: <FaUsers />, number: 25, text: "Happy Clients", suffix: "K" },
-    { icon: <FaGlobe />, number: 50, text: "Projects Completed", suffix: "+" },
-  ];
+const statsData = [
+  { icon: <FaAward />, number: 25, text: "Years of Experience", suffix: "+" },
+  { icon: <FaUsers />, number: 25, text: "Happy Clients", suffix: "K" },
+  { icon: <FaGlobe />, number: 15, text: "Projects Completed", suffix: "+" },
+];
 
   return (
     <div className="stats-section">

@@ -4,7 +4,7 @@ import "./HomeBanner.css";
 function HomeBanner() {
   return (
     <section className="homebanner">
-      <Carousel slide interval={3000} >
+      <Carousel slide interval={2700} >
         
         {/* Slide 1 */}
         <Carousel.Item>

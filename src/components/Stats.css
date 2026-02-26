@@ -1,6 +1,9 @@
 .stats-section {
   padding: 15px 20px;
-  background: #f9f9f9;
+  background-image: url("../assets//banner//white-bg-texture22.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .stats-container {
@@ -30,7 +33,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: lightgray;
+  background: #3F412B;
   color: #fff;
   display: flex;
   align-items: center;

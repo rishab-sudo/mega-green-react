@@ -19,11 +19,11 @@ const Footer = () => {
     Mega Green City offers thoughtfully designed, eco-friendly homes with quality construction and modern comfort.
   </p>
 </div>
-                <div className="social-icons">
+                {/* <div className="social-icons">
                   <a href="https://www.facebook.com/profile.php?"><FaFacebook /></a>
                   <a href="https://www.linkedin.com/company/"><FaLinkedin /></a>
                   <a href="https://www.instagram.com//"><FaInstagram /></a>
-                </div>
+                </div> */}
               </div>
             </Col>
 
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       <div className='copyright-div'>
-        Copyright © 2025 <span style={{ color: "#A1BE28" }}> MegaGreenCity</span>. All Right Reserved.
+        Copyright © 2026 <span style={{ color: "#A1BE28" }}> MegaGreenCity</span>. All Right Reserved.
       </div>
     </Container>
   );

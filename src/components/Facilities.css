@@ -4,7 +4,10 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-   background-color: rgba(255, 255, 255, 0.35) !important;
+  background:  url("../assets/banner//white-bg-texture22.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .facilities-grid {
@@ -85,13 +88,13 @@
 }
 
 /* The animated line */
-.dotted-line {
+/* .dotted-line {
   width: 0%;
   height: 2px;
   background-color: #3f412bd1; 
   transition: width 1.5s ease;
-  margin-bottom: 16px;
-}
+  margin-bottom: 15px;
+} */
 
 /* When section is visible */
 .dotted-line.animate {

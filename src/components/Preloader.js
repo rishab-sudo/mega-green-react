@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // import leaf from "../assets/leaf2.png"; 
 import "./Preloader.css";
 
-const text = "MEGHA GREEN CITY";
+const text = "MEGA GREEN CITY";
 
 const Preloader = ({ onFinish }) => {
   const [phase, setPhase] = useState("enter"); // enter -> shrink

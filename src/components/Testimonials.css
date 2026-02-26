@@ -1,13 +1,12 @@
 .testimonials-section {
   padding: 60px 20px;
-  background: #f9f9f9;
   text-align: center;
+  background: url("../assets/banner/white-bg-texture22.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.testimonials-slider{
-  display: flex;
-  justify-content: center;
-  margin: auto !important;
-}
+
 .testimonials-header h2 {
   margin-bottom: 10px;
   color: #222;
@@ -15,7 +14,6 @@
 
 .testimonials-header p {
   margin: 0 auto 40px;
-
 }
 
 .testimonials-container {
@@ -27,14 +25,12 @@
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  margin: 10px;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px;
-  max-width: 350px;
+  min-height: 260px;
 }
 
 .testimonial-top {
@@ -83,20 +79,20 @@
   color: #f5b50a;
 }
 
-/* Slick Dots */
-.slick-dots li button:before {
-  font-size: 10px;
-  color: #888;
+/* Swiper pagination dots */
+.swiper-pagination-bullet {
+  background: #888;
+  opacity: 0.6;
 }
 
-.slick-dots li.slick-active button:before {
-  color: #222;
+.swiper-pagination-bullet-active {
+  background: #222;
+  opacity: 1;
 }
 
+/* Mobile tweaks */
 @media (max-width: 767px) {
-.testimonial-card {
-    width: 100% !important;
-    /* max-width: 100% !important; */
-    margin: 0 auto 2rem auto; /* center horizontally */
-}
+  .testimonial-card {
+    min-height: auto;
+  }
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// import leaf from "../assets/leaf2.png"; 
 import "./Preloader.css";
 
 const text = "MEGHA GREEN CITY";
@@ -18,23 +19,26 @@ const Preloader = ({ onFinish }) => {
     };
   }, [onFinish]);
 
-  return (
-    <div className={`preloader ${phase}`}>
-      <div className="preloader-inner">
-        <h1 className="preloader-title">
-          {text.split("").map((char, i) => (
-            <span
-              key={i}
-              className="letter"
-              style={{ animationDelay: `${i * 0.08}s` }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </span>
-          ))}
-        </h1>
-      </div>
+return (
+  <div className={`preloader ${phase}`}>
+    <div className="preloader-inner">
+      <h1 className="preloader-title">
+        {text.split("").map((char, i) => (
+          <span
+            key={i}
+            className="letter"
+            style={{ animationDelay: `${i * 0.08}s` }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </span>
+        ))}
+      </h1>
+
+      {/* 🌿 Leaf image */}
+      {/* <img src={leaf} alt="leaf" className="preloader-leaf" /> */}
     </div>
-  );
+  </div>
+);
 };
 
 export default Preloader;

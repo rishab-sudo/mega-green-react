@@ -20,6 +20,19 @@
   transform: translateY(120px);
   animation: textEnter 1s ease-out forwards;
 }
+/* .preloader-inner {
+  position: relative; 
+}
+
+.preloader-leaf {
+  position: absolute;
+  top: -25px;    
+  right: -30px;   
+  width: 75px;    
+  height: auto;
+  pointer-events: none; 
+
+} */
 .letter {
   position: relative;
   display: inline-block;

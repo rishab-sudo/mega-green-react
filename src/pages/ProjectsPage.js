@@ -40,7 +40,7 @@ const [current, setCurrent] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 3500); // change slide every 4 seconds
+    }, 2500); // change slide every 4 seconds
 
     return () => clearInterval(interval);
   }, []);

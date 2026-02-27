@@ -26,7 +26,7 @@ const About = () => {
       <h2 className='page-heading'>About Our Company</h2>
 </div>
       <p className='page-description'>
-        Each apartments has been individually designed to maximise space and
+        Each villa has been individually designed to maximise space and
         light. Smart Home Technology installed as standard in each apartment
         putting you in total control of your home at the touch of a button from
         wherever you might be.

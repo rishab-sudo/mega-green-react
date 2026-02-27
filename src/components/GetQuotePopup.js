@@ -20,6 +20,18 @@ const GetQuotePopup = ({ open, onClose }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
+
+    setErrors((prevErrors) => {
+      const newErrors = { ...prevErrors };
+
+      if (name === "name" && value.trim()) delete newErrors.name;
+      if (name === "phone" && /^[0-9]{10}$/.test(value)) delete newErrors.phone;
+      if (name === "email" && /^\S+@\S+\.\S+$/.test(value)) delete newErrors.email;
+      if (name === "address" && value.trim()) delete newErrors.address;
+      if (name === "product" && value.trim()) delete newErrors.product;
+
+      return newErrors;
+    });
   };
 
   const validate = () => {
@@ -27,21 +39,16 @@ const GetQuotePopup = ({ open, onClose }) => {
 
     if (!form.name.trim()) newErrors.name = "Full name is required";
 
-    if (!form.phone.trim())
-      newErrors.phone = "Phone number is required";
+    if (!form.phone.trim()) newErrors.phone = "Phone number is required";
     else if (!/^[0-9]{10}$/.test(form.phone))
       newErrors.phone = "Enter valid 10 digit phone number";
 
-    if (!form.email.trim())
-      newErrors.email = "Email is required";
+    if (!form.email.trim()) newErrors.email = "Email is required";
     else if (!/^\S+@\S+\.\S+$/.test(form.email))
       newErrors.email = "Enter valid email";
 
-    if (!form.address.trim())
-      newErrors.address = "Address is required";
-
-    if (!form.product.trim())
-      newErrors.product = "Please select an option";
+    if (!form.address.trim()) newErrors.address = "Address is required";
+    if (!form.product.trim()) newErrors.product = "Please select an option";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -50,13 +57,12 @@ const GetQuotePopup = ({ open, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validate()) {
-      Swal.fire("Error", "Please fix errors before submitting", "error");
-      return;
-    }
-
+const isValid = validate();
+if (!isValid) {
+  return;
+}
     try {
-      const res = await fetch("/send-form.php", {
+      const res = await fetch("/send-contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -65,7 +71,13 @@ const GetQuotePopup = ({ open, onClose }) => {
       const data = await res.json();
 
       if (res.ok) {
-        Swal.fire("Success!", data.message, "success");
+        onClose();
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Your quote request has been submitted successfully.",
+          confirmButtonColor: "#a1be28",
+        });
 
         setForm({
           name: "",
@@ -74,14 +86,18 @@ const GetQuotePopup = ({ open, onClose }) => {
           address: "",
           product: "",
         });
-
         setErrors({});
-        onClose();
       } else {
-        throw new Error(data.message);
+        throw new Error(data.message || "Server error");
       }
     } catch (err) {
-      Swal.fire("Error!", err.message || "Server error", "error");
+      onClose();
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Something went wrong. Please try again later.",
+        confirmButtonColor: "#d33",
+      });
     }
   };
 
@@ -90,58 +106,78 @@ const GetQuotePopup = ({ open, onClose }) => {
       <div className="pop-up-modal">
         <span className="pop-up-close" onClick={onClose}>×</span>
 
-        <h3>Get a Quote</h3>
+        <h3 className="pop-up-title">Get a Quote</h3>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={form.name}
-            onChange={handleChange}
-          />
-          {errors.name && <span className="pop-up-error">{errors.name}</span>}
+        <form className="pop-up-form" onSubmit={handleSubmit}>
+          <div className="pop-up-field">
+            <label className="pop-up-label">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              className="pop-up-input"
+              placeholder="Enter your full name"
+            />
+            {errors.name && <span className="pop-up-error">{errors.name}</span>}
+          </div>
 
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={handleChange}
-          />
-          {errors.phone && <span className="pop-up-error">{errors.phone}</span>}
+          <div className="pop-up-field">
+            <label className="pop-up-label">Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              className="pop-up-input"
+              placeholder="Enter your phone number"
+            />
+            {errors.phone && <span className="pop-up-error">{errors.phone}</span>}
+          </div>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={handleChange}
-          />
-          {errors.email && <span className="pop-up-error">{errors.email}</span>}
+          <div className="pop-up-field">
+            <label className="pop-up-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className="pop-up-input"
+              placeholder="Enter your email"
+            />
+            {errors.email && <span className="pop-up-error">{errors.email}</span>}
+          </div>
 
-          <textarea
-            name="address"
-            placeholder="Address"
-            rows="3"
-            value={form.address}
-            onChange={handleChange}
-          ></textarea>
-          {errors.address && <span className="pop-up-error">{errors.address}</span>}
+          <div className="pop-up-field">
+            <label className="pop-up-label">Address</label>
+            <textarea
+              name="address"
+              value={form.address}
+              onChange={handleChange}
+              className="pop-up-textarea"
+              rows="3"
+              placeholder="Enter your address"
+            ></textarea>
+            {errors.address && <span className="pop-up-error">{errors.address}</span>}
+          </div>
 
-          <select
-            name="product"
-            value={form.product}
-            onChange={handleChange}
-          >
-            <option value="">Select Option</option>
-            {products.map((p, i) => (
-              <option key={i} value={p}>{p}</option>
-            ))}
-          </select>
-          {errors.product && <span className="pop-up-error">{errors.product}</span>}
+          <div className="pop-up-field">
+            <label className="pop-up-label">Select Options</label>
+            <select
+              name="product"
+              value={form.product}
+              onChange={handleChange}
+              className="pop-up-input"
+            >
+              <option value="">Options</option>
+              {products.map((p, i) => (
+                <option key={i} value={p}>{p}</option>
+              ))}
+            </select>
+            {errors.product && <span className="pop-up-error">{errors.product}</span>}
+          </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" className="pop-up-submit-btn">Submit</button>
         </form>
       </div>
     </div>

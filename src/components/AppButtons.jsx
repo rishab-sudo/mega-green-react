@@ -20,7 +20,7 @@ const AppButtons = () => {
   }, []);
 
   const handleWhatsApp = () => {
-    const phoneNumber = "91"; // change number
+    const phoneNumber = "919690177555"; // change number
     const message = "Hello, I want to know more.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message

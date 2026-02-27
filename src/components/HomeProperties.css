@@ -2,9 +2,9 @@
   margin: 1.5% auto;
   width: 100%;
   text-align: center;
-background-color: #3F412B;
-   /* background-color: #A1BE28; */
-   padding: 45px 0px;
+  background-color: #3F412B;
+  padding: 45px 0px;
+  padding-bottom: 0px;
 }
 
 /* Heading + lines */
@@ -14,12 +14,11 @@ background-color: #3F412B;
   justify-content: center;
   gap: 20px;
   margin-bottom: 40px;
- 
 }
-.heading-container{
+
+.heading-container {
   margin-top: 2.5%;
   font-family: "Geologica", sans-serif;
-
 }
 
 .villa-heading {
@@ -27,21 +26,14 @@ background-color: #3F412B;
   text-transform: uppercase;
   white-space: nowrap;
   color: #fff;
-
 }
-
 
 .villa-line {
   height: 2px;
   background: #fff;
-  width: 0;                 /* start collapsed */
+  width: 0;
   transition: width 1s ease;
   flex-shrink: 0;
-}
-
-/* On scroll: lines stretch */
-.villa-section.active .villa-line {
-  width: 45%;
 }
 
 /* Image */
@@ -58,8 +50,42 @@ background-color: #3F412B;
   border-radius: 6px;
 }
 
-/* On scroll: image expands */
-.villa-section.active .villa-image {
-  width: 100%;
-  height: 85vh; /* adjust as per design */
+/* ============================= */
+/* NEW GRAY CONTENT SECTION */
+/* ============================= */
+
+.villa-content {
+  background-color: #fbfbfb;   /* Gray background */
+  padding: 35px 20px;
+  margin-top: 40px;
+}
+
+.villa-subheading {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+  text-transform: uppercase;
+}
+
+.villa-description {
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .villa-heading {
+    font-size: 28px;
+  }
+
+  .villa-subheading {
+    font-size: 20px;
+  }
+
+  .villa-description {
+    font-size: 14px;
+  }
 }

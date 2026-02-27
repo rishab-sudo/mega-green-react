@@ -11,37 +11,38 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validate = () => {
-    if (!form.name.trim()) {
-      Swal.fire("Error", "Name is required", "error");
-      return false;
-    }
+    const newErrors = {};
 
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) {
-      Swal.fire("Error", "Valid email is required", "error");
-      return false;
-    }
+    if (!form.name.trim()) newErrors.name = "Name is required";
 
-    if (!/^[0-9]{10}$/.test(form.phone)) {
-      Swal.fire("Error", "Enter valid 10 digit phone number", "error");
-      return false;
-    }
+    if (!form.email.trim())
+      newErrors.email = "Email is required";
+    else if (!/^\S+@\S+\.\S+$/.test(form.email))
+      newErrors.email = "Invalid email";
 
-    if (!form.subject.trim()) {
-      Swal.fire("Error", "Subject is required", "error");
-      return false;
-    }
+    if (!form.phone.trim())
+      newErrors.phone = "Phone is required";
+    else if (!/^[0-9]{10}$/.test(form.phone))
+      newErrors.phone = "Enter valid 10 digit phone";
 
-    if (!form.message.trim()) {
-      Swal.fire("Error", "Message is required", "error");
-      return false;
-    }
+    if (!form.subject.trim())
+      newErrors.subject = "Subject is required";
 
-    return true;
+    if (!form.message.trim())
+      newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
@@ -50,7 +51,7 @@ const ContactForm = () => {
     if (!validate()) return;
 
     try {
-      const res = await fetch("/send-form.php", {
+      const res = await fetch("/send-contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -58,8 +59,13 @@ const ContactForm = () => {
 
       const data = await res.json();
 
-      if (res.ok) {
-        Swal.fire("Success!", data.message, "success");
+      if (data.status) {
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: data.message,
+          confirmButtonColor: "#a1be28",
+        });
 
         setForm({
           name: "",
@@ -68,11 +74,22 @@ const ContactForm = () => {
           subject: "",
           message: "",
         });
+        setErrors({});
       } else {
-        throw new Error(data.message);
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: data.message,
+          confirmButtonColor: "#d33",
+        });
       }
     } catch (err) {
-      Swal.fire("Error!", err.message || "Server error", "error");
+      Swal.fire({
+        icon: "error",
+        title: "Server Error",
+        text: "Please try again later.",
+        confirmButtonColor: "#d33",
+      });
     }
   };
 
@@ -83,25 +100,27 @@ const ContactForm = () => {
       <form className="contact-form-form" onSubmit={handleSubmit}>
         <div className="contact-form-row">
           <div className="contact-form-field">
-            <label>Your Name</label>
+            <label className="contact-form-label">Your Name</label>
             <input
               type="text"
               name="name"
+              placeholder="Enter your name"
+              className="contact-form-input"
               value={form.name}
               onChange={handleChange}
-              placeholder="Enter your name"
               required
             />
           </div>
 
           <div className="contact-form-field">
-            <label>Your Email</label>
+            <label className="contact-form-label">Your Email</label>
             <input
               type="email"
               name="email"
+              placeholder="Enter your email"
+              className="contact-form-input"
               value={form.email}
               onChange={handleChange}
-              placeholder="Enter your email"
               required
             />
           </div>
@@ -109,38 +128,41 @@ const ContactForm = () => {
 
         <div className="contact-form-row">
           <div className="contact-form-field">
-            <label>Phone Number</label>
+            <label className="contact-form-label">Phone Number</label>
             <input
               type="tel"
               name="phone"
+              placeholder="Enter your phone number"
+              className="contact-form-input"
               value={form.phone}
               onChange={handleChange}
-              placeholder="Enter 10 digit phone number"
               required
             />
           </div>
 
           <div className="contact-form-field">
-            <label>Subject</label>
+            <label className="contact-form-label">Subject</label>
             <input
               type="text"
               name="subject"
+              placeholder="Enter subject"
+              className="contact-form-input"
               value={form.subject}
               onChange={handleChange}
-              placeholder="Enter subject"
               required
             />
           </div>
         </div>
 
         <div className="contact-form-field">
-          <label>Your Message</label>
+          <label className="contact-form-label">Your Message</label>
           <textarea
             name="message"
+            placeholder="Type your message here..."
+            className="contact-form-textarea"
             rows="5"
             value={form.message}
             onChange={handleChange}
-            placeholder="Type your message..."
             required
           ></textarea>
         </div>

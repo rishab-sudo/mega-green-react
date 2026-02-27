@@ -15,11 +15,42 @@ const ContactForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const validate = () => {
+    if (!form.name.trim()) {
+      Swal.fire("Error", "Name is required", "error");
+      return false;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+      Swal.fire("Error", "Valid email is required", "error");
+      return false;
+    }
+
+    if (!/^[0-9]{10}$/.test(form.phone)) {
+      Swal.fire("Error", "Enter valid 10 digit phone number", "error");
+      return false;
+    }
+
+    if (!form.subject.trim()) {
+      Swal.fire("Error", "Subject is required", "error");
+      return false;
+    }
+
+    if (!form.message.trim()) {
+      Swal.fire("Error", "Message is required", "error");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!validate()) return;
+
     try {
-      const res = await fetch("/send-contact.php", {
+      const res = await fetch("/send-form.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -28,12 +59,7 @@ const ContactForm = () => {
       const data = await res.json();
 
       if (res.ok) {
-        Swal.fire({
-          icon: "success",
-          title: "Success!",
-          text: "Your message has been sent successfully.",
-          confirmButtonColor: "#a1be28",
-        });
+        Swal.fire("Success!", data.message, "success");
 
         setForm({
           name: "",
@@ -43,15 +69,10 @@ const ContactForm = () => {
           message: "",
         });
       } else {
-        throw new Error(data.message || "Server error");
+        throw new Error(data.message);
       }
     } catch (err) {
-      Swal.fire({
-        icon: "error",
-        title: "Error!",
-        text: "Something went wrong. Please try again later.",
-        confirmButtonColor: "#d33",
-      });
+      Swal.fire("Error!", err.message || "Server error", "error");
     }
   };
 
@@ -62,27 +83,25 @@ const ContactForm = () => {
       <form className="contact-form-form" onSubmit={handleSubmit}>
         <div className="contact-form-row">
           <div className="contact-form-field">
-            <label className="contact-form-label">Your Name</label>
+            <label>Your Name</label>
             <input
               type="text"
               name="name"
-              placeholder="Enter your name"
-              className="contact-form-input"
               value={form.name}
               onChange={handleChange}
+              placeholder="Enter your name"
               required
             />
           </div>
 
           <div className="contact-form-field">
-            <label className="contact-form-label">Your Email</label>
+            <label>Your Email</label>
             <input
               type="email"
               name="email"
-              placeholder="Enter your email"
-              className="contact-form-input"
               value={form.email}
               onChange={handleChange}
+              placeholder="Enter your email"
               required
             />
           </div>
@@ -90,41 +109,38 @@ const ContactForm = () => {
 
         <div className="contact-form-row">
           <div className="contact-form-field">
-            <label className="contact-form-label">Phone Number</label>
+            <label>Phone Number</label>
             <input
               type="tel"
               name="phone"
-              placeholder="Enter your phone number"
-              className="contact-form-input"
               value={form.phone}
               onChange={handleChange}
+              placeholder="Enter 10 digit phone number"
               required
             />
           </div>
 
           <div className="contact-form-field">
-            <label className="contact-form-label">Subject</label>
+            <label>Subject</label>
             <input
               type="text"
               name="subject"
-              placeholder="Enter subject"
-              className="contact-form-input"
               value={form.subject}
               onChange={handleChange}
+              placeholder="Enter subject"
               required
             />
           </div>
         </div>
 
         <div className="contact-form-field">
-          <label className="contact-form-label">Your Message</label>
+          <label>Your Message</label>
           <textarea
             name="message"
-            placeholder="Type your message here..."
-            className="contact-form-textarea"
             rows="5"
             value={form.message}
             onChange={handleChange}
+            placeholder="Type your message..."
             required
           ></textarea>
         </div>

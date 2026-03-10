@@ -15,6 +15,7 @@ import Contact from './pages/ContactUs';
 
 import Preloader from './components/Preloader';
 import AppButtons from './components/AppButtons';
+import DownloadBrochure from "./components/DownloadBrochure";
 
 function App() {
  const [loadingDone, setLoadingDone] = useState(() => {
@@ -48,6 +49,7 @@ function App() {
 
   {/* Main App is ALWAYS rendered */}
         <Navbar />
+        <DownloadBrochure />
         <AppButtons/>
       <div className="App">
 

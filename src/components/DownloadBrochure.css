@@ -1,0 +1,27 @@
+.brochure-wrapper{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99999;
+}
+
+.brochure-btn{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  background:#3F412B;
+  color:#fff;
+  border:none;
+
+  padding:15px 10px;
+  font-size:15px;
+  font-weight:600;
+
+  cursor:pointer;
+  border-radius:8px 0 0 8px;
+}
+
+.brochure-btn:hover{
+  background:#3F412B;
+}

@@ -4,7 +4,7 @@ import "./DownloadBrochure.css";
 const DownloadBrochure = () => {
 
   const openPDF = () => {
-    window.open("/mg-brochure.pdf", "_blank");
+    window.open("/MegaGreenCity-Brochure.pdf", "_blank");
   };
 
   return (

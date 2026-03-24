@@ -98,6 +98,7 @@ const ContactForm = () => {
       <h3 className="contact-form-title">Send Us a Message</h3>
 
       <form className="contact-form-form" onSubmit={handleSubmit}>
+        
         <div className="contact-form-row">
           <div className="contact-form-field">
             <label className="contact-form-label">Your Name</label>
@@ -108,8 +109,8 @@ const ContactForm = () => {
               className="contact-form-input"
               value={form.name}
               onChange={handleChange}
-              required
             />
+            {errors.name && <span className="error">{errors.name}</span>}
           </div>
 
           <div className="contact-form-field">
@@ -121,8 +122,8 @@ const ContactForm = () => {
               className="contact-form-input"
               value={form.email}
               onChange={handleChange}
-              required
             />
+            {errors.email && <span className="error">{errors.email}</span>}
           </div>
         </div>
 
@@ -136,8 +137,8 @@ const ContactForm = () => {
               className="contact-form-input"
               value={form.phone}
               onChange={handleChange}
-              required
             />
+            {errors.phone && <span className="error">{errors.phone}</span>}
           </div>
 
           <div className="contact-form-field">
@@ -149,8 +150,8 @@ const ContactForm = () => {
               className="contact-form-input"
               value={form.subject}
               onChange={handleChange}
-              required
             />
+            {errors.subject && <span className="error">{errors.subject}</span>}
           </div>
         </div>
 
@@ -163,8 +164,8 @@ const ContactForm = () => {
             rows="5"
             value={form.message}
             onChange={handleChange}
-            required
           ></textarea>
+          {errors.message && <span className="error">{errors.message}</span>}
         </div>
 
         <button type="submit" className="contact-form-btn">

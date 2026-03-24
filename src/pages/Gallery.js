@@ -25,20 +25,20 @@ const Gallery = () => {
 
           <div className="gallery-grid">
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img1" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img2" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img1" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img2" alt="mega-green-city-gallery"/>
             </div>
 
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img3" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img4" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img5" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img6" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img3" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img4" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img5" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img6" alt="mega-green-city-gallery"/>
             </div>
 
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img7" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img8" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img7" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img8" alt="mega-green-city-gallery"/>
             </div>
           </div>
         </div>
@@ -54,20 +54,20 @@ const Gallery = () => {
 
           <div className="gallery-grid">
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img1" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img2" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img1" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img2" alt="mega-green-city-gallery"/>
             </div>
 
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img3" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img4" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img5" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img6" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img3" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img4" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img5" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img6" alt="mega-green-city-gallery"/>
             </div>
 
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img7" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img8" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img7" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img8" alt="mega-green-city-gallery"/>
             </div>
           </div>
         </div>
@@ -83,20 +83,20 @@ const Gallery = () => {
 
           <div className="gallery-grid">
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img1" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img2" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img1" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img2" alt="mega-green-city-gallery"/>
             </div>
 
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img3" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img4" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img5" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img6" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img3" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img4" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img5" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img6" alt="mega-green-city-gallery"/>
             </div>
 
             <div className="gallery-col">
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img7" />
-              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img8" />
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img7" alt="mega-green-city-gallery"/>
+              <img src={require("../assets/mock-gallery.jpg")} className="gallery-section1-img gallery-section1-img8" alt="mega-green-city-gallery"/>
             </div>
           </div>
         </div>

@@ -20,11 +20,7 @@ const FloorPlan = () => {
     ],
   };
 
-  // 🔥 handle all / filtered images
-  const displayedPlans =
-    active === "all"
-      ? Object.values(plans).flat()
-      : plans[active];
+
 
   return (
     <>

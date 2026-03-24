@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, } from "react-bootstrap";
 import "./ProjectsPage.css";
 import ProjectPageBanner from "../components/ProjectPageBanner";

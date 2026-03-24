@@ -1,6 +1,5 @@
 import React from 'react'
 import HomeBanner from '../components/HomeBanner'
-import HomeAbout from '../components/HomeAbout'
 import HomeProperties from '../components/HomeProperties'
 import { motion } from "framer-motion";
 import Appartments from '../components/Appartments'

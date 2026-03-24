@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Carousel } from "react-bootstrap";
+import { Container, } from "react-bootstrap";
 import "./ProjectsPage.css";
 import ProjectPageBanner from "../components/ProjectPageBanner";
 import img1 from "../assets/projects/villa1.jpeg";
@@ -12,15 +12,15 @@ const images = [img1, img2, img3, img4];
 
 
 const Projects = () => {
-  const [current, setCurrent] = useState(0);
+  // const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 1500);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  //   }, 1500);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <>

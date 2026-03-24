@@ -2,7 +2,7 @@
   margin: 1.5% auto;
   width: 100%;
   text-align: center;
-  background-color: #3F412B;
+  background-color: #faedc862;
   padding: 45px 0px;
   padding-bottom: 0px;
 }
@@ -17,7 +17,7 @@
 }
 
 .heading-container {
-  margin-top: 2.5%;
+  margin-top: 2.5% !important;
   font-family: "Geologica", sans-serif;
 }
 
@@ -25,12 +25,12 @@
   font-size: 45px;
   text-transform: uppercase;
   white-space: nowrap;
-  color: #fff;
+  color: #3F412B;
 }
 
 .villa-line {
   height: 2px;
-  background: #fff;
+  background: #3F412B;
   width: 0;
   transition: width 1s ease;
   flex-shrink: 0;
@@ -46,16 +46,17 @@
   width: 350px;
   height: 350px;
   object-fit: cover;
-  transition: all 1.2s ease;
-  border-radius: 6px;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 0px;
 }
+
 
 /* ============================= */
 /* NEW GRAY CONTENT SECTION */
 /* ============================= */
 
 .villa-content {
-  background-color: #fbfbfb;   /* Gray background */
+  background-color: #fff;   /* Gray background */
   padding: 35px 20px;
   margin-top: 40px;
 }
@@ -74,6 +75,62 @@
   line-height: 1.7;
   color: #555;
 }
+/*  */
+/* ===== FEATURES ROW ===== */
+.villa-features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 15px;
+  background: #fff;
+}
+
+/* Each item */
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+width: 150px;
+  padding: 15px 10px;
+  color: #333;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1); /* 🔥 smooth */
+  cursor: pointer;
+}
+
+/* 🔥 ZOOM + PINK BG */
+.feature-item:hover {
+  background: linear-gradient(135deg, #faedc862, #faedc862);
+  transform: scale(1.08); /* 🔥 main zoom */
+}
+
+/* icon */
+.feature-item img {
+  height: 45px;
+  width: 45px;
+  margin-bottom: 8px;
+  transition: all 0.35s ease;
+}
+
+.feature-item:hover img {
+  transform: scale(1.2);
+  filter: brightness(0); 
+}
+/* text */
+.feature-item span {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* text color change */
+.feature-item:hover span {
+  color: #000;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -87,5 +144,17 @@
 
   .villa-description {
     font-size: 14px;
+  }
+  .villa-features {
+    gap: 15px;
+  }
+
+  .feature-item {
+    width: calc(50% - 10px); /* 🔥 2 items per row */
+    align-items: flex-start; /* 🔥 left align content */
+  }
+
+  .feature-item span {
+    text-align: left;
   }
 }

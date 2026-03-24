@@ -1,10 +1,11 @@
 .exclusive {
-  margin-top: 0%;
+  margin-top: 3.6%;
   padding: 0px;
   display: flex;
   justify-content: center;
   /* background-color: #3f412b; */
-  background-color: #3F412B;
+  /* background-color: #3F412B; */
+  background-color: #faedc862;
 }
 
 .exclusive-container {
@@ -89,7 +90,7 @@
 
 .exclusive-thumb.active {
   opacity: 1;
-  border: 2px solid #A1BE28;
+  border: 2px solid #FAEDC8;
 }
 
 /* Right Side */
@@ -106,7 +107,7 @@
 
 .exclusive-heading {
   position: relative;
-  color: #fff;
+  color: #3F412B;
 padding-top:25px ;
 padding-bottom: 8px;
 }
@@ -119,12 +120,12 @@ padding-bottom: 8px;
   bottom: 0;
   width: 15%;
   height: 1.5px;         
-  background-color: #A1BE28;
+  background-color: #3F412B;
   border-radius: 2px;
 }
 
 .exclusive-description {
-  color: #fff;
+  color: #3F412B;
   line-height: 1.6;
 }
 
@@ -137,11 +138,11 @@ padding-bottom: 8px;
 .exclusive-point {
   display: flex;
   gap: 10px;
-  color: #fff;
+  color: #3F412B;
 }
 
 .point-icon {
-  color: #A1BE28;
+  color: #3F412B;
   font-size: 18px;
 }
 
@@ -150,16 +151,17 @@ padding-bottom: 8px;
   margin-top: 15px;
   padding: 8px 20px;
   background: none;
-  color: #fff;
+  color: #3F412B;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s;
-  border: 1px solid #b6d83a;;
+  border: 1px solid #3F412B;;
 }
 
 .exclusive-btn:hover {
-  background: #b6d83a;
+  background: #3F412B;
+  color: #fff !important;
 }
 
 /* Responsive */

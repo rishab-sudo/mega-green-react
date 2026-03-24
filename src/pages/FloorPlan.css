@@ -1,0 +1,77 @@
+.plan-section {
+  padding: 45px 0;
+  /* background-image: url("../assets/banner/white-bg-texture22.png");
+  background-size: cover;
+  background-position: cover; */
+  min-height: 100%;
+  background: #fff;
+  margin-top: 0px;
+  padding: 45px 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -30px 60px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* 🔘 Buttons */
+.plan-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.plan-buttons button {
+  padding: 8px 20px;
+  border: 1px solid #000;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.plan-buttons button:hover,
+.plan-buttons .active {
+  background: #3F412B;
+  color: #fff;
+}
+
+/* 🖼️ Grid */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: auto;
+  height: 100%;
+}
+
+/* 🖼️ Image Box */
+.plan-item img {
+  width: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ========================= */
+/* 🔥 NEW (SAFE ADDITION) */
+/* ========================= */
+
+.plan-grid-wrapper {
+  width: 100%;
+}
+
+.plan-row {
+  margin-bottom: 60px;
+}
+
+/* Left aligned heading */
+.plan-row-heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 5px;
+  position: relative;
+}
+

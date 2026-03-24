@@ -12,10 +12,13 @@ import Home from "./pages/Home";
 import About from './pages/About';
 import Projects from './pages/ProjectsPage';
 import Contact from './pages/ContactUs';
-
+import Gallery from './pages/Gallery';
 import Preloader from './components/Preloader';
 import AppButtons from './components/AppButtons';
+import FloorPlan from './pages/FloorPlan';
+import ProjectHighlight from "./pages/ProjectHighlight"
 import DownloadBrochure from "./components/DownloadBrochure";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
  const [loadingDone, setLoadingDone] = useState(() => {
@@ -36,35 +39,38 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      {/* Preloader always on top */}
-{!loadingDone && (
-  <Preloader
-    onFinish={() => {
-      sessionStorage.setItem("preloaderShown", "true");
-      setLoadingDone(true);
-    }}
-  />
-)}
+  <Router>
+  <ScrollToTop />   
 
-  {/* Main App is ALWAYS rendered */}
-        <Navbar />
-        <DownloadBrochure />
-        <AppButtons/>
-      <div className="App">
+  {!loadingDone && (
+    <Preloader
+      onFinish={() => {
+        sessionStorage.setItem("preloaderShown", "true");
+        setLoadingDone(true);
+      }}
+    />
+  )}
 
-        <Routes>
-          <Route path="*" element={<Home />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+  <Navbar />
+  <DownloadBrochure />
+  <AppButtons />
 
-        <Footer />
-      </div>
-    </Router>
+  <div className="App">
+    <Routes>
+      <Route path="*" element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/projects" element={<Projects />} />
+           <Route path="/project-highlight" element={<ProjectHighlight />} />
+      <Route path="/FloorPlan" element={<FloorPlan />} />
+        <Route path="/gallery" element={<Gallery />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+
+  </div>
+  <Footer />
+</Router>
   );
 }
 

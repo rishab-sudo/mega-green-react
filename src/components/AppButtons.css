@@ -13,7 +13,7 @@
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: #A1BE28;
+  background-color: #3F412B;
   color: #fff;
   border: none;
   font-size: 28px;
@@ -35,8 +35,8 @@
   height: 50px;
   border-radius: 50%;
   background: transparent;
-  border: 2px solid #A1BE28;
-  color: #A1BE28;
+  border: 2px solid #3F412B;
+  color: #3F412B;
   font-size: 20px;
   cursor: pointer;
   display: flex;
@@ -46,6 +46,7 @@
 }
 
 .top-btn:hover {
-  background-color: #A1BE28;
+  /* background-color: #A1BE28; */
+  background-color: #3F412B;
   color: #fff;
 }

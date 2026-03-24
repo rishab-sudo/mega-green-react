@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
 import { Container, Carousel } from "react-bootstrap";
-import Work from "../components/Work";
 import "./ProjectsPage.css";
 import ProjectPageBanner from "../components/ProjectPageBanner";
-
 import img1 from "../assets/projects/villa1.jpeg";
 import img2 from "../assets/projects/villa2.jpeg";
 import img3 from "../assets/projects/villa3.jpeg";
@@ -12,19 +9,7 @@ import img4 from "../assets/projects/villa-3-night.jpeg";
 
 const images = [img1, img2, img3, img4];
 
-const highlights = [
-  "GRAND ENTRANCE",
-  "24X7 GATED SECURITY",
-  "TREE LINED WELL LIT ROAD",
-  "FULLY EQUIPPED GYMNASIUM",
-  "HALF BASKETBALL COURT",
-  "TENNIS AND BADMINTON COURTS",
-  "SWIMMING POOL",
-  "LANDSCAPED GREEN SPACES",
-  "CHILDREN’S PLAY AREA WITH SLIDES AND SWINGS",
-  "CLEAN AND POLLUTION-FREE ENVIRONMENT",
-  "EARTHQUAKE-RESISTANT CONSTRUCTION",
-];
+
 
 const Projects = () => {
   const [current, setCurrent] = useState(0);
@@ -76,85 +61,32 @@ const Projects = () => {
         </div>
 
         {/* 🔹 Slider */}
-        <Container fluid className="new-project-slider-wrapper g-0">
-          <Carousel
-            controls={true}
-            indicators={false}
-            interval={2500}
-            pause="hover"
-            fade={false}
-          >
-            {images.map((img, index) => (
-              <Carousel.Item key={index}>
-                <img
-                  className="d-block w-100 new-project-carousel-img"
-                  src={img}
-                  alt={`slide-${index}`}
-                />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Container>
+<Container className="new-project-slider-wrapper">
+
+  {images.map((img, index) => (
+    <div className="carousel-img-wrapper" key={index}>
+
+      <div className="image-inner">
+
+        <img
+          className="new-project-carousel-img"
+          src={img}
+          alt={`villa-${index}`}
+        />
+
+        <div className="villa-overlay">
+          <h3>Villa {index + 1}</h3>
+        </div>
+
+      </div>
+
+    </div>
+  ))}
+
+</Container>
       </section>
 
-      {/* 🔹 Highlights */}
-      <section className="project-highlight">
-        <Container>
-          <div className="text-center highlight-heading-div">
-            <div className="heading-center-underline">
-              <h1 className="page-heading">PROJECT HIGHLIGHTS</h1>
-            </div>
-          </div>
-
-          <div className="project-highlight-grid">
-            {highlights.map((item, index) => (
-              <div className="highlight-box" key={index}>
-                <div className="highlight-icon">
-                  <FaCheckCircle />
-                </div>
-                <div className="highlight-text">{item}</div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 🔹 Plan Section */}
-      <section className="plan-section">
-        <Container fluid>
-          <div className="plan-heading-div heading-center-underline">
-            <h1 className="page-heading">PROJECT PLAN</h1>
-          </div>
-
-          <Container>
-            <div className="plan-grid">
-              <div className="plan-big">
-                <img src={require("../assets/projects/plan1.jpg")} alt="plan1" />
-              </div>
-              <div className="plan-small">
-                <img src={require("../assets/projects/plan2.jpg")} alt="plan2" />
-              </div>
-              <div className="plan-small">
-                <img src={require("../assets/projects/plan3.jpg")} alt="plan3" />
-              </div>
-            </div>
-
-            <div className="plan-grid reverse">
-              <div className="plan-big">
-                <img src={require("../assets/projects/plan4.jpg")} alt="plan4" />
-              </div>
-              <div className="plan-small">
-                <img src={require("../assets/projects/plan5.jpg")} alt="plan5" />
-              </div>
-              <div className="plan-small">
-                <img src={require("../assets/projects/plan6.jpg")} alt="plan6" />
-              </div>
-            </div>
-          </Container>
-        </Container>
-      </section>
-
-      <Work />
+  
     </>
   );
 };

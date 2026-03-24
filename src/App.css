@@ -1,15 +1,12 @@
 h1, h2, h3, .heading {
   font-family: 'MadeMirage', serif ;
 }
-body {
-  font-family: poppins !important;
 
-}
 /* Initial state: hidden & zoomed out */
 .app-wrapper {
-  opacity: 0;
+  /* opacity: 0;
   transform: scale(0.9);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease; */
 }
 
 /* When preloader finishes */
@@ -49,8 +46,8 @@ body.scrolled .navbar {
   font-weight: 600;
 }
 .page-description{
-  font-size: 20px !important;
-  font-weight: 500 !important;
+  font-size: 19.5px !important;
+  font-weight: 400 !important;
   
 }
 .heading-center-underline {
@@ -64,7 +61,7 @@ body.scrolled .navbar {
   display: block;
   width: 99px;
   height: 2px;              
-  background-color: #A1BE28;  
+  background-color: #3F412B;  
   margin: 0px auto 20px auto !important;      
   border-radius: 2px;
 }

@@ -45,7 +45,7 @@
   text-align: left !important;
   width: 100%;
   margin-top: 5.2rem;
-/* background-color: #A1BE28; */
+/* background-color: #3F412B; */
 }
 
 .col-text-div {
@@ -84,7 +84,7 @@
 }
 
 .social-icons a:hover {
-  color: #A1BE28;
+  color: #3F412B;
 }
 
 .trust-text h2 {
@@ -121,7 +121,7 @@
 }
 
 .footer-links-column a:hover {
-  color: #A1BE28;
+  color: #3F412B;
 }
 
 a {
@@ -129,7 +129,7 @@ a {
   color: #fff;
 }
 a:hover {
-  color: #A1BE28;
+  color: #3F412B;
 }
 
 .footer-contact-info p {

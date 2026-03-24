@@ -10,8 +10,8 @@
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 
-  background:#3F412B;
-  color:#fff;
+  background:#faedc862;
+  color:#3F412B;
   border:none;
 
   padding:15px 10px;
@@ -20,8 +20,9 @@
 
   cursor:pointer;
   border-radius:8px 0 0 8px;
+  box-shadow: 0 4px 7px rgba(0,0,0,0.15);
 }
 
 .brochure-btn:hover{
-  background:#3F412B;
+  background:#faedc879;
 }

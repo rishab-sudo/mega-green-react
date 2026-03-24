@@ -1,0 +1,219 @@
+/* ===== Global Wrapper ===== */
+.gallery {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Banner Section ===== */
+.gallery-banner {
+  height: 100vh;
+  width: 100%;
+  background: url("../assets/mock-gallery.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* ===== Overlay ===== */
+.gallery-overlay {
+  background: rgba(0, 0, 0, 0.6) !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.gallery-overlay h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+/* ===== Vertical Line Animation ===== */
+.line-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  height: 180px;
+  width: 2px;
+  overflow: hidden;
+}
+
+/* Smooth gradient line */
+.moving-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #fff 40%,
+    #fff 60%,
+    transparent 100%
+  );
+
+  animation: smoothMove 2s linear infinite;
+}
+
+@keyframes smoothMove {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ===== Content Section (Overlap Effect) ===== */
+.gallery-content {
+  background: #fff;
+  margin-top: 0px;
+  padding: 45px 0;
+  position: relative;
+  z-index: 2;
+box-shadow: 0 -30px 60px rgba(255, 255, 255, 0.7);
+}
+
+/* ===== gallery-Container ===== */
+.gallery-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+.gallery-container h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* Description */
+.gallery-container p {
+  max-width: 800px;
+  margin: auto;
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ===== Gallery Grid 2 ===== */
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+/* Columns */
+.gallery-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Images Base ===== */
+.gallery-section1-img {
+  width: 426px;
+  object-fit: cover;
+  border-radius: 2px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect (Premium Feel) */
+.gallery-section1-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== Column 1 ===== */
+.gallery-section1-img1 {
+  height: 565px;
+}
+
+.gallery-section1-img2 {
+  height: 745px;
+}
+
+/* ===== Column 2 ===== */
+.gallery-section1-img3 {
+  height: 268px;
+}
+
+.gallery-section1-img4 {
+  height: 426px;
+}
+.gallery-section1-img5 {
+  height: 284px;
+}
+
+.gallery-section1-img6 {
+  height: 426px;
+}
+
+/* ===== Column 3 ===== */
+.gallery-section1-img7 {
+  height: 852px;
+}
+
+.gallery-section1-img8{
+  height: 426px;
+}
+
+/* ===== Responsive ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .gallery-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-section1-img {
+    width: 95%;
+  }
+
+  .overlay h1 {
+    font-size: 42px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .overlay h1 {
+    font-size: 32px;
+  }
+
+  .gallery-container h2 {
+    font-size: 24px;
+  }
+
+  .gallery-container p {
+    font-size: 14px;
+  }
+
+  .vertical-line {
+    animation: growLineMobile 1.5s ease forwards;
+  }
+
+  @keyframes growLineMobile {
+    from {
+      height: 0;
+    }
+    to {
+      height: 200px;
+    }
+  }
+}

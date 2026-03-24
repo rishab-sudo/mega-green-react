@@ -76,7 +76,7 @@ if (!isValid) {
           icon: "success",
           title: "Success!",
           text: "Your quote request has been submitted successfully.",
-          confirmButtonColor: "#a1be28",
+          confirmButtonColor: "#3F412B",
         });
 
         setForm({

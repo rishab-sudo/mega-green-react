@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
 import "./Appartments.css";
 
 // Replace these images with your own
-import plan1 from "../assets/projects/App-map.png";
-import plan2 from "../assets/projects/App-map.png";
-import plan3 from "../assets/projects/App-map.png";
+import plan1 from "../assets/projects/App-map2.jpeg";
+import plan2 from "../assets/projects/App-map2.jpeg";
+import plan3 from "../assets/projects/App-map2.jpeg";
 
 import { Container } from "react-bootstrap";
 
 const plans = [
   {
-    name: "Villa 1",
-    plotSize: "7.00 × 14.27 M",
-    floors: 2,
-    carpetArea: "1136 SQ.FT",
-    type: "3 BHK VILLA",
+    name: "Villa  A",
+    plotSize: "99.89 Sq.Mtrs (119.47 Sq.Yards)",
+    floors: "Duplex",
+    coveredArea: "155.388 Sq.Mtrs. (1672.588 Sq.Ft)",
+    // type: "2BHK, 3BHK, 4BHK",
     // extra: '7000 [23"] × 14270 [46\'-10"] Ground',
     image: plan1,
   },
   {
-    name: "Villa 2",
-    plotSize: "6.810 × 12.610 M",
-    floors: 2,
-    carpetArea: "900 SQ.FT",
-    type: "3 BHK VILLA",
-    extra: "",
+    name: "Villa  B",
+    plotSize: "85.874 Sq.Mtrs (102.704 Sq.Yards)",
+   floors: "Duplex",
+    coveredArea: "132.904 Sq.Mtrs (1430.566 Sq.Ft)",
+    // type: "2BHK, 3BHK, 4BHK",
+  
     image: plan2,
   },
   {
-    name: "Villa 3",
-    plotSize: "5.14 × 10.71 M",
-    floors: 2,
-    carpetArea: "557 SQ.FT",
-    type: "3 BHK",
-    extra: "",
+    name: "Villa  C",
+    plotSize: "55.05 Sq.Mtrs (65.839 Sq.Yards)",
+  floors: "Duplex",
+    coveredArea: "81.1225 Sq.Mtrs (873.194 Sq.Ft)",
+  //  type: "2BHK, 3BHK, 4BHK",
+   
     image: plan3,
   },
 ];
@@ -54,7 +55,7 @@ const Appartments = () => {
     <section className="appartments">
       <Container className="appartments-container">
         <div className="heading-center-underline">
-        <h2 className="appartments-title page-heading">Apartments Plans</h2>
+        <h2 className="appartments-title page-heading">Villa Plans</h2>
 </div>
         {/* Tabs */}
         <div className="appartments-tabs">
@@ -89,17 +90,17 @@ const Appartments = () => {
       <span>{plans[activeIndex].plotSize}</span>
     </li>
     <li>
-      <span>Floors</span>
+      <span>Living Floors</span>
       <span>{plans[activeIndex].floors}</span>
     </li>
     <li>
-      <span>Carpet Area</span>
-      <span>{plans[activeIndex].carpetArea}</span>
+      <span> Total Covered Area</span>
+      <span>{plans[activeIndex].coveredArea}</span>
     </li>
-    <li>
-      <span>Type</span>
+    {/* <li>
+      <span>Villa Type</span>
       <span>{plans[activeIndex].type}</span>
-    </li>
+    </li> */}
 
     {plans[activeIndex].extra && (
       <li>
@@ -109,7 +110,9 @@ const Appartments = () => {
     )}
   </ul>
 
+ <Link to="/projects">
   <button className="learn-more-btn">Know More</button>
+</Link>
 </div>
 
           <div className="appartments-image">

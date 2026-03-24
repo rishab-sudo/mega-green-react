@@ -6,31 +6,31 @@ import "./Best.css";
 const slides = [
   {
     title: "Mega Group",
-    year: "2024",
-    desc: "Each apartment has been individually designed to maximise space and light with smart home technology.",
+    tagline: "Experience Greenery",
+    desc: "Each villa has been individually designed to maximise space and light with smart home technology.",
     image: require("../assets/banner/Banner1.jpeg"),
   },
   {
     title: "Mega Group",
-    year: "2025",
+    tagline: "Experience Luxury",
     desc: "Premium materials and thoughtful layouts for a comfortable and modern lifestyle.",
     image: require("../assets/banner/Banner2.jpeg"),
   },
   {
     title: "Mega Group",
-    year: "2026",
+    tagline: "Experience Comfort",
     desc: "Smart layouts, elegant interiors and high quality construction standards.",
     image: require("../assets/banner/Banner3.jpeg"),
   },
   {
     title: "Mega Group",
-    year: "2027",
+    tagline: "Experience Elegance",
     desc: "Designed for people who value comfort, style and long-term reliability.",
     image: require("../assets/banner/Banner4.jpeg"),
   },
   {
     title: "Mega Group",
-    year: "2028",
+    tagline: "Experience Modern Living",
     desc: "A perfect blend of architecture, technology and lifestyle.",
     image: require("../assets/banner/Banner5.jpeg"),
   },
@@ -77,8 +77,10 @@ const Best = () => {
         {/* LEFT SIDE */}
         <div className="about-left container">
           <div className="left-text-wrapper">
-            <h2 className="about-heading page-heading">{slides[index].title}</h2>
-            <span className="about-year page-subheading">{slides[index].year}</span>
+            <h2 className="about-heading page-heading">{slides[index].title}</h2> 
+           <span className="about-tagline page-subheading">
+  {slides[index].tagline}
+</span>
 
             <p className={`about-para page-description ${animate ? "slide-left" : ""}`}>
               {slides[index].desc}

@@ -64,7 +64,7 @@ const ContactForm = () => {
           icon: "success",
           title: "Success!",
           text: data.message,
-          confirmButtonColor: "#a1be28",
+          confirmButtonColor: "#3F412B",
         });
 
         setForm({

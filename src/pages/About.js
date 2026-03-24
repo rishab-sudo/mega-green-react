@@ -2,7 +2,8 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import Best from '../components/Best';
 import Luxury from '../components/Luxury'
-import Testimonials from '../components/Testimonials'
+import Work from "../components/Work"
+// import Testimonials from '../components/Testimonials'
 import { motion } from "framer-motion";
 import PageTopBanner from "../components/PageTopBanner";
 
@@ -73,11 +74,11 @@ const About = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Testimonials />
+        {/* <Testimonials /> */}
       </motion.div>
 
 
-
+ <Work />
 
 
     </>

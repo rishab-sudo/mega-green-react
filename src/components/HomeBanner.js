@@ -18,7 +18,7 @@ function HomeBanner() {
             <div className="homebanner-center-content">
               <h2>Mega Green City</h2>
               <p>
-                A premium residential destination offering modern apartments and
+                A premium residential destination offering modern villas and
                 luxury villas surrounded by lush greenery and elegant design.
               </p>
             </div>
@@ -46,23 +46,23 @@ function HomeBanner() {
 
         {/* Slide 3 */}
   
-            <Carousel.Item>
+            {/* <Carousel.Item>
           <div className="homebanner-slide">
             <img
               className="homebanner-img"
               src={require("../assets/banner/Banner2.jpeg")}
-              alt="Premium Apartments"
+              alt="Premium villas"
             />
             <div className="homebanner-overlay"></div>
             <div className="homebanner-center-content">
-              <h2>Premium Apartments</h2>
+              <h2>Premium villas</h2>
               <p>
                 Thoughtfully planned homes with modern architecture, efficient
                 layouts, and a lifestyle crafted for comfort and elegance.
               </p>
             </div>
           </div>
-        </Carousel.Item>
+        </Carousel.Item> */}
 
         {/* Slide 4 */}
         <Carousel.Item>

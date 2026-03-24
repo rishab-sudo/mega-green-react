@@ -1,6 +1,7 @@
 .work {
   position: relative;
   height: 500vh; 
+  margin-top: auto !important;
   position: relative;
 background-color: rgba(211, 211, 211, 0.034);
   margin-top: 2.5%;

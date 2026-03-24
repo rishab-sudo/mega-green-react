@@ -6,7 +6,7 @@ const subHeadings = [
   "Where Modern Living Meets Nature",
   "A Perfect Blend of Comfort and Sustainability",
   "Crafted for a Better Lifestyle",
-  "Future-Ready Living Spaces",
+  "Future Ready Living Spaces",
 ];
 
 const MAIN_TITLE = "MEGA GREEN CITY";

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram,  } from 'react-icons/fa';
 import "./Footer.css";
 
 const Footer = () => {
@@ -19,11 +19,11 @@ const Footer = () => {
     Mega Green City offers thoughtfully designed, eco-friendly homes with quality construction and modern comfort.
   </p>
 </div>
-                {/* <div className="social-icons">
-                  <a href="https://www.facebook.com/profile.php?"><FaFacebook /></a>
-                  <a href="https://www.linkedin.com/company/"><FaLinkedin /></a>
-                  <a href="https://www.instagram.com//"><FaInstagram /></a>
-                </div> */}
+                <div className="social-icons">
+                 <a href="https://www.facebook.com/profile.php?id=61588345141535"><FaFacebookF /></a>
+                  <a href="https://www.instagram.com/megagreencity/"><FaInstagram /></a>
+
+                </div>
               </div>
             </Col>
 
@@ -49,14 +49,14 @@ const Footer = () => {
                 <div className="col-text-div">
                   <h4>Contact Info</h4>
                   <div className="footer-contact-info">
-                    <p><strong>Address:</strong><br /> Between Phoenix Mall and Funcity,<br/>Pilibhit Bypass, Bareilly
+                    <p><strong>Address:</strong><br />  Kuan Danda, Bisalpur Road<br/>Bareilly - 243123 (UP)
 
 </p>
                     <p><strong>Phone:</strong><br />
                       <a href="tel:+919690177555">+91 9690177555</a>
                     </p>
                     <p><strong>Email:</strong><br />
-                      <a href="mailto:MegaGreenCity6@gmail.com">MegaGreenCity6@gmail.com</a>
+                      <a href="mailto: megagreencity@gmail.com"> megagreencity@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       <div className='copyright-div'>
-        Copyright © 2026 <span style={{ color: "#A1BE28" }}> MegaGreenCity</span>. All Right Reserved.
+        Copyright © 2026  <span style={{ color: "#fff",marginLeft:'5px' }}>  MegaGreenCity</span>. All Right Reserved.
       </div>
     </Container>
   );

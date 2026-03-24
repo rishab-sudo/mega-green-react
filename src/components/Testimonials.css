@@ -76,7 +76,8 @@
 }
 
 .star.filled {
-  color: #f5b50a;
+  /* color: #f5b50a; */
+  color: #3F412B;
 }
 
 /* Swiper pagination dots */

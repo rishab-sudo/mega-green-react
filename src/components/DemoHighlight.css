@@ -1,0 +1,66 @@
+.demohighlight {
+  background: #faedc862;
+  padding: 45px 20px;
+ margin-top: 3.5%;
+}
+
+.dh-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 45px;
+  color: #000;
+}
+
+.dh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dh-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.dh-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dh-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.dh-tick {
+  background: #3F412B;
+  color: #fff;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .dh-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .dh-grid {
+    grid-template-columns: 1fr;
+  }
+}

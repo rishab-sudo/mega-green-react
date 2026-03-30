@@ -2,22 +2,29 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import Best from '../components/Best';
 import Luxury from '../components/Luxury'
+import StickyBanner from "../components/StickyBanner"
+import banner11 from "../assets/banner/Banner2.jpeg"
 import Work from "../components/Work"
 // import Testimonials from '../components/Testimonials'
 import { motion } from "framer-motion";
-import PageTopBanner from "../components/PageTopBanner";
+
 
 import "./About.css"
 
 const About = () => {
   return (
     <>
-      <PageTopBanner
+      {/* <PageTopBanner
         title="About Us"
         currentPage="About Us"
         backgroundImage={require("../assets/banner/Banner2.jpeg")}
+      /> */}
+     <StickyBanner
+        image={banner11}
+        title="About Us"
+        currentPage="About Us"
       />
-
+  
  
 {/* section 1 */}
 <section className="aboutdemo-section">

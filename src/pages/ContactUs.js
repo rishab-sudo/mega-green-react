@@ -8,18 +8,23 @@ import {
   FaInstagram,
   
 } from "react-icons/fa";
-
+import banner2 from "../assets/banner/Banner2.jpeg"
+import  StickyBanner from "../components/StickyBanner"
 import ContactForm from "../components/ContactForm";
-import PageTopBanner from "../components/PageTopBanner";
 import "./ContactUs.css";
 
 const ContactUs = () => {
   return (
     <>
-      <PageTopBanner
+      {/* <PageTopBanner
         title="Contact Us"
         currentPage="Contact Us"
         backgroundImage={require("../assets/banner/Banner2.jpeg")}
+      /> */}
+        <StickyBanner
+        image={banner2}
+        title="Contact Us"
+        currentPage="Contact Us"
       />
 
       <section className="contact-us">

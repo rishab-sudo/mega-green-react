@@ -19,7 +19,12 @@ const Footer = () => {
     Mega Green City offers thoughtfully designed, eco-friendly homes with quality construction and modern comfort.
   </p>
 </div>
+<div className='d-flex'>
+  <p>Project Approved By :</p>
+  <img style={{height:"35px",marginLeft:"7px"}} src={require("../assets/pnb-logo22.png")} alt=""/>
+</div>
                 <div className="social-icons">
+                  <p style={{fontSize:"16px", marginTop:"15px"}}>Social Links:</p>
                  <a href="https://www.facebook.com/profile.php?id=61588345141535"><FaFacebookF /></a>
                   <a href="https://www.instagram.com/megagreencity/"><FaInstagram /></a>
 

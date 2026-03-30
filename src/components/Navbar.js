@@ -38,9 +38,9 @@ const Navbar = () => {
           <ul className="nav-links">
             <li><a href="/home">Home</a></li>
             <li><a href="/about">About Us</a></li>
-
+  <li><a href="/projects">Project</a></li>
             {/* 🔥 PROJECTS DROPDOWN */}
-            <li
+            {/* <li
               className="dropdown"
               onMouseEnter={() => setProjectsDropdown(true)}
               onMouseLeave={() => setProjectsDropdown(false)}
@@ -53,11 +53,11 @@ const Navbar = () => {
                 <li><a href="/projects">Our Project</a></li>
                 <li><a href="/project-highlight">Project Highlights</a></li>
 
-              </ul>
-            </li>
+              </ul> 
+            </li> */}
 
             <li><a href="/FloorPlan">Floor Plans</a></li>
-            <li><a href="/gallery">Gallery</a></li>
+            {/* <li><a href="/gallery">Gallery</a></li> */}
             <li><a href="/contact">Contact Us</a></li>
 
             {/* ✅ FIXED BUTTON STRUCTURE */}
@@ -86,9 +86,9 @@ const Navbar = () => {
           <ul className="side-nav-links">
             <li><a href="/home" onClick={toggleMenu}>Home</a></li>
             <li><a href="/about" onClick={toggleMenu}>About</a></li>
-
+ <li><a href="/projects">Project</a></li>
             {/* 🔥 MOBILE DROPDOWN */}
-            <li className="side-dropdown">
+            {/* <li className="side-dropdown">
               <span
                 className="side-about-title"
                 onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
@@ -103,10 +103,10 @@ const Navbar = () => {
 
                 </ul>
               )}
-            </li>
+            </li> */}
 
             <li><a href="/FloorPlan" onClick={toggleMenu}>Floor Plans</a></li>
-            <li><a href="/gallery" onClick={toggleMenu}>Gallery</a></li>
+            {/* <li><a href="/gallery" onClick={toggleMenu}>Gallery</a></li> */}
             <li><a href="/contact" onClick={toggleMenu}>Contact Us</a></li>
 
             <li>

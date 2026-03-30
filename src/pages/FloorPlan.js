@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import StickyBanner from "../components/StickyBanner";
+import banner1 from "../assets/banner/Banner7.jpeg"
 import "./FloorPlan.css";
 
 const FloorPlan = () => {
@@ -25,14 +27,11 @@ const FloorPlan = () => {
   return (
     <>
           {/* ===== Banner Section ===== */}
-      <div className="gallery-banner">
-        <div className="  gallery-overlay">
-          <h1 className="">Floor Plans</h1>
-       <div className="line-container">
-  <div className="moving-line"></div>
-</div>
-        </div>
-      </div>
+      <StickyBanner
+        image={banner1}
+        title="Floor Plans"
+        currentPage="Floor Plans"
+      />
   
     <Container fluid className="plan-section">
       <Container className="floor-content">

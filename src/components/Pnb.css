@@ -1,0 +1,44 @@
+.pnb {
+  width: 100%;
+  background: #faedc862; 
+  padding: 18px 0px;
+  border-radius: 0px;
+
+ 
+}
+.pnb-content-div{
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* Left */
+.pnb-left h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+
+.pnb-left p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Right */
+.pnb-right{
+width: auto !important;
+
+}
+.pnb-right img {
+    cursor: pointer;
+  transition: 0.3s ease;
+  height: 60px;
+  width: 90% !important;
+ }
+ .pnb-right img:hover {
+  transform: scale(1.02);
+} 

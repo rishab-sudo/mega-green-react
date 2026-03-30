@@ -73,14 +73,18 @@
 
 .social-icons {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center !important;
+  gap: 8px;
   font-size: 24px;
   margin-bottom: 20px;
+ 
 }
 
 .social-icons a {
   color: #fff;
   transition: color 0.3s;
+
 }
 
 .social-icons a:hover {

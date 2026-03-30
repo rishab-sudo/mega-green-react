@@ -3,7 +3,7 @@ import HomeBanner from '../components/HomeBanner'
 import HomeProperties from '../components/HomeProperties'
 import { motion } from "framer-motion";
 import Appartments from '../components/Appartments'
-import HomeResidence from '../components/HomeResidence';
+import Pnb from "../components/Pnb"
 
 const Home = () => {
   return (
@@ -58,7 +58,7 @@ const Home = () => {
       >
      <ExclusiveSection/>
       </motion.div> */}
-
+{/* 
         <motion.div
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <HomeResidence />
-      </motion.div>
+      </motion.div> */}
    
         <motion.div
         initial={{ opacity: 0, y: 80 }}
@@ -98,7 +98,7 @@ const Home = () => {
       </motion.div>
 
 
-
+<Pnb/>
     </div>
   )
 }

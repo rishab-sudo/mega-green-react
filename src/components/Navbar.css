@@ -105,10 +105,10 @@ color: #000;
 
 .dropdown-toggle::after {
  display: inline-block;
-  font-size: 20px;
+  font-size: 0px;
   margin-left: 5px;
   position: relative;
-  top: 2px; /* this moves the arrow a bit lower */
+  top: 2px; 
 }
 
 

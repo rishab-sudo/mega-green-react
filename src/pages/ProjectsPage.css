@@ -51,18 +51,12 @@
 .carousel-img-wrapper {
   position: sticky;
   top: 100px; 
-
   height: 80vh;
-  margin-bottom: 120px;
-
-  border-radius: 5px;
+    border-radius: 1px;
   overflow: hidden;
-
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-
+ box-shadow: 0 20px 50px rgba(0,0,0,0.15);
   transform: scale(0.92);
   transition: all 0.6s ease;
-
   background: #000; /* fallback */
 }
 
@@ -77,26 +71,25 @@
 .villa-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.1);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
+  justify-content: center;   
+  align-items: flex-start;   
+  padding-top: 40px;        
 }
 
 /* Overlay text */
-.villa-overlay h3 {
+.villa-overlay h2 {
   color: #F8F8F8;
   font-size: 42px;
   font-weight: 700;
-  opacity: 0;
-  transform: translateY(15px);
+  opacity: 1; /* 👈 ye 0 se 1 kar do */
+  transform: translateY(0);
   transition: 0.5s;
+  text-align: center;
+  
 }
-
-
 /* Responsive */
-
 
 @media (max-width: 768px) {
 

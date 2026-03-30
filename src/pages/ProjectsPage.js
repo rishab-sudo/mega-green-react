@@ -5,22 +5,16 @@ import ProjectPageBanner from "../components/ProjectPageBanner";
 import img1 from "../assets/projects/villa1.jpeg";
 import img2 from "../assets/projects/villa2.jpeg";
 import img3 from "../assets/projects/villa3.jpeg";
-import img4 from "../assets/projects/villa-3-night.jpeg";
-
-const images = [img1, img2, img3, img4];
-
+// import img4 from "../assets/projects/villa-3-night.jpeg";
+import DemoHighlight from "../components/DemoHighlight";
 
 
+const images = [
+  { src: img1, title: "Villa A" },
+  { src: img2, title: "Villa B" },
+  { src: img3, title: "Villa C" },
+];
 const Projects = () => {
-  // const [current, setCurrent] = useState(0);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  //   }, 1500);
-
-  //   return () => clearInterval(interval);
-  // }, []);
 
   return (
     <>
@@ -63,30 +57,30 @@ const Projects = () => {
         {/* 🔹 Slider */}
 <Container className="new-project-slider-wrapper">
 
-  {images.map((img, index) => (
+  {images.map((item, index) => (
     <div className="carousel-img-wrapper" key={index}>
 
       <div className="image-inner">
 
         <img
           className="new-project-carousel-img"
-          src={img}
+          src={item.src}
           alt={`villa-${index}`}
         />
 
         <div className="villa-overlay">
-          <h3>Villa {index + 1}</h3>
+          <h2>{item.title}</h2>
         </div>
 
       </div>
 
     </div>
   ))}
-
 </Container>
+
+<DemoHighlight />
       </section>
 
-  
     </>
   );
 };

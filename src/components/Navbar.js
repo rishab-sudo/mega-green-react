@@ -6,9 +6,9 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // ✅ FIXED STATES
-  const [projectsDropdown, setProjectsDropdown] = useState(false);
-  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  
+  // const [projectsDropdown, setProjectsDropdown] = useState(false);
+  // const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
   const [showQuote, setShowQuote] = useState(false);
